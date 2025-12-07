@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corax Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .selected {
+            background-color: #e5e7eb;
+            border-left: 4px solid #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-white shadow-lg flex flex-col z-10">
+        <div class="p-4 border-b bg-gray-50">
+            <h1 class="text-xl font-bold text-gray-800">Corax Admin</h1>
+            <input type="text" id="search" placeholder="Search shops..." class="w-full mt-2 p-2 border rounded text-sm">
+        </div>
+        <div id="shopList" class="flex-1 overflow-y-auto">
+            <!-- Shop items injected here -->
+        </div>
+        <div class="p-4 border-t bg-gray-50">
+            <button id="saveBtn"
+                class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 font-bold shadow">Save All
+                Changes</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8 overflow-y-auto relative">
+        <div id="editor" class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md hidden">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 id="editName" class="text-3xl font-bold text-gray-800">Shop Name</h2>
+                    <p id="editId" class="text-sm text-gray-500">ID: 123</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <label class="flex items-center cursor-pointer">
+                        <input type="checkbox" id="editApproved" class="w-5 h-5 text-green-600 rounded">
+                        <span class="ml-2 font-medium text-gray-700">Corax Approved</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Left Column -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="inputName" class="w-full p-2 border rounded mt-1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Location</label>
+                        <input type="text" id="inputLocation" class="w-full p-2 border rounded mt-1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Address</label>
+                        <input type="text" id="inputAddress" class="w-full p-2 border rounded mt-1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Coordinates (Lat, Lng)</label>
+                        <div class="flex space-x-2">
+                            <input type="number" step="any" id="inputLat" class="w-full p-2 border rounded mt-1"
+                                placeholder="Lat">
+                            <input type="number" step="any" id="inputLng" class="w-full p-2 border rounded mt-1"
+                                placeholder="Lng">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Image</label>
+                        <div class="mt-1 flex items-center space-x-4">
+                            <img id="previewImage" src="" class="w-20 h-20 object-cover rounded border bg-gray-50">
+                            <div class="flex-1">
+                                <input type="text" id="inputImage" class="w-full p-2 border rounded text-sm mb-2"
+                                    readonly>
+                                <label
+                                    class="cursor-pointer bg-blue-50 text-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-100">
+                                    Upload New
+                                    <input type="file" id="uploadImage" class="hidden" accept="image/*">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Description</label>
+                        <textarea id="inputDescription" rows="4" class="w-full p-2 border rounded mt-1"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Tags</label>
+                        <div id="tagsContainer" class="mt-2 grid grid-cols-2 gap-2">
+                            <!-- Checkboxes injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t">
+                <h3 class="font-bold text-gray-800 mb-2">Detailed Review</h3>
+                <textarea id="inputDetailedReview" rows="3" class="w-full p-2 border rounded mt-1"
+                    placeholder="Markdown supported..."></textarea>
+            </div>
+        </div>
+
+        <div id="emptyState" class="flex items-center justify-center h-full text-gray-400">
+            <p class="text-xl">Select a shop to edit</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

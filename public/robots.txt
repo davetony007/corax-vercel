@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corax-amsterdam-explorer-main.pages.dev/sitemap.xml

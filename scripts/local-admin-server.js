@@ -1,0 +1,139 @@
+import express from 'express';
+import multer from 'multer';
+import cors from 'cors';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const PORT = 3001;
+
+// Paths
+const COFFEESHOPS_FILE = path.join(__dirname, '../src/data/coffeeshops.ts');
+const IMAGES_DIR = path.join(__dirname, '../public/images/shops');
+const CLIENT_DIR = path.join(__dirname, 'admin-client');
+
+// Middleware
+app.use(cors());
+app.use(express.json({ limit: '50mb' }));
+app.use(express.static(CLIENT_DIR));
+// Serve public images so the admin panel can show them
+app.use('/images', express.static(path.join(__dirname, '../public/images')));
+
+// Multer setup for image uploads
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, IMAGES_DIR);
+    },
+    filename: function (req, file, cb) {
+        // Keep original extension, sanitize name
+        const ext = path.extname(file.originalname);
+        const name = path.basename(file.originalname, ext).replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        cb(null, `${name}${ext}`);
+    }
+});
+const upload = multer({ storage: storage });
+
+// Helper to read/write TS file
+function readCoffeeshops() {
+    if (!fs.existsSync(COFFEESHOPS_FILE)) return [];
+    const content = fs.readFileSync(COFFEESHOPS_FILE, 'utf-8');
+    const startMarker = 'export const coffeeshops: CoffeeshopData[] =';
+    const endMarker = 'export const filterTags';
+
+    const startIndex = content.indexOf(startMarker);
+    const endIndex = content.indexOf(endMarker);
+
+    if (startIndex !== -1 && endIndex !== -1) {
+        let rawPart = content.substring(startIndex + startMarker.length, endIndex);
+        // Find the array brackets
+        const arrayStart = rawPart.indexOf('[');
+        const arrayEnd = rawPart.lastIndexOf(']');
+
+        if (arrayStart !== -1 && arrayEnd !== -1) {
+            const arrayString = rawPart.substring(arrayStart, arrayEnd + 1);
+            try {
+                // SECURITY: Use JSON.parse instead of eval
+                return JSON.parse(arrayString);
+            } catch (e) {
+                console.error('JSON Parse error:', e.message);
+                console.warn('Falling back to Function constructor due to parse error (likely single quotes or comments).');
+                try {
+                    return new Function('return ' + arrayString)();
+                } catch (e2) {
+                    console.error('Fatal parse error:', e2);
+                    return [];
+                }
+            }
+        }
+    }
+    return [];
+}
+
+function writeCoffeeshops(shops) {
+    const originalContent = fs.readFileSync(COFFEESHOPS_FILE, 'utf-8');
+    const newArrayString = JSON.stringify(shops, null, 2);
+
+    const startMarker = 'export const coffeeshops: CoffeeshopData[] =';
+    const endMarker = 'export const filterTags';
+
+    const startIndex = originalContent.indexOf(startMarker);
+    const endIndex = originalContent.indexOf(endMarker);
+
+    if (startIndex !== -1 && endIndex !== -1) {
+        const prefix = originalContent.substring(0, startIndex + startMarker.length);
+        const suffix = originalContent.substring(endIndex);
+        // Ensure we have the type definition and assignment
+        const newContent = `${prefix} ${newArrayString};\n\n${suffix}`;
+        fs.writeFileSync(COFFEESHOPS_FILE, newContent);
+        return true;
+    }
+    return false;
+}
+
+// Routes
+
+// GET all shops
+app.get('/api/shops', (req, res) => {
+    try {
+        const shops = readCoffeeshops();
+        res.json(shops);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// POST update shops (save all)
+app.post('/api/shops', (req, res) => {
+    try {
+        const shops = req.body;
+        if (!Array.isArray(shops)) {
+            return res.status(400).json({ error: 'Expected array of shops' });
+        }
+        const success = writeCoffeeshops(shops);
+        if (success) {
+            res.json({ success: true, count: shops.length });
+        } else {
+            res.status(500).json({ error: 'Failed to write file' });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// POST upload image
+app.post('/api/upload', upload.single('image'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: 'No file uploaded' });
+    }
+    // Return the public path
+    const publicPath = `/images/shops/${req.file.filename}`;
+    res.json({ path: publicPath });
+});
+
+app.listen(PORT, () => {
+    console.log(`Admin Server running at http://localhost:${PORT}`);
+});
