@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /api/
 
 Sitemap: https://corax-amsterdam-explorer-main.pages.dev/sitemap.xml
