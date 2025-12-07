@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const COFFEESHOPS_FILE = path.join(__dirname, '../src/data/coffeeshops.ts');
 const SITEMAP_FILE = path.join(__dirname, '../public/sitemap.xml');
-const BASE_URL = 'https://corax-amsterdam-explorer-main.pages.dev';
+const BASE_URL = 'https://budstuntman.pages.dev';
 
 // Static routes
 const staticRoutes = [

@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: { id: string; slug:
     const tagsText = shop.tags?.length > 0 ? ` Known for ${shop.tags.join(", ")}.` : "";
     const description = `Read honest reviews for ${shop.name} in ${shop.location}.${tagsText}${ratingText} Check out the latest menu, strain ratings, and see if it's Corax Approved.`;
 
-    const canonicalUrl = `https://corax-amsterdam-explorer-main.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+    const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 
     return {
         title,
@@ -92,7 +92,7 @@ export default async function ShopPage({ params }: { params: { id: string; slug:
         );
     }
 
-    const canonicalUrl = `https://corax-amsterdam-explorer-main.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+    const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
     const description = `Read honest reviews for ${shop.name} in ${shop.location}.`;
 
     return (

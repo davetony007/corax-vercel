@@ -8,10 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Corax Dawai - Best Amsterdam Coffeeshop Reviews & Cannabis Guide 2026",
   description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed strains, hash, and edibles. Find top-rated shops, current menus, and Cali import prices.",
-  metadataBase: new URL("https://corax-amsterdam-explorer-main.pages.dev/"),
+  metadataBase: new URL("https://budstuntman.pages.dev/"),
   openGraph: {
     type: "website",
-    url: "https://corax-amsterdam-explorer-main.pages.dev/",
+    url: "https://budstuntman.pages.dev/",
     title: "Corax Dawai - Best Amsterdam Coffeeshop Reviews & Cannabis Guide 2026",
     description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed strains, hash, and edibles. Find top-rated shops, current menus, and Cali import prices.",
     images: ["/og-image.png"],
@@ -48,7 +48,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Corax Dawai",
               alternateName: ["Corax Amsterdam Explorer", "Corax Amsterdam"],
-              url: "https://corax-amsterdam-explorer-main.pages.dev/",
+              url: "https://budstuntman.pages.dev/",
               description: "Comprehensive guide to Amsterdam's coffeeshops and cannabis culture.",
               author: {
                 "@type": "Person",
@@ -58,7 +58,7 @@ export default function RootLayout({
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://corax-amsterdam-explorer-main.pages.dev/?search={search_term_string}",
+                  "https://budstuntman.pages.dev/?search={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),
