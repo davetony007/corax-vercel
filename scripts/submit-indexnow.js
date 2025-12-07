@@ -20,9 +20,9 @@ while ((match = regex.exec(sitemapContent)) !== null) {
 console.log(`Found ${urls.length} URLs to submit.`);
 
 const data = JSON.stringify({
-    "host": "corax-amsterdam-explorer-main.pages.dev",
-    "key": "32065eec00e84b769f8d272cd65be47a",
-    "keyLocation": "https://corax-amsterdam-explorer-main.pages.dev/32065eec00e84b769f8d272cd65be47a.txt",
+    "host": "budstuntman.pages.dev",
+    "key": "d2a8f4fef2844399871c60c335d86c7d",
+    "keyLocation": "https://budstuntman.pages.dev/d2a8f4fef2844399871c60c335d86c7d.txt",
     "urlList": urls
 });
 
