@@ -15,7 +15,10 @@ const staticRoutes = [
     { url: '/explore', priority: '0.8', freq: 'daily' },
     { url: '/videos', priority: '0.8', freq: 'weekly' },
     { url: '/insta', priority: '0.8', freq: 'daily' },
-    { url: '/support', priority: '0.5', freq: 'monthly' }
+    { url: '/support', priority: '0.5', freq: 'monthly' },
+    { url: '/guides', priority: '0.9', freq: 'weekly' },
+    { url: '/guides/first-time-guide-2026', priority: '0.9', freq: 'monthly' },
+    { url: '/guides/best-hash-amsterdam-2026', priority: '0.9', freq: 'monthly' }
 ];
 
 function extractShops(filePath) {

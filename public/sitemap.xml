@@ -31,6 +31,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://budstuntman.pages.dev/guides</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budstuntman.pages.dev/guides/first-time-guide-2026</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://budstuntman.pages.dev/guides/best-hash-amsterdam-2026</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://budstuntman.pages.dev/shop/1/the-4-floors</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
