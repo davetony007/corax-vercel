@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, MapPin, Video, Instagram, Heart } from "lucide-react";
+import { Home, MapPin, Video, Instagram, Heart, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -12,6 +12,7 @@ const Navigation = () => {
     { path: "/", label: "Home", icon: Home },
     { path: "/explore", label: "Explore", icon: MapPin },
     { path: "/videos", label: "Videos", icon: Video },
+    { path: "/guides", label: "Guides", icon: BookOpen },
     { path: "/insta", label: "Instagram", icon: Instagram },
     { path: "/support", label: "Support", icon: Heart },
   ];

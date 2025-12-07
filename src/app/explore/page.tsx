@@ -50,24 +50,7 @@ export default function Explore() {
             <MapWrapper />
 
             <div className="container mx-auto px-4 py-8">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto text-center">
-                    <a href="?filter=tourist-friendly" className="p-4 bg-card border rounded-lg hover:border-primary transition-colors">
-                        <h3 className="font-bold text-foreground">Tourist Friendly</h3>
-                        <p className="text-sm text-muted-foreground">Relaxed spots perfect for first-timers</p>
-                    </a>
-                    <a href="?filter=best-hash" className="p-4 bg-card border rounded-lg hover:border-primary transition-colors">
-                        <h3 className="font-bold text-foreground">Best Hash</h3>
-                        <p className="text-sm text-muted-foreground">Top-tier isolator and traditional hash</p>
-                    </a>
-                    <a href="?filter=best-edibles" className="p-4 bg-card border rounded-lg hover:border-primary transition-colors">
-                        <h3 className="font-bold text-foreground">Best Edibles</h3>
-                        <p className="text-sm text-muted-foreground">Strong and tested cakes & pastries</p>
-                    </a>
-                    <a href="?filter=local-favorites" className="p-4 bg-card border rounded-lg hover:border-primary transition-colors">
-                        <h3 className="font-bold text-foreground">Local Favorites</h3>
-                        <p className="text-sm text-muted-foreground">Hidden gems where locals go</p>
-                    </a>
-                </div>
+                {/* Visual filters removed to avoid redundancy with MapWrapper controls */}
             </div>
             <Reviews />
 

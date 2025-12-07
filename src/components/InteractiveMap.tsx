@@ -11,6 +11,7 @@ import { MapPin } from "lucide-react";
 import { coffeeshops, filterTags, CoffeeshopData } from "@/data/coffeeshops";
 import ShopDetails from "@/components/ShopDetails";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { useSearchParams, useRouter } from "next/navigation";
 
 // Fix for default marker icons in Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -25,8 +26,50 @@ const InteractiveMap = () => {
   const map = useRef<L.Map | null>(null);
   const markers = useRef<L.Marker[]>([]);
   const previousFilterRef = useRef<string>("All");
-  const [activeFilter, setActiveFilter] = useState("All");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // Normalize URL param to match tag format
+  const normalizeFilter = useMemo(() => (param: string | null) => {
+    if (!param) return "All";
+    if (param === "tourist-friendly") return "Tourist Friendly";
+    if (param === "best-hash") return "Best Hash";
+    if (param === "best-edibles") return "Best Edibles";
+    if (param === "local-favorites") return "Local Favorite";
+    return "All";
+  }, []);
+
+  const [activeFilter, setActiveFilter] = useState(normalizeFilter(searchParams.get("filter")));
   const [selectedShop, setSelectedShop] = useState<CoffeeshopData | null>(null);
+
+  // Sync state if URL changes
+  useEffect(() => {
+    const newFilter = normalizeFilter(searchParams.get("filter"));
+    if (newFilter !== activeFilter) {
+      setActiveFilter(newFilter);
+    }
+  }, [searchParams, normalizeFilter, activeFilter]);
+
+  // Update URL when filter changes (optional, but good for deep linking from UI clicks)
+  const handleFilterChange = (newFilter: string) => {
+    setActiveFilter(newFilter);
+    // Update URL without full reload
+    const params = new URLSearchParams(searchParams.toString());
+
+    // Reverse mapping for URL
+    let urlValue = newFilter;
+    if (newFilter === "Tourist Friendly") urlValue = "tourist-friendly";
+    else if (newFilter === "Best Hash") urlValue = "best-hash";
+    else if (newFilter === "Best Edibles") urlValue = "best-edibles";
+    else if (newFilter === "Local Favorite") urlValue = "local-favorites";
+
+    if (newFilter === "All") {
+      params.delete("filter");
+    } else {
+      params.set("filter", urlValue);
+    }
+    router.push(`?${params.toString()}`, { scroll: false });
+  };
 
   const filteredShops = useMemo(() => {
     return coffeeshops.filter(shop => {
@@ -100,6 +143,7 @@ const InteractiveMap = () => {
       map.current.fitBounds(bounds, { padding: [50, 50] });
       previousFilterRef.current = activeFilter;
     }
+
   }, [filteredShops, activeFilter]);
 
   const [desktopView, setDesktopView] = useState(true);
@@ -180,21 +224,21 @@ const InteractiveMap = () => {
 
             <Button
               variant={activeFilter === "Amsterdam Only" ? "default" : "outline"}
-              onClick={() => setActiveFilter(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")}
+              onClick={() => handleFilterChange(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")}
               className="gap-2 h-8 text-sm"
             >
               <span className="text-base">🏙️</span> Amsterdam Only
             </Button>
             <Button
               variant={activeFilter === "Has Menu" ? "default" : "outline"}
-              onClick={() => setActiveFilter(activeFilter === "Has Menu" ? "All" : "Has Menu")}
+              onClick={() => handleFilterChange(activeFilter === "Has Menu" ? "All" : "Has Menu")}
               className="gap-2 h-8 text-sm"
             >
               <span className="text-base">📜</span> Has Menu
             </Button>
             <Button
               variant={activeFilter === "Has Review" ? "default" : "outline"}
-              onClick={() => setActiveFilter(activeFilter === "Has Review" ? "All" : "Has Review")}
+              onClick={() => handleFilterChange(activeFilter === "Has Review" ? "All" : "Has Review")}
               className="gap-2 h-8 text-sm"
             >
               <span className="text-base">⭐</span> Has Review
@@ -209,7 +253,7 @@ const InteractiveMap = () => {
               key={tag}
               variant={activeFilter === tag ? "default" : "outline"}
               className="cursor-pointer px-3 py-1 text-sm hover:scale-105 transition-transform"
-              onClick={() => setActiveFilter(activeFilter === tag ? "All" : tag)}
+              onClick={() => handleFilterChange(activeFilter === tag ? "All" : tag)}
             >
               {tag}
             </Badge>

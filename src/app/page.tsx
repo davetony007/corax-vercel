@@ -132,11 +132,23 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-xl font-bold text-foreground pt-2">Quick Tips for First-Timers</h3>
-                <ul className="space-y-2 text-muted-foreground list-disc list-inside">
+                <ul className="space-y-2 text-muted-foreground list-disc list-inside mb-4">
                   <li><strong>ID is Mandatory:</strong> No ID, no entry. Digital copies usually don't work.</li>
                   <li><strong>Tobacco Ban:</strong> Smoking pure is the norm indoors. Use provided herbal mix.</li>
                   <li><strong>Cash vs Card:</strong> Most take card now, but some old-school spots are cash-only.</li>
                 </ul>
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                  <Link href="/guides/first-time-guide-2026">
+                    <Button variant="outline" className="w-full sm:w-auto border-primary/20 text-primary hover:bg-primary/5">
+                      First-Time Guide (21 Tips)
+                    </Button>
+                  </Link>
+                  <Link href="/guides/best-hash-amsterdam-2026">
+                    <Button variant="outline" className="w-full sm:w-auto border-amber-500/20 text-amber-500 hover:bg-amber-500/5">
+                      Best Hash Guide (2026)
+                    </Button>
+                  </Link>
+                </div>
 
                 <p className="pt-4">
                   Welcome to the family! I'm Corax, and I'm obsessed with finding the cleanest ash and the craziest flavors in Amsterdam. From "super duper highly mega approved" top-shelf strains to hidden budget gems, I review it all with 100% honesty.
