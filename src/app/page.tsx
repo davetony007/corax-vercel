@@ -48,7 +48,7 @@ export default function Home() {
                 "name": "Is Amsterdam still good for coffeeshops in 2026?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Amsterdam remains a strong destination for coffeeshops in 2026, but prices are higher and many venues cater more to tourists, so choosing the right shops is important."
+                  "text": "Amsterdam is still a fantastic city for coffeeshops in 2026, but more venues now focus on tourists, prices are higher, and quality varies, so choosing the right shops matters more than ever."
                 }
               },
               {
@@ -56,7 +56,7 @@ export default function Home() {
                 "name": "Are Amsterdam coffeeshops safe for first-time visitors?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Licensed coffeeshops are generally safe if visitors bring valid ID, start with low doses and avoid mixing cannabis with alcohol or other substances."
+                  "text": "Licensed coffeeshops are generally safe for first-time visitors who bring valid ID, start with low doses, stay hydrated and avoid mixing cannabis with alcohol or other substances."
                 }
               },
               {
@@ -64,7 +64,7 @@ export default function Home() {
                 "name": "How much does weed cost in Amsterdam in 2026?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Most coffeeshops charge mid to high prices per gram, with top-shelf flower and hash costing more, so it is smart to compare menus and avoid tourist traps near major squares."
+                  "text": "Most Amsterdam coffeeshops charge typical European prices for mid-range flower and hash, while top-shelf menus cost more per gram, so it is smart to compare a few menus instead of buying at the first tourist hotspot."
                 }
               },
               {
@@ -72,7 +72,7 @@ export default function Home() {
                 "name": "Can tourists still buy weed in Amsterdam?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Most visitors with valid ID can still buy cannabis in coffeeshops, but local rules can change, so it is wise to check current policy and ask staff if you are unsure."
+                  "text": "Most adult tourists with valid ID can still buy cannabis in Amsterdam coffeeshops, but some local rules can change, so it is best to check current policy and ask staff if anything is unclear."
                 }
               }
             ]
@@ -302,25 +302,25 @@ export default function Home() {
               <AccordionItem value="item-1" className="bg-card px-6 rounded-lg border">
                 <AccordionTrigger className="text-lg font-semibold">Is Amsterdam still good for coffeeshops in 2026?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base">
-                  Amsterdam is still one of the best cities in the world for coffeeshops, but prices are higher and many spots now focus on tourists, so careful shop selection matters more than ever.
+                  Amsterdam is still a fantastic city for coffeeshops in 2026, but more places now focus on tourists, prices are higher, and quality varies a lot from shop to shop, so choosing the right spots matters more than ever.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="bg-card px-6 rounded-lg border">
                 <AccordionTrigger className="text-lg font-semibold">Are Amsterdam coffeeshops safe for first‑time visitors?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base">
-                  Licensed coffeeshops are generally safe if you stick to well‑known venues, start with low doses, and avoid mixing cannabis with alcohol or other substances.
+                  Licensed coffeeshops are generally safe for first‑time visitors if you bring valid ID, start with low doses, drink water, and avoid mixing cannabis with alcohol or other substances.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="bg-card px-6 rounded-lg border">
                 <AccordionTrigger className="text-lg font-semibold">How much does weed cost in Amsterdam in 2026?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base">
-                  Most coffeeshops charge mid to high prices per gram, with top‑shelf flower and hash costing more, so it is smart to compare menus and avoid tourist traps near major squares.
+                  In most Amsterdam coffeeshops, mid‑range flower and hash sit in the normal European price band while top‑shelf menus cost more per gram, so it is worth comparing a few menus instead of buying at the first tourist hotspot.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="bg-card px-6 rounded-lg border">
                 <AccordionTrigger className="text-lg font-semibold">Can tourists still buy weed in Amsterdam?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base">
-                  Most visitors with valid ID can still buy cannabis in coffeeshops, but local rules can change, so it is wise to check current policy and ask staff if you are unsure.
+                  Most adult tourists with valid ID can still buy cannabis in Amsterdam coffeeshops, but some cities and neighborhoods test local rules, so always check current policy and ask staff if you are unsure.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

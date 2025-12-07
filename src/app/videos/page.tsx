@@ -14,6 +14,23 @@ export const metadata: Metadata = {
 export default function Videos() {
     return (
         <div className="min-h-screen bg-background">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "CollectionPage",
+                        "name": "Amsterdam Coffeeshop Reviews & Videos",
+                        "url": "https://budstuntman.pages.dev/videos",
+                        "description": "Collection of Amsterdam coffeeshop review videos, walking tours and shorts covering the best smoking spots, hash, edibles and neighborhoods for 2026 travelers.",
+                        "isPartOf": {
+                            "@type": "WebSite",
+                            "name": "Bud Stuntman",
+                            "url": "https://budstuntman.pages.dev/"
+                        }
+                    })
+                }}
+            />
             <Navigation />
 
             <div className="container mx-auto px-4 py-8">
@@ -21,8 +38,8 @@ export default function Videos() {
                     <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                         Amsterdam Coffeeshop Reviews & Videos
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl">
-                        Browse long‑form reviews, walking tours and shorts that show real Amsterdam coffeeshop experiences, including first impressions, menus, neighborhood context and honest thoughts about value, quality and vibe.
+                    <p className="text-xl text-muted-foreground max-w-3xl">
+                        Explore our library of <strong>100+ videos</strong>, featuring long‑form reviews, walking tours, and shorts. Designed for <strong>25+ travelers</strong>, we cover everything from first impressions and full menu breakdowns to neighborhood guides—giving you honest insights on value, quality, and vibe.
                     </p>
                 </div>
             </div>

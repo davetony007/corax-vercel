@@ -20,30 +20,18 @@ export default function Explore() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [{
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Home",
-                                "item": "https://corax-amsterdam-explorer-main.pages.dev/"
-                            }, {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": "Explore",
-                                "item": "https://corax-amsterdam-explorer-main.pages.dev/explore"
-                            }]
-                        },
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "CollectionPage",
-                            "name": "Amsterdam Coffeeshop Map",
-                            "description": "Interactive Amsterdam coffeeshop map with filters for tourist-friendly spots, best cannabis, hash, edibles and local favorites.",
-                            "url": "https://corax-amsterdam-explorer-main.pages.dev/explore"
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "CollectionPage",
+                        "name": "Amsterdam Coffeeshop Map",
+                        "url": "https://budstuntman.pages.dev/explore",
+                        "description": "Interactive Amsterdam coffeeshop map with filters for tourist-friendly shops, best cannabis, hash and waterhash, edibles, local favorites and historic spots for 2026 trips.",
+                        "isPartOf": {
+                            "@type": "WebSite",
+                            "name": "Bud Stuntman",
+                            "url": "https://budstuntman.pages.dev/"
                         }
-                    ])
+                    })
                 }}
             />
             <Navigation />
@@ -53,8 +41,8 @@ export default function Explore() {
                     <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                         Amsterdam Coffeeshop Map (2026)
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Explore Amsterdam coffeeshops on an interactive map with filters for <strong>tourist‑friendly vibes</strong>, best <strong>cannabis</strong>, <strong>hash</strong> and <strong>waterhash</strong>, strong <strong>edibles</strong>, <strong>local favorites</strong> and <strong>historic legends</strong> so you can build a relaxed 2026 itinerary in minutes.
+                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                        Welcome to the ultimate <strong>Amsterdam Coffeeshop Map for 2026</strong>. Use the filters below to find exactly what you need—whether that's "Tourist Friendly" spots for first-timers, "Best Hash" for connoisseurs, or verified "Best Edibles". Each location is reviewed for quality, vibe, and safety.
                     </p>
                 </div>
             </div>

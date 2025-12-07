@@ -46,8 +46,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Corax Dawai",
-              alternateName: ["Corax Amsterdam Explorer", "Corax Amsterdam"],
+              name: "Bud Stuntman",
+              alternateName: ["Corax Dawai", "Corax Amsterdam"],
               url: "https://budstuntman.pages.dev/",
               description: "Comprehensive guide to Amsterdam's coffeeshops and cannabis culture.",
               author: {
