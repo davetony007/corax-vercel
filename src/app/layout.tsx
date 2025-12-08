@@ -77,6 +77,11 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "uhyb9ekr2f");
           `}
         </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="bDc43sSI0+pkZ2f1slafbw"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
