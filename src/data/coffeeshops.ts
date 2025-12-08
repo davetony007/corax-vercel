@@ -67,7 +67,6 @@ export const coffeeshops: CoffeeshopData[] = [
     "rating": 0,
     "tags": [],
     "videoIds": [
-      "4YkGp6JhzRE",
       "QVpMoKOxd2A",
       "KFAKQAdY2pU",
       "rw_EVmnyjYQ",
@@ -76,7 +75,15 @@ export const coffeeshops: CoffeeshopData[] = [
       "cNARVqHpigI",
       "4b3NDVZV3Zk",
       "utuU8EA_KHk",
-      "7kwicBefV1w"
+      "7kwicBefV1w",
+      "4YkGp6JhzRE",
+      "nCorJMnfO8M",
+      "8TNwFAxZBg4",
+      "fS8THioQvhU",
+      "QMhjG6EdZ4A",
+      "6anPRuuA-SE",
+      "HA7CBmz04SQ",
+      "Yc16xcKSXqU"
     ],
     "shortIds": [
       "VQwpWVtXdc8",
@@ -339,7 +346,9 @@ export const coffeeshops: CoffeeshopData[] = [
       "Top Pick"
     ],
     "videoIds": [
-      "QMhjG6EdZ4A"
+      "4YkGp6JhzRE",
+      "QMhjG6EdZ4A",
+      "6anPRuuA-SE"
     ],
     "shortIds": [
       "wHAOravKVU4",
@@ -693,7 +702,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": [
+      "8b0Sr2CCJDs"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/28.jpg",
@@ -862,7 +873,9 @@ export const coffeeshops: CoffeeshopData[] = [
     "rating": 0,
     "tags": [],
     "videoIds": [
-      "mcoGoW1D3Go"
+      "mcoGoW1D3Go",
+      "nCorJMnfO8M",
+      "BkCVRymxvWw"
     ],
     "shortIds": [
       "QMBkff3w9L0",
@@ -933,7 +946,9 @@ export const coffeeshops: CoffeeshopData[] = [
       "Good Prices"
     ],
     "videoIds": [
+      "3vG1w0x6xf0",
       "8TNwFAxZBg4",
+      "6anPRuuA-SE",
       "HA7CBmz04SQ",
       "Yc16xcKSXqU"
     ],
@@ -962,10 +977,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [
-      "IHsaYicPBCg",
-      "sfr2BaAMlG4"
-    ],
+    "videoIds": [],
     "shortIds": [
       "6884VkL0nDg"
     ],
@@ -988,9 +1000,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "tags": [
       "Good Prices"
     ],
-    "videoIds": [
-      "QBJczjs94Ec"
-    ],
+    "videoIds": [],
     "shortIds": [
       "mdHNQFiHNcU"
     ],
@@ -1128,9 +1138,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [
-      "Oj50ohly8EQ"
-    ],
+    "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/45.jpg",
@@ -1253,7 +1261,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["6anPRuuA-SE"],
     "shortIds": [
       "FaUxzEJR6kQ",
       "BrQO9sms6ck"
@@ -1359,7 +1367,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["aW6-IiRVcXs"],
     "shortIds": [
       "6GW-s_yGR5Y"
     ],
@@ -1677,7 +1685,8 @@ export const coffeeshops: CoffeeshopData[] = [
       "Top Pick",
       "Quality Focus"
     ],
-    "videoIds": [],
+    "videoIds": ["nCorJMnfO8M",
+      "6anPRuuA-SE"],
     "shortIds": [
       "583cfdPXeew"
     ],
@@ -2303,10 +2312,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "tags": [
       "Top Pick"
     ],
-    "videoIds": [
-      "Oj50ohly8EQ",
-      "sfr2BaAMlG4"
-    ],
+    "videoIds": [],
     "shortIds": [
       "JUDFJ1pdrm8",
       "ztWVdTc3Js0",
@@ -3463,7 +3469,9 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [
       "kW3JA08umHI",
       "fS8THioQvhU",
+      "W82ua6zEh2w",
       "LKcN_LbOekI",
+      "ys40nIDmptI",
       "sfr2BaAMlG4"
     ],
     "shortIds": [
@@ -3787,9 +3795,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "tags": [
       "Good Prices"
     ],
-    "videoIds": [
-      "cDRL5ofqJwM"
-    ],
+    "videoIds": [],
     "shortIds": [
       "-hq7UZO5t6M"
     ],
@@ -3877,7 +3883,10 @@ export const coffeeshops: CoffeeshopData[] = [
       "Quality Focus"
     ],
     "videoIds": [
+      "nCorJMnfO8M",
+      "6anPRuuA-SE",
       "6JPXRth0fk4",
+      "W82ua6zEh2w",
       "LKcN_LbOekI"
     ],
     "shortIds": [
@@ -4202,7 +4211,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["8b0Sr2CCJDs"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/167.jpg",
@@ -4432,7 +4441,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["6JPXRth0fk4"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/179.jpg",
@@ -4582,6 +4591,7 @@ export const coffeeshops: CoffeeshopData[] = [
       "Tourist Friendly"
     ],
     "videoIds": [
+      "6anPRuuA-SE",
       "6JPXRth0fk4"
     ],
     "shortIds": [
@@ -4612,7 +4622,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["sfr2BaAMlG4"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/186.svg",
@@ -4667,7 +4677,12 @@ export const coffeeshops: CoffeeshopData[] = [
       "Top Pick",
       "Quality Focus"
     ],
-    "videoIds": [],
+    "videoIds": ["4YkGp6JhzRE",
+      "I0ObhAANa0U",
+      "QMhjG6EdZ4A",
+      "6anPRuuA-SE",
+      "W82ua6zEh2w",
+      "LKcN_LbOekI"],
     "shortIds": [
       "dUvtId3Gvn8",
       "NgKuUG5K5hs",
@@ -5184,7 +5199,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["6anPRuuA-SE"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/213.jpg",
@@ -5577,6 +5592,8 @@ export const coffeeshops: CoffeeshopData[] = [
       "F8C_RsNvqtY",
       "1LVHf_41jEQ",
       "4b3NDVZV3Zk",
+      "6anPRuuA-SE",
+      "W82ua6zEh2w",
       "LKcN_LbOekI"
     ],
     "shortIds": [
@@ -5738,7 +5755,8 @@ export const coffeeshops: CoffeeshopData[] = [
       "Tourist Friendly"
     ],
     "videoIds": [
-      "fS8THioQvhU"
+      "fS8THioQvhU",
+      "6JPXRth0fk4"
     ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
@@ -6123,7 +6141,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [],
+    "videoIds": ["sfr2BaAMlG4"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/258.jpg",
@@ -6262,9 +6280,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": [
-      "aW6-IiRVcXs"
-    ],
+    "videoIds": [],
     "shortIds": [
       "1C7WWWTR-5Y"
     ],
