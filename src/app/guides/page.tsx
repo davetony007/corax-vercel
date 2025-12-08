@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Info, Flame, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Amsterdam Coffeeshop Guides (2026) – Tips, Tricks & Insider Knowledge",
+    title: "Amsterdam Coffeeshop Guides (2026): Tips & Insiders",
     description: "Expert guides for navigating Amsterdam's coffeeshop scene. From first-time tips to finding the best hash, our deep dives help you smoke like a local.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/guides",
     },
     openGraph: {
-        title: "Amsterdam Coffeeshop Guides (2026)",
+        title: "Amsterdam Coffeeshop Guides (2026): Tips & Insiders",
         description: "Expert guides for navigating Amsterdam's coffeeshop scene. Tips, etiquette, and best product lists.",
         type: "website",
         url: "https://budstuntman.pages.dev/guides",

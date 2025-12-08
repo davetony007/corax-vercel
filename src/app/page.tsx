@@ -25,9 +25,10 @@ import { Metadata } from "next";
 // For now I will assume it's there and fix if missing.
 
 // Metadata for SEO
+// Metadata for SEO
 export const metadata: Metadata = {
-  title: "Amsterdam Coffeeshop Reviews & Map (2026) – Honest Cannabis Guides for Chill Travelers",
-  description: "Plan your 2026 Amsterdam coffeeshop trip with honest reviews, a filterable coffeeshop map, daily videos and practical guides for chill 25+ travelers who want quality over chaos.",
+  title: "Amsterdam Coffeeshop Reviews, Map & Guide (2026)",
+  description: "Plan your 2026 Amsterdam trip with honest coffeeshop reviews, an interactive map, daily videos, and practical guides for mature travelers.",
   alternates: {
     canonical: "https://budstuntman.pages.dev/",
   }

@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button";
 import { AlertTriangle, Check, Info, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Amsterdam Coffeeshop First Time Guide (2026) – Rules, Prices & Etiquette",
+    title: "First Time in Amsterdam Coffeeshops (2026): The Guide",
     description: "The honest 2026 guide to Amsterdam coffeeshops for first-timers. 21 things nobody tells you about rules, IDs, scams, and finding the best weed safely.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/guides/first-time-guide-2026",
     },
     openGraph: {
-        title: "Amsterdam Coffeeshop First Time Guide (2026)",
+        title: "First Time in Amsterdam Coffeeshops (2026): The Guide",
         description: "Don't look like a tourist. Here are the real rules, prices, and etiquette for Amsterdam coffeeshops in 2026.",
         type: "article",
         url: "https://budstuntman.pages.dev/guides/first-time-guide-2026",

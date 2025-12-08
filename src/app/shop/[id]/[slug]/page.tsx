@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: { params: { id: string; slug:
         };
     }
 
-    const title = `${shop.name} Coffeeshop Amsterdam - Reviews & Menu 2025`;
+    const title = `${shop.name} Coffeeshop Reviews & Menu (2026)`;
     const ratingText = shop.rating > 0 ? ` Rated ${shop.rating}/5.` : "";
     const tagsText = shop.tags?.length > 0 ? ` Known for ${shop.tags.join(", ")}.` : "";
-    const description = `Read honest reviews for ${shop.name} in ${shop.location}.${tagsText}${ratingText} Check out the latest menu, strain ratings, and see if it's Corax Approved.`;
+    const description = `Honest reviews for ${shop.name} (${shop.location}).${tagsText} Check menu, prices & strain ratings for 2026.`;
 
     const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 

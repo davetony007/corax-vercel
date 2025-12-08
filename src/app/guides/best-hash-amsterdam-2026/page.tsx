@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button";
 import { AlertTriangle, Check, Info, Flame, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Best Hash in Amsterdam (2026) – The Ultimate Connoisseur’s Guide",
+    title: "Best Hash in Amsterdam (2026): Connoisseur's Guide",
     description: "Looking for the best hash in Amsterdam? From old-school Moroccan gold to 6-star Piatella and Static Sift. Our 2026 guide lists the top shops and prices.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/guides/best-hash-amsterdam-2026",
     },
     openGraph: {
-        title: "Best Hash in Amsterdam (2026) – The Ultimate Guide",
+        title: "Best Hash in Amsterdam (2026): Connoisseur's Guide",
         description: "Old school bricks vs. New school extracts. Find the best hash in Amsterdam with our 2026 expert guide.",
         type: "article",
         url: "https://budstuntman.pages.dev/guides/best-hash-amsterdam-2026",

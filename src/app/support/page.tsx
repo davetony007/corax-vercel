@@ -5,10 +5,10 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Support Corax Dawai – Independent Amsterdam Coffeeshop Journalism & Guides",
-    description: "Support independent Amsterdam coffeeshop journalism, videos and guides by backing Corax Dawai via Patreon, Ko‑Fi or Twitch and help keep reviews honest and ad‑free.",
+    title: "Support Corax Dawai: Independent Cannabis Journalism",
+    description: "Support independent Amsterdam coffeeshop journalism and guides by backing Corax Dawai via Patreon, Ko-Fi, or Twitch.",
     alternates: {
-        canonical: "https://corax-amsterdam-explorer-main.pages.dev/support",
+        canonical: "https://budstuntman.pages.dev/support",
     }
 };
 

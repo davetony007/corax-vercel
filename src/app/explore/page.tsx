@@ -7,10 +7,10 @@ import Footer from "@/components/Footer";
 import MapWrapper from "@/components/MapWrapper";
 
 export const metadata: Metadata = {
-    title: "Amsterdam Coffeeshop Map – Filters for Best Cannabis, Hash, Edibles & Tourist‑Friendly Spots",
-    description: "Use this interactive Amsterdam coffeeshop map to filter for tourist‑friendly shops, best hash and waterhash, strong edibles, local favorites and historic spots for your 2026 trip.",
+    title: "Amsterdam Coffeeshop Map (2026): Find Best Weed & Hash",
+    description: "Interactive Amsterdam coffeeshop map. Filter for tourist-friendly spots, best hash, strong edibles, and local favorites for your 2026 trip.",
     alternates: {
-        canonical: "https://corax-amsterdam-explorer-main.pages.dev/explore",
+        canonical: "https://budstuntman.pages.dev/explore",
     }
 };
 

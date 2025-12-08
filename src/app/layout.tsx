@@ -6,22 +6,22 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Corax Dawai - Best Amsterdam Coffeeshop Reviews & Cannabis Guide 2026",
-  description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed strains, hash, and edibles. Find top-rated shops, current menus, and Cali import prices.",
+  title: "Corax Dawai: Amsterdam Coffeeshop Reviews & Guide 2026",
+  description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed, hash, and edibles. Find top shops, menus, and prices.",
   metadataBase: new URL("https://budstuntman.pages.dev/"),
   openGraph: {
     type: "website",
     url: "https://budstuntman.pages.dev/",
-    title: "Corax Dawai - Best Amsterdam Coffeeshop Reviews & Cannabis Guide 2026",
-    description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed strains, hash, and edibles. Find top-rated shops, current menus, and Cali import prices.",
+    title: "Corax Dawai: Amsterdam Coffeeshop Reviews & Guide 2026",
+    description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed, hash, and edibles. Find top shops, menus, and prices.",
     images: ["/og-image.png"],
     siteName: "Corax Dawai",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Corax Dawai - Best Amsterdam Coffeeshop Reviews & Cannabis Guide 2025",
-    description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed strains, hash, and edibles. Find top-rated shops, current menus, and Cali import prices.",
+    title: "Corax Dawai: Amsterdam Coffeeshop Reviews & Guide 2026",
+    description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed, hash, and edibles. Find top shops, menus, and prices.",
     images: ["/og-image.png"],
   },
   verification: {

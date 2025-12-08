@@ -4,10 +4,10 @@ import VideoGallery from "@/components/VideoGallery";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Amsterdam Coffeeshop Reviews & Videos – Best Smoking Spots & Tours (2026)",
-    description: "Watch in‑depth Amsterdam coffeeshop review videos, walking tours and shorts covering the best smoking spots, hash, edibles and neighborhoods to visit in 2026.",
+    title: "Amsterdam Coffeeshop Reviews & Walking Tours (2026)",
+    description: "Watch in-depth Amsterdam coffeeshop reviews, walking tours, and shorts covering the best smoking spots, hash, edibles, and neighborhoods.",
     alternates: {
-        canonical: "https://corax-amsterdam-explorer-main.pages.dev/videos",
+        canonical: "https://budstuntman.pages.dev/videos",
     }
 };
 

@@ -33,7 +33,7 @@ const Reviews = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={shop.image}
-                  alt={shop.name}
+                  alt={shop.name || "Coffeeshop"}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1">
@@ -51,7 +51,7 @@ const Reviews = () => {
                   >
                     <img
                       src={shop.menuImages[0]}
-                      alt="Menu"
+                      alt={`${shop.name} Menu Preview`}
                       className="w-full h-full object-cover"
                     />
                   </div>
