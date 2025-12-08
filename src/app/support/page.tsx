@@ -9,7 +9,10 @@ export const metadata: Metadata = {
     description: "Support independent Amsterdam coffeeshop journalism. Help keep reviews honest and ad-free by backing Corax Dawai via Patreon, Ko-Fi, or Twitch for exclusive content.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/support",
-    }
+    },
+    openGraph: {
+        url: "https://budstuntman.pages.dev/support",
+    },
 };
 
 export default function SupportPage() {

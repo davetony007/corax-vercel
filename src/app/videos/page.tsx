@@ -8,7 +8,10 @@ export const metadata: Metadata = {
     description: "Watch in-depth Amsterdam coffeeshop reviews, walking tours, and shorts covering the best smoking spots, hash, edibles, and neighborhoods.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/videos",
-    }
+    },
+    openGraph: {
+        url: "https://budstuntman.pages.dev/videos",
+    },
 };
 
 export default function Videos() {

@@ -11,7 +11,10 @@ export const metadata: Metadata = {
     description: "Interactive Amsterdam coffeeshop map. Filter for tourist-friendly spots, best hash, strong edibles, and local favorites for your 2026 trip.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/explore",
-    }
+    },
+    openGraph: {
+        url: "https://budstuntman.pages.dev/explore",
+    },
 };
 
 export default function Explore() {

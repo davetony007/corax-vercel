@@ -8,7 +8,10 @@ export const metadata: Metadata = {
     description: "Daily cannabis culture updates from Amsterdam. Follow Corax for the latest menu drops, smoke spots, and community vibes. Stay connected with the real local scene.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/insta",
-    }
+    },
+    openGraph: {
+        url: "https://budstuntman.pages.dev/insta",
+    },
 };
 
 export default function Instagram() {
