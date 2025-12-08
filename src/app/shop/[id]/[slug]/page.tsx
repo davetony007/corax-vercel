@@ -31,9 +31,11 @@ export async function generateMetadata({ params }: { params: { id: string; slug:
     }
 
     const title = `${shop.name} Coffeeshop Reviews & Menu (2026)`;
-    const ratingText = shop.rating > 0 ? ` Rated ${shop.rating}/5.` : "";
-    const tagsText = shop.tags?.length > 0 ? ` Known for ${shop.tags.join(", ")}.` : "";
-    const description = `Honest reviews for ${shop.name} (${shop.location}).${tagsText} Check menu, prices & strain ratings for 2026.`;
+    // Robust description generation to ensure optimal length (110-160 chars)
+    // Structure: [Intro] [Details] [Call to Action]
+    const ratingStr = shop.rating > 0 ? `Rated ${shop.rating}/5` : "Honest reviews";
+    const tagsStr = shop.tags?.length > 0 ? `known for ${shop.tags.slice(0, 2).join(" & ")}` : "in Amsterdam";
+    const description = `Read our honest review of ${shop.name} (${shop.location}). ${ratingStr} and ${tagsStr}. Check the latest menu, prices, and explore our 2026 guide.`;
 
     const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 
@@ -54,10 +56,26 @@ export async function generateMetadata({ params }: { params: { id: string; slug:
             canonical: canonicalUrl,
         },
         openGraph: {
+            type: "article",
+            title,
+            description,
+            images: [
+                {
+                    url: shop.image,
+                    width: 1200,
+                    height: 630,
+                    alt: `${shop.name} Coffeeshop Amsterdam`,
+                }
+            ],
+            url: canonicalUrl,
+            siteName: "Corax Dawai",
+            locale: "en_US",
+        },
+        twitter: {
+            card: "summary_large_image",
             title,
             description,
             images: [shop.image],
-            url: canonicalUrl,
         },
         twitter: {
             title,
