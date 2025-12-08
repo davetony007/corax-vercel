@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "Support Corax Dawai: Independent Cannabis Journalism",
-    description: "Support independent Amsterdam coffeeshop journalism and guides by backing Corax Dawai via Patreon, Ko-Fi, or Twitch.",
+    description: "Support independent Amsterdam coffeeshop journalism. Help keep reviews honest and ad-free by backing Corax Dawai via Patreon, Ko-Fi, or Twitch for exclusive content.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/support",
     }

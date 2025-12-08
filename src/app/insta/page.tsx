@@ -5,7 +5,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 
 export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Daily Updates: Instagram Feed",
-    description: "Daily cannabis culture updates from Amsterdam. Follow Corax for the latest menu drops, smoke spots, and community vibes.",
+    description: "Daily cannabis culture updates from Amsterdam. Follow Corax for the latest menu drops, smoke spots, and community vibes. Stay connected with the real local scene.",
     alternates: {
         canonical: "https://budstuntman.pages.dev/insta",
     }
