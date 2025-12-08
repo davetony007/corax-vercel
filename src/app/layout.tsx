@@ -9,6 +9,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Corax Dawai: Amsterdam Coffeeshop Reviews & Guide 2026",
   description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed, hash, and edibles. Find top shops, menus, and prices.",
+  keywords: ["Amsterdam coffeeshop", "weed", "hash", "cannabis", "coffeeshop menu", "Amsterdam weed", "best hash Amsterdam", "edibles", "Corax Dawai"],
+  authors: [{ name: "Corax Dawai", url: "https://www.youtube.com/@CoraxDawai" }],
+  publisher: "Corax Dawai",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   metadataBase: new URL("https://budstuntman.pages.dev/"),
   openGraph: {
     type: "website",
