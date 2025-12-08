@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Video, Instagram, Info } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
@@ -99,11 +100,15 @@ export default function Home() {
                   I will use a placeholder logic or expect the valid path. 
                   Since I haven't copied src/assets yet, I will use a path assuming I will copy it.
                */}
-              <img
-                src="/images/about-photo-new.jpg"
-                alt="Corax Dawai"
-                className="relative rounded-2xl shadow-card w-full object-cover aspect-[4/5]"
-              />
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/images/about-photo-new.jpg"
+                  alt="Corax Dawai"
+                  fill
+                  className="rounded-2xl shadow-card object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
 
             <div className="space-y-6 order-1 md:order-2">
@@ -193,10 +198,12 @@ export default function Home() {
             {/* Explore Card */}
             <Card className="group overflow-hidden bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow relative h-full flex flex-col">
               <div className="absolute inset-0">
-                <img
+                <Image
                   src="/images/map-card-bg.png"
                   alt="Amsterdam Map"
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  fill
+                  className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
               </div>
@@ -240,10 +247,12 @@ export default function Home() {
             {/* Videos Card */}
             <Card className="group overflow-hidden bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow relative h-full flex flex-col">
               <div className="absolute inset-0">
-                <img
+                <Image
                   src="/images/video-card-bg.png"
                   alt="Video Content"
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  fill
+                  className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
               </div>
@@ -273,10 +282,12 @@ export default function Home() {
             {/* Instagram Card */}
             <Card className="group overflow-hidden bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-glow relative h-full flex flex-col">
               <div className="absolute inset-0">
-                <img
+                <Image
                   src="/images/insta-card-bg.png"
                   alt="Instagram Feed"
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  fill
+                  className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
               </div>
