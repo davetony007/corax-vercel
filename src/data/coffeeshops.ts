@@ -2320,7 +2320,8 @@ export const coffeeshops: CoffeeshopData[] = [
       "qfHv91vepBQ",
       "fjnnJAS1gus",
       "scQKBbEjArg",
-      "qsYZAV71qSQ"
+      "qsYZAV71qSQ",
+      "mBJi1Yx7AKU"
     ],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/92.jpg",

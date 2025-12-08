@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { MapPin } from "lucide-react";
 import { coffeeshops, filterTags, CoffeeshopData } from "@/data/coffeeshops";
 import ShopDetails from "@/components/ShopDetails";
@@ -40,6 +41,7 @@ const InteractiveMap = () => {
   }, []);
 
   const [activeFilter, setActiveFilter] = useState(normalizeFilter(searchParams.get("filter")));
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedShop, setSelectedShop] = useState<CoffeeshopData | null>(null);
 
   // Sync state if URL changes
@@ -73,13 +75,19 @@ const InteractiveMap = () => {
 
   const filteredShops = useMemo(() => {
     return coffeeshops.filter(shop => {
+      // 1. Text Search Filter
+      if (searchQuery && !shop.name.toLowerCase().includes(searchQuery.toLowerCase().trim())) {
+        return false;
+      }
+
+      // 2. Tag/Category Filter
       if (activeFilter === "All") return true;
       if (activeFilter === "Amsterdam Only") return shop.location === "Amsterdam";
       if (activeFilter === "Has Menu") return shop.menuImages && shop.menuImages.length > 0;
       if (activeFilter === "Has Review") return shop.detailedReview || shop.videoIds.length > 0;
       return shop.tags.includes(activeFilter);
     });
-  }, [activeFilter]);
+  }, [activeFilter, searchQuery]);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -164,6 +172,33 @@ const InteractiveMap = () => {
 
         {/* Controls Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+          {/* Search Input */}
+          <div className="w-full md:w-auto relative group">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <Input
+              type="text"
+              placeholder="Search coffeeshops..."
+              className="pl-9 w-full md:w-64 bg-card border-border focus:ring-1 focus:ring-primary/50"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
           {/* View Toggle (Desktop Only) */}
           <div className="hidden lg:flex items-center gap-2 bg-card border border-border p-1 rounded-lg">
             <Button
@@ -217,7 +252,7 @@ const InteractiveMap = () => {
                   alert("Geolocation is not supported by this browser.");
                 }
               }}
-              className="gap-2 h-8 text-sm bg-blue-600 text-white hover:bg-blue-700 hover:text-white"
+              className="gap-2 h-9 text-sm bg-blue-600 text-white hover:bg-blue-700 hover:text-white"
             >
               <span className="text-base">📍</span> Find Near Me
             </Button>
@@ -225,21 +260,21 @@ const InteractiveMap = () => {
             <Button
               variant={activeFilter === "Amsterdam Only" ? "default" : "outline"}
               onClick={() => handleFilterChange(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")}
-              className="gap-2 h-8 text-sm"
+              className="gap-2 h-9 text-sm"
             >
               <span className="text-base">🏙️</span> Amsterdam Only
             </Button>
             <Button
               variant={activeFilter === "Has Menu" ? "default" : "outline"}
               onClick={() => handleFilterChange(activeFilter === "Has Menu" ? "All" : "Has Menu")}
-              className="gap-2 h-8 text-sm"
+              className="gap-2 h-9 text-sm"
             >
               <span className="text-base">📜</span> Has Menu
             </Button>
             <Button
               variant={activeFilter === "Has Review" ? "default" : "outline"}
               onClick={() => handleFilterChange(activeFilter === "Has Review" ? "All" : "Has Review")}
-              className="gap-2 h-8 text-sm"
+              className="gap-2 h-9 text-sm"
             >
               <span className="text-base">⭐</span> Has Review
             </Button>
