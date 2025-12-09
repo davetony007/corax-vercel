@@ -6141,7 +6141,10 @@ export const coffeeshops: CoffeeshopData[] = [
       4.8915489
     ],
     "rating": 0,
-    "tags": [],
+    "tags": [
+      "Quality Focus",
+      "Unique Vibe"
+    ],
     "videoIds": ["sfr2BaAMlG4"],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
@@ -6171,7 +6174,8 @@ export const coffeeshops: CoffeeshopData[] = [
         "videoTitle": "This Wizard Trees From CoffeeShop DrewIsSharing Might Be One Of The Bests Out There Right Now"
       }
     ],
-    "coraxApproved": true
+    "coraxApproved": true,
+    "detailedReview": ""
   },
   {
     "id": "259",

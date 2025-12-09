@@ -21,25 +21,13 @@ export const metadata: Metadata = {
     },
 };
 
-const guides = [
-    {
-        title: "First-Time Guide (2026)",
-        description: "21 things nobody tells you about rules, IDs, scams, and finding the best weed safely.",
-        href: "/guides/first-time-guide-2026",
-        icon: Info,
-        color: "text-primary",
-        badge: "Essential",
-    },
-    {
-        title: "Best Hash in Amsterdam",
-        description: "From old-school Moroccan gold to 6-star Piatella and Static Sift. The ultimate connoisseur's list.",
-        href: "/guides/best-hash-amsterdam-2026",
-        icon: Flame,
-        color: "text-amber-500",
-        badge: "Connoisseur",
-    },
-    // Future guides can be added here
-];
+import guidesData from "@/data/guides.json";
+
+const iconMap: { [key: string]: any } = {
+    Info,
+    Flame,
+    BookOpen
+};
 
 export default function GuidesHub() {
     return (
@@ -55,12 +43,12 @@ export default function GuidesHub() {
                         url: "https://budstuntman.pages.dev/guides",
                         mainEntity: {
                             "@type": "ItemList",
-                            itemListElement: guides.map((guide, index) => ({
+                            itemListElement: guidesData.map((guide, index) => ({
                                 "@type": "ListItem",
                                 position: index + 1,
-                                url: `https://budstuntman.pages.dev${guide.href}`,
+                                url: `https://budstuntman.pages.dev/guides/${guide.slug}`,
                                 name: guide.title,
-                                description: guide.description,
+                                description: guide.metaDescription,
                             })),
                         },
                     }),
@@ -79,24 +67,29 @@ export default function GuidesHub() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {guides.map((guide) => {
-                        const Icon = guide.icon;
+                    {guidesData.map((guide) => {
+                        // Cast to any to access dynamic props added in JSON
+                        const g = guide as any;
+                        const Icon = iconMap[g.icon] || BookOpen;
+
                         return (
-                            <Link key={guide.href} href={guide.href} className="group">
+                            <Link key={g.slug} href={`/guides/${g.slug}`} className="group">
                                 <Card className="h-full p-6 border-border group-hover:border-primary transition-all duration-300 hover:shadow-glow flex flex-col">
                                     <div className="mb-4 flex justify-between items-start">
-                                        <div className={`p-3 rounded-xl bg-card border shadow-sm ${guide.color}`}>
+                                        <div className={`p-3 rounded-xl bg-card border shadow-sm ${g.color || 'text-primary'}`}>
                                             <Icon className="w-8 h-8" />
                                         </div>
-                                        <span className="px-2 py-1 bg-muted rounded text-xs font-medium uppercase tracking-wider">
-                                            {guide.badge}
-                                        </span>
+                                        {g.badge && (
+                                            <span className="px-2 py-1 bg-muted rounded text-xs font-medium uppercase tracking-wider">
+                                                {g.badge}
+                                            </span>
+                                        )}
                                     </div>
                                     <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                                        {guide.title}
+                                        {g.title}
                                     </h2>
                                     <p className="text-muted-foreground mb-6 flex-grow">
-                                        {guide.description}
+                                        {g.metaDescription}
                                     </p>
                                     <div className="flex items-center text-sm font-bold text-primary">
                                         Read Guide <BookOpen className="w-4 h-4 ml-2" />
