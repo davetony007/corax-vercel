@@ -1,0 +1,18 @@
+[
+    {
+        "slug": "first-time-guide-2026",
+        "title": "First Timer's Guide to Amsterdam",
+        "metaDescription": "Essential tips for your first coffeeshop visit. Rules, etiquette, and what to expect.",
+        "icon": "Info",
+        "color": "text-blue-500",
+        "badge": "Essential"
+    },
+    {
+        "slug": "best-hash-amsterdam-2026",
+        "title": "Finding the Best Hash",
+        "metaDescription": "A deep dive into the best hash available in Amsterdam in 2026.",
+        "icon": "Flame",
+        "color": "text-amber-500",
+        "badge": "Connoisseur"
+    }
+]
