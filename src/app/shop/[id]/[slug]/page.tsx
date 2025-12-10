@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata dynamically
-export async function generateMetadata({ params }: { params: { id: string; slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ id: string; slug: string }> }): Promise<Metadata> {
     const { id } = await params; // Nextjs 15 requires awaiting params
     const shop = coffeeshops.find((s) => s.id === id);
 
@@ -77,15 +77,10 @@ export async function generateMetadata({ params }: { params: { id: string; slug:
             description,
             images: [shop.image],
         },
-        twitter: {
-            title,
-            description,
-            images: [shop.image],
-        },
     };
 }
 
-export default async function ShopPage({ params }: { params: { id: string; slug: string } }) {
+export default async function ShopPage({ params }: { params: Promise<{ id: string; slug: string }> }) {
     const { id } = await params; // Nextjs 15 requires awaiting params
     const shop = coffeeshops.find((s) => s.id === id);
 

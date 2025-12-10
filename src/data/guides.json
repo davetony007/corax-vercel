@@ -1,18 +1,96 @@
 [
     {
+        "id": "first-time-guide-2026",
         "slug": "first-time-guide-2026",
-        "title": "First Timer's Guide to Amsterdam",
-        "metaDescription": "Essential tips for your first coffeeshop visit. Rules, etiquette, and what to expect.",
+        "title": "Amsterdam Coffeeshop First Time Guide (2026) – Rules, Prices & Etiquette",
+        "metaDescription": "The honest 2026 guide to Amsterdam coffeeshops for first-timers. 21 things nobody tells you about rules, IDs, scams, and finding the best weed safely.",
+        "h1": "21 Things Nobody Tells You About Amsterdam Coffeeshops",
+        "intro": "Forget what you saw in movies. Here is the honest, no-stress guide to buying, smoking, and chilling in Amsterdam like a local.",
+        "author": "Corax Dawai",
+        "datePublished": "2025-01-01",
         "icon": "Info",
-        "color": "text-blue-500",
-        "badge": "Essential"
+        "color": "text-primary",
+        "badge": "Essential",
+        "sections": [
+            {
+                "title": "Entering & Buying",
+                "content": "### 1. ID is Non-Negotiable\nNo matter if you look 18 or 80, you need valid ID. Passports are best. Digital photos of ID usually get rejected. No ID = No Entry.\n\n### 2. The \"Menu\" isn't Food\nWhen you walk in, ask for the \"Menu\". This is the weed list. Don't sit down first; buy your product at the counter, *then* find a table.\n\n### 3. Cash is Still King (Sometimes)\nWhile many spots now take card, legendary old-school shops often remain **Cash Only**. Always carry €50 in cash just in case.\n\n### 4. Don't Buy 5 Grams Immediately\nThe legal limit is 5g per person per day. Don't max it out at the first shop! Buy 1g, try it, and explore elsewhere. Variety is the spice of life."
+            },
+            {
+                "title": "Smoking Etiquette",
+                "content": "### 5. The Tobacco Ban\nTobacco is legally banned indoors. Most shops provide a designated \"herbal mix\" (a tobacco substitute) for free. If you roll with tobacco, keep it discreet or sit in a designated smoking room (if they have one).\n\n### 6. Hats & Sunglasses Off\nIt's a security thing. Take off your hat and sunglasses when entering. It shows respect and stops the bouncer from worrying.\n\n### 7. Don't Camp Without Buying\nCoffeeshops are businesses. If you occupy a table for 2 hours, buy drinks and snacks. Don't bring outside food."
+            },
+            {
+                "title": "Safety & Avoiding Traps",
+                "content": "### 8. Avoid \"Cali\" in Tourist Traps\nIf a shop in the center screams \"CALI WEED\" with neon lights, it's often overpriced mid-grade. For real top-shelf, check our Best Hash list.\n\n### 9. The Edible Warning\nDutch edibles are often stronger than you expect. Start with **half** a cake. Wait 90 minutes. Do NOT eat more because \"you don't feel it yet.\"\n\n### 10. Alcohol + Weed = Spinning\nKeep them separate. Most coffeeshops don't serve alcohol, and bars don't let you smoke weed inside. Mixing them is the #1 reason tourists faint (\"whitey\")."
+            },
+            {
+                "title": "Local Secrets",
+                "content": "### 11. Ask the Budtender\n\"What are you smoking right now?\" is the best question you can ask. They know what's fresh.\n\n### 12. Explore Outside the Center\nPrices drop and quality rises when you leave the Red Light District. Visit De Pijp, West, or Oost for a \"living room\" vibe."
+            }
+        ],
+        "sidebarStats": [
+            {
+                "label": "Avg. Price (Gram)",
+                "value": "€12 - €16"
+            },
+            {
+                "label": " \"Cali\" Price",
+                "value": "€25 - €35"
+            },
+            {
+                "label": "Legal Limit",
+                "value": "5g / day"
+            },
+            {
+                "label": "Age Limit",
+                "value": "18+ (ID Req)"
+            }
+        ]
     },
     {
+        "id": "best-hash-amsterdam-2026",
         "slug": "best-hash-amsterdam-2026",
-        "title": "Finding the Best Hash",
-        "metaDescription": "A deep dive into the best hash available in Amsterdam in 2026.",
+        "title": "Best Hash in Amsterdam (2026) – The Ultimate Connoisseur’s Guide",
+        "metaDescription": "Looking for the best hash in Amsterdam? From old-school Moroccan gold to 6-star Piatella and Static Sift. Our 2026 guide lists the top shops and prices.",
+        "h1": "The Search for the Best Hash in Amsterdam",
+        "intro": "Amsterdam is the hash capital of the world. But the game has changed. Whether you want a €12 Moroccan brick or a €100 gram of Piatella, here is where to look.",
+        "author": "Corax Dawai",
+        "datePublished": "2025-01-15",
         "icon": "Flame",
         "color": "text-amber-500",
-        "badge": "Connoisseur"
+        "badge": "Connoisseur",
+        "sections": [
+            {
+                "title": "Traditional Imports",
+                "content": "This is the heritage of Amsterdam. Imported directly from the Rif Mountains of Morocco or the fields of Lebanon. Perfect for rolling into a joint with tobacco or herbal mix.\n\n### Top Pick: Bluebird\nFamous for their \"Ketama Gold\" and \"Polm\". Prices are reasonable (€12-15), and the quality is consistent. A true Amsterdam classic.\n\n### Top Pick: Katsu\nA local favorite in De Pijp. Their \"Black Bombay\" and various Moroccan Polms are legendary. The menu is huge, so ask for a recommendation.\n\n### Top Pick: Boerejongens\nFor value, you can't beat their \"White Choco Block\". It's a modern hybrid block hash that tastes incredible and burns clean."
+            },
+            {
+                "title": "The New Wave: Static & Piatella",
+                "content": "This is for the heavy hitters. Using advanced filtration (static tech, fresh frozen material), these products are 3x-4x stronger than traditional hash.\n\n### Top Pick: Family First\nThe absolute temple of terps. They carry **Piatella** (cold-cured full melt) and Static Sift that bubbles at room temperature. Bring your wallet (€30-100/g).\n\n### Top Pick: Green Place\nAnother heavy hitter near the center. Great selection of \"Cali\" style dry sift and semi-dry products.\n\n> **Warning: Potency**\n> Modern extracts can range from 50% to 80% THC. Do NOT treat this like old-school hash. Use a tiny amount."
+            },
+            {
+                "title": "Know Your Textures",
+                "content": "**Blonde / Pollen**: Sandy, light color. Crumbles easily without heat. Usually uplifting.\n\n**Dark / Afghan**: Black, sticky, pliable. Needs to be rolled into a \"snake\". Heavy body effect.\n\n**Filtered / Dry Sift**: Clean, melts when touched with flame. Very strong aroma.\n\n**Piatella / Rosin**: Greasy, almost wet. Must be kept in a fridge. The highest grade possible."
+            }
+        ],
+        "sidebarStats": [
+            {
+                "label": "Standard Polm",
+                "value": "€10 - €14"
+            },
+            {
+                "label": "Super Polm",
+                "value": "€15 - €20"
+            },
+            {
+                "label": "Ice-o-Lator",
+                "value": "€20 - €40"
+            },
+            {
+                "label": "Top Shelf Static",
+                "value": "€50 - €120"
+            }
+        ]
     }
 ]
