@@ -1261,7 +1261,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["6anPRuuA-SE"],
+    "videoIds": [
+      "6anPRuuA-SE"
+    ],
     "shortIds": [
       "FaUxzEJR6kQ",
       "BrQO9sms6ck"
@@ -1367,7 +1369,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["aW6-IiRVcXs"],
+    "videoIds": [
+      "aW6-IiRVcXs"
+    ],
     "shortIds": [
       "6GW-s_yGR5Y"
     ],
@@ -1685,8 +1689,10 @@ export const coffeeshops: CoffeeshopData[] = [
       "Top Pick",
       "Quality Focus"
     ],
-    "videoIds": ["nCorJMnfO8M",
-      "6anPRuuA-SE"],
+    "videoIds": [
+      "nCorJMnfO8M",
+      "6anPRuuA-SE"
+    ],
     "shortIds": [
       "583cfdPXeew"
     ],
@@ -2499,6 +2505,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/98.jpg",
     "menuImages": [
+      "/menus/het-ballonnetje-05-12-25.jpg",
       "/menus/het-ballonnetje-31-10-25.png"
     ],
     "reviews": [
@@ -3393,6 +3400,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Purmerend",
     "image": "/images/shops/131.jpg",
     "menuImages": [
+      "/menus/splif-ii-03-12-25.jpg",
       "/menus/splif-ii-16-01-25.png"
     ]
   },
@@ -3450,6 +3458,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Zaandam",
     "image": "/images/shops/134.jpg",
     "menuImages": [
+      "/menus/the-squad-05-12-25.jpg",
       "/menus/the-squad-26-09-25.png"
     ]
   },
@@ -3702,6 +3711,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Haarlem",
     "image": "/images/shops/145.jpg",
     "menuImages": [
+      "/menus/empire-02-12-25.jpg",
       "/menus/empire-01-11-25.png"
     ],
     "detailedReview": "",
@@ -4004,6 +4014,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Ede",
     "image": "/images/shops/156.jpg",
     "menuImages": [
+      "/menus/de-kink-07-12-25.jpg",
       "/menus/de-kink-04-11-25.png"
     ]
   },
@@ -4212,7 +4223,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["8b0Sr2CCJDs"],
+    "videoIds": [
+      "8b0Sr2CCJDs"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/167.jpg",
@@ -4350,6 +4363,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Haarlem",
     "image": "/images/shops/174.svg",
     "menuImages": [
+      "/menus/de-kruidenier-cannabis-takeaway-05-12-25.jpg",
       "/menus/de-kruidenier-cannabis-takeaway-03-11-25.png"
     ]
   },
@@ -4442,7 +4456,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["6JPXRth0fk4"],
+    "videoIds": [
+      "6JPXRth0fk4"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/179.jpg",
@@ -4536,6 +4552,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/183.jpg",
     "menuImages": [
+      "/menus/terps-army-2-06-12-25.jpg",
       "/menus/terps-army-2-02-08-25.png"
     ],
     "reviews": [
@@ -4623,7 +4640,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["sfr2BaAMlG4"],
+    "videoIds": [
+      "sfr2BaAMlG4"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/186.svg",
@@ -4678,12 +4697,14 @@ export const coffeeshops: CoffeeshopData[] = [
       "Top Pick",
       "Quality Focus"
     ],
-    "videoIds": ["4YkGp6JhzRE",
+    "videoIds": [
+      "4YkGp6JhzRE",
       "I0ObhAANa0U",
       "QMhjG6EdZ4A",
       "6anPRuuA-SE",
       "W82ua6zEh2w",
-      "LKcN_LbOekI"],
+      "LKcN_LbOekI"
+    ],
     "shortIds": [
       "dUvtId3Gvn8",
       "NgKuUG5K5hs",
@@ -5200,7 +5221,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["6anPRuuA-SE"],
+    "videoIds": [
+      "6anPRuuA-SE"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/213.jpg",
@@ -5289,6 +5312,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Haarlem",
     "image": "/images/shops/217.svg",
     "menuImages": [
+      "/menus/regine-05-12-25.jpg",
       "/menus/regine-09-10-25.png"
     ]
   },
@@ -6142,7 +6166,9 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "rating": 0,
     "tags": [],
-    "videoIds": ["sfr2BaAMlG4"],
+    "videoIds": [
+      "sfr2BaAMlG4"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/258.jpg",
@@ -6248,6 +6274,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Ede",
     "image": "/images/shops/262.jpg",
     "menuImages": [
+      "/menus/green-valley-07-12-25.jpg",
       "/menus/green-valley-21-09-25.png"
     ]
   },
@@ -6364,6 +6391,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/267.jpg",
     "menuImages": [
+      "/menus/rookies-05-12-25.jpg",
       "/menus/rookies-27-08-25.png"
     ]
   },

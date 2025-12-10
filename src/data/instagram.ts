@@ -6,6 +6,26 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSEqNOHEefQ/",
+    "image": "/images/instagram/DSEqNOHEefQ.jpg",
+    "caption": "@TheHighCastleSesh Advent Calendar Day 10 December 10th @thcturbine @callmemrterpz"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSDrOuBETvh/",
+    "image": "/images/instagram/DSDrOuBETvh.jpg",
+    "caption": "Amsterdam Calling Skit Pt 2\n\nDisclaimer: This is a skit. A fictional situation presented for comedic purposes."
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSCvLhHkTkx/",
+    "image": "/images/instagram/DSCvLhHkTkx.jpg",
+    "caption": "Please Don't Buy This, So More Stays Over For Me \n\nDISCLAIMER: This is a product test."
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSCNrXdEeTp/",
+    "image": "/images/instagram/DSCNrXdEeTp.jpg",
+    "caption": "@thehighcastlesesh Advent Calendar Day 9 December 9th @petit_four_twenty @thcturbine"
+  },
+  {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSAfu1rkW-7/",
     "image": "/images/instagram/DSAfu1rkW-7.jpg",
     "caption": "Gifting A T*C Vape Pen To A Random Person \n\nDISCLAIMER: This is a skit with actors, nothing illegal has taken place @chronic_kitchen710 @cannibal_kitchen"
