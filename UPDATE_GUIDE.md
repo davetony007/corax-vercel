@@ -47,3 +47,22 @@ Follow these steps to update the YouTube and Instagram data on the website.
 
 - **"Module not found" error**: If you see an error about missing modules (e.g., `puppeteer`), try running `npm install`.
 - **"No data file found"**: Make sure your JSON files are named correctly and placed in the root directory (not in `src` or `scripts`).
+
+## Pushing Changes to Git
+
+Once you have verified your updates, you need to save them to the repository.
+
+1. **Stage Changes**:
+   ```bash
+   git add .
+   ```
+
+2. **Commit Changes**:
+   ```bash
+   git commit -m "Update social media data"
+   ```
+
+3. **Push to Remote**:
+   ```bash
+   git push
+   ```
