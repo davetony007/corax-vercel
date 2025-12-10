@@ -13,6 +13,7 @@ const PORT = 3001;
 
 // Paths
 const COFFEESHOPS_FILE = path.join(__dirname, '../src/data/coffeeshops.ts');
+const GUIDES_FILE = path.join(__dirname, '../src/data/guides.json');
 const IMAGES_DIR = path.join(__dirname, '../public/images/shops');
 const CLIENT_DIR = path.join(__dirname, 'admin-client');
 
@@ -56,17 +57,13 @@ function readCoffeeshops() {
         if (arrayStart !== -1 && arrayEnd !== -1) {
             const arrayString = rawPart.substring(arrayStart, arrayEnd + 1);
             try {
-                // SECURITY: Use JSON.parse instead of eval
-                return JSON.parse(arrayString);
+                // SECURITY: Use JSON.parse instead of eval where possible
+                // Fallback to Function if simple JSON parse fails (TS files might have trailing commas)
+                // return JSON.parse(arrayString); 
+                return new Function('return ' + arrayString)();
             } catch (e) {
-                console.error('JSON Parse error:', e.message);
-                console.warn('Falling back to Function constructor due to parse error (likely single quotes or comments).');
-                try {
-                    return new Function('return ' + arrayString)();
-                } catch (e2) {
-                    console.error('Fatal parse error:', e2);
-                    return [];
-                }
+                console.error('Parse error:', e.message);
+                return [];
             }
         }
     }
@@ -94,6 +91,28 @@ function writeCoffeeshops(shops) {
     return false;
 }
 
+// Helper: Read Guides
+function readGuides() {
+    try {
+        if (!fs.existsSync(GUIDES_FILE)) return [];
+        return JSON.parse(fs.readFileSync(GUIDES_FILE, 'utf8'));
+    } catch (err) {
+        console.error('Error reading guides:', err);
+        return [];
+    }
+}
+
+// Helper: Write Guides
+function writeGuides(guides) {
+    try {
+        fs.writeFileSync(GUIDES_FILE, JSON.stringify(guides, null, 2), 'utf8');
+        return true;
+    } catch (err) {
+        console.error('Error writing guides:', err);
+        return false;
+    }
+}
+
 // Routes
 
 // GET all shops
@@ -118,6 +137,34 @@ app.post('/api/shops', (req, res) => {
             res.json({ success: true, count: shops.length });
         } else {
             res.status(500).json({ error: 'Failed to write file' });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// GET all guides
+app.get('/api/guides', (req, res) => {
+    try {
+        const guides = readGuides();
+        res.json(guides);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// POST update guides
+app.post('/api/guides', (req, res) => {
+    try {
+        const guides = req.body;
+        if (!Array.isArray(guides)) {
+            return res.status(400).json({ error: 'Expected array of guides' });
+        }
+        const success = writeGuides(guides);
+        if (success) {
+            res.json({ success: true, count: guides.length });
+        } else {
+            res.status(500).json({ error: 'Failed to write guides file' });
         }
     } catch (err) {
         res.status(500).json({ error: err.message });

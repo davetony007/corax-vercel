@@ -1,81 +1,99 @@
 let shops = [];
+let guides = [];
 let selectedShopId = null;
+let selectedGuideId = null;
+let currentTab = 'shops'; // 'shops' or 'guides'
 
 const API_URL = 'http://localhost:3001/api';
 
-const availableTags = [
-    "Top Pick",
-    "Tourist Friendly",
-    "Local Favorite",
-    "Quality Focus",
-    "Good Prices",
-    "Unique Vibe",
-    "Historic"
-];
-
-// Elements
-const shopListEl = document.getElementById('shopList');
-const searchEl = document.getElementById('search');
-const editorEl = document.getElementById('editor');
-const emptyStateEl = document.getElementById('emptyState');
-const saveBtn = document.getElementById('saveBtn');
-const tagsContainer = document.getElementById('tagsContainer');
-
-// Inputs
-const inputs = {
-    name: document.getElementById('inputName'),
-    location: document.getElementById('inputLocation'),
-    address: document.getElementById('inputAddress'),
-    lat: document.getElementById('inputLat'),
-    lng: document.getElementById('inputLng'),
-    image: document.getElementById('inputImage'),
-    description: document.getElementById('inputDescription'),
-    detailedReview: document.getElementById('inputDetailedReview'),
-    approved: document.getElementById('editApproved')
+// --- Selectors ---
+const tabs = {
+    shops: document.getElementById('tabShops'),
+    guides: document.getElementById('tabGuides')
 };
 
-const previewImage = document.getElementById('previewImage');
-const uploadInput = document.getElementById('uploadImage');
+const containers = {
+    shopSearch: document.getElementById('shopSearchContainer'),
+    guideActions: document.getElementById('guideActionsContainer'),
+    shopList: document.getElementById('shopList'),
+    guideList: document.getElementById('guideList'),
+    shopEditor: document.getElementById('editor'),
+    guideEditor: document.getElementById('guideEditor'),
+    emptyState: document.getElementById('emptyState')
+};
 
-// Init
+const saveBtn = document.getElementById('saveBtn');
+
+// --- Initialization ---
 async function init() {
+    await Promise.all([fetchShops(), fetchGuides()]);
+    renderList();
+    renderTags(); // For shops
+    setupListeners();
+}
+
+async function fetchShops() {
     try {
         const res = await fetch(`${API_URL}/shops`);
         shops = await res.json();
-        renderList();
-        renderTags();
-    } catch (err) {
-        alert('Failed to load shops: ' + err.message);
+    } catch (err) { alert('Failed to load shops'); }
+}
+
+async function fetchGuides() {
+    try {
+        const res = await fetch(`${API_URL}/guides`);
+        guides = await res.json();
+    } catch (err) { alert('Failed to load guides'); }
+}
+
+// --- Tabs Logic ---
+function switchTab(tab) {
+    currentTab = tab;
+
+    // UI Classes
+    if (tab === 'shops') {
+        tabs.shops.className = 'flex-1 py-2 text-sm font-bold text-green-600 border-b-2 border-green-600';
+        tabs.guides.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+
+        containers.shopSearch.classList.remove('hidden');
+        containers.guideActions.classList.add('hidden');
+        containers.shopList.classList.remove('hidden');
+        containers.guideList.classList.add('hidden');
+    } else {
+        tabs.shops.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+        tabs.guides.className = 'flex-1 py-2 text-sm font-bold text-blue-600 border-b-2 border-blue-600';
+
+        containers.shopSearch.classList.add('hidden');
+        containers.guideActions.classList.remove('hidden');
+        containers.shopList.classList.add('hidden');
+        containers.guideList.classList.remove('hidden');
     }
+
+    // Reset Selection
+    selectedShopId = null;
+    selectedGuideId = null;
+    containers.shopEditor.classList.add('hidden');
+    containers.guideEditor.classList.add('hidden');
+    containers.emptyState.classList.remove('hidden');
+
+    renderList();
 }
 
-function renderTags() {
-    tagsContainer.innerHTML = '';
-    availableTags.forEach(tag => {
-        const label = document.createElement('label');
-        label.className = 'flex items-center space-x-2 cursor-pointer';
-        label.innerHTML = `
-            <input type="checkbox" value="${tag}" class="tag-checkbox w-4 h-4 text-blue-600 rounded">
-            <span class="text-sm text-gray-700">${tag}</span>
-        `;
-        tagsContainer.appendChild(label);
-
-        // Add listener
-        label.querySelector('input').addEventListener('change', updateState);
-    });
-}
-
-// Render List
+// --- Rendering Lists ---
 function renderList() {
-    const query = searchEl.value.toLowerCase();
-    shopListEl.innerHTML = '';
+    if (currentTab === 'shops') renderShopList();
+    else renderGuideList();
+}
+
+function renderShopList() {
+    const query = document.getElementById('search').value.toLowerCase();
+    containers.shopList.innerHTML = '';
 
     shops.forEach(shop => {
         if (shop.name.toLowerCase().includes(query)) {
             const div = document.createElement('div');
-            div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedShopId === shop.id ? 'selected' : ''}`;
+            div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedShopId === shop.id ? 'bg-green-50 border-l-4 border-green-500' : ''}`;
             div.onclick = () => selectShop(shop.id);
-
             div.innerHTML = `
                 <div class="flex justify-between items-center">
                     <span class="font-medium text-gray-800">${shop.name}</span>
@@ -83,126 +101,297 @@ function renderList() {
                 </div>
                 <div class="text-xs text-gray-500 mt-1">${shop.location}</div>
             `;
-            shopListEl.appendChild(div);
+            containers.shopList.appendChild(div);
         }
     });
 }
 
-// Select Shop
+function renderGuideList() {
+    containers.guideList.innerHTML = '';
+
+    guides.forEach(guide => {
+        const div = document.createElement('div');
+        div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedGuideId === guide.id ? 'bg-blue-50 border-l-4 border-blue-500' : ''}`;
+        div.onclick = () => selectGuide(guide.id);
+        div.innerHTML = `
+            <div class="font-medium text-gray-800">${guide.title}</div>
+            <div class="text-xs text-gray-500 mt-1">${guide.slug}</div>
+        `;
+        containers.guideList.appendChild(div);
+    });
+}
+
+// --- Selection Logic ---
 function selectShop(id) {
     selectedShopId = id;
-    const shop = shops.find(s => s.id === id);
+    renderShopList();
+    containers.emptyState.classList.add('hidden');
+    containers.shopEditor.classList.remove('hidden');
+    containers.guideEditor.classList.add('hidden');
+    populateShopEditor(shops.find(s => s.id === id));
+}
+
+function selectGuide(id) {
+    selectedGuideId = id;
+    renderGuideList();
+    containers.emptyState.classList.add('hidden');
+    containers.shopEditor.classList.add('hidden');
+    containers.guideEditor.classList.remove('hidden');
+    populateGuideEditor(guides.find(g => g.id === id));
+}
+
+// --- Editors (Shops) ---
+function populateShopEditor(shop) {
     if (!shop) return;
 
-    // UI Toggle
-    editorEl.classList.remove('hidden');
-    emptyStateEl.classList.add('hidden');
-    renderList(); // Update selection style
-
-    // Populate Fields
     document.getElementById('editName').textContent = shop.name;
     document.getElementById('editId').textContent = `ID: ${shop.id}`;
 
-    inputs.name.value = shop.name;
-    inputs.location.value = shop.location;
-    inputs.address.value = shop.address;
-    inputs.lat.value = shop.coordinates[0];
-    inputs.lng.value = shop.coordinates[1];
-    inputs.image.value = shop.image;
-    inputs.description.value = shop.description;
-    inputs.detailedReview.value = shop.detailedReview || '';
-    inputs.approved.checked = !!shop.coraxApproved;
+    setValue('inputName', shop.name);
+    setValue('inputLocation', shop.location);
+    setValue('inputAddress', shop.address);
+    setValue('inputLat', shop.coordinates[0]);
+    setValue('inputLng', shop.coordinates[1]);
+    setValue('inputImage', shop.image);
+    setValue('inputDescription', shop.description);
+    setValue('inputDetailedReview', shop.detailedReview || '');
+    document.getElementById('editApproved').checked = !!shop.coraxApproved;
+    document.getElementById('previewImage').src = shop.image;
 
-    previewImage.src = shop.image;
-
-    // Populate Tags
+    // Tags
     const currentTags = shop.tags || [];
     document.querySelectorAll('.tag-checkbox').forEach(cb => {
         cb.checked = currentTags.includes(cb.value);
     });
 }
 
-// Update Local State on Input
-function updateState() {
-    if (!selectedShopId) return;
-    const shop = shops.find(s => s.id === selectedShopId);
+// --- Editors (Guides) ---
+function populateGuideEditor(guide) {
+    if (!guide) return;
 
-    shop.name = inputs.name.value;
-    shop.location = inputs.location.value;
-    shop.address = inputs.address.value;
-    shop.coordinates = [parseFloat(inputs.lat.value), parseFloat(inputs.lng.value)];
-    shop.image = inputs.image.value;
-    shop.description = inputs.description.value;
-    shop.detailedReview = inputs.detailedReview.value;
-    shop.coraxApproved = inputs.approved.checked;
+    setValue('guideTitle', guide.title);
+    setValue('guideSlug', guide.slug);
+    setValue('guideH1', guide.h1);
+    setValue('guideIntro', guide.intro);
+    setValue('guideMetaDesc', guide.metaDescription);
+    document.getElementById('guideDate').textContent = guide.datePublished || 'Draft';
 
-    // Update Tags
-    const selectedTags = [];
-    document.querySelectorAll('.tag-checkbox:checked').forEach(cb => {
-        selectedTags.push(cb.value);
+    // Sections
+    const sectionsContainer = document.getElementById('sectionsContainer');
+    sectionsContainer.innerHTML = '';
+    (guide.sections || []).forEach((section, idx) => {
+        addSectionToDOM(section, idx);
     });
-    shop.tags = selectedTags;
 
-    // Update header immediately
-    document.getElementById('editName').textContent = shop.name;
+    // Stats
+    const statsContainer = document.getElementById('statsContainer');
+    statsContainer.innerHTML = '';
+    (guide.sidebarStats || []).forEach((stat, idx) => {
+        addStatToDOM(stat, idx);
+    });
 }
 
-// Add listeners
-Object.values(inputs).forEach(input => {
-    input.addEventListener('input', updateState);
-});
+function addSectionToDOM(section = { title: '', content: '' }, index) {
+    const div = document.createElement('div');
+    div.className = 'bg-gray-50 p-4 rounded border relative group';
+    div.innerHTML = `
+        <button class="delete-section absolute top-2 right-2 text-red-500 opacity-0 group-hover:opacity-100" data-idx="${index}">×</button>
+        <input type="text" class="section-title w-full p-2 border rounded mb-2 font-bold" placeholder="Section Title" value="${section.title || ''}">
+        <textarea class="section-content w-full p-2 border rounded text-sm h-32" placeholder="Markdown content...">${section.content || ''}</textarea>
+    `;
 
-searchEl.addEventListener('input', renderList);
+    // Bind events
+    div.querySelector('.section-title').oninput = (e) => updateSection(index, 'title', e.target.value);
+    div.querySelector('.section-content').oninput = (e) => updateSection(index, 'content', e.target.value);
+    div.querySelector('.delete-section').onclick = () => deleteSection(index);
 
-// Image Upload
-uploadInput.addEventListener('change', async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    document.getElementById('sectionsContainer').appendChild(div);
+}
 
-    const formData = new FormData();
-    formData.append('image', file);
+function addStatToDOM(stat = { label: '', value: '' }, index) {
+    const div = document.createElement('div');
+    div.className = 'flex space-x-2 items-center group';
+    div.innerHTML = `
+        <input type="text" class="stat-label w-1/3 p-1 text-xs border rounded" placeholder="Label" value="${stat.label || ''}">
+        <input type="text" class="stat-value flex-1 p-1 text-xs border rounded font-mono" placeholder="Value" value="${stat.value || ''}">
+        <button class="delete-stat text-red-500 opacity-0 group-hover:opacity-100 text-xs" data-idx="${index}">×</button>
+    `;
 
-    try {
-        const res = await fetch(`${API_URL}/upload`, {
-            method: 'POST',
-            body: formData
-        });
-        const data = await res.json();
+    div.querySelector('.stat-label').oninput = (e) => updateStat(index, 'label', e.target.value);
+    div.querySelector('.stat-value').oninput = (e) => updateStat(index, 'value', e.target.value);
+    div.querySelector('.delete-stat').onclick = () => deleteStat(index);
 
-        if (data.path) {
-            inputs.image.value = data.path;
-            previewImage.src = data.path;
-            updateState();
-        }
-    } catch (err) {
-        alert('Upload failed: ' + err.message);
+    document.getElementById('statsContainer').appendChild(div);
+}
+
+// --- Updates (State Management) ---
+
+// Shops
+function updateShopState(key, value) {
+    const shop = shops.find(s => s.id === selectedShopId);
+    if (!shop) return;
+
+    if (key === 'coordinates') {
+        const lat = parseFloat(document.getElementById('inputLat').value);
+        const lng = parseFloat(document.getElementById('inputLng').value);
+        shop.coordinates = [lat, lng];
+    } else if (key === 'tags') {
+        shop.tags = Array.from(document.querySelectorAll('.tag-checkbox:checked')).map(cb => cb.value);
+    } else {
+        shop[key] = value;
     }
-});
 
-// Save All
-saveBtn.addEventListener('click', async () => {
-    saveBtn.textContent = 'Saving...';
-    saveBtn.disabled = true;
+    if (key === 'name') document.getElementById('editName').textContent = value;
+}
 
-    try {
-        const res = await fetch(`${API_URL}/shops`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(shops)
-        });
+// Guides
+function updateGuideState(key, value) {
+    const guide = guides.find(g => g.id === selectedGuideId);
+    if (!guide) return;
+    guide[key] = value;
+    if (key === 'title') renderGuideList(); // Refresh list title
+}
 
-        if (res.ok) {
+function updateSection(index, field, value) {
+    const guide = guides.find(g => g.id === selectedGuideId);
+    if (!guide.sections[index]) guide.sections[index] = {};
+    guide.sections[index][field] = value;
+}
+
+function deleteSection(index) {
+    const guide = guides.find(g => g.id === selectedGuideId);
+    guide.sections.splice(index, 1);
+    populateGuideEditor(guide);
+}
+
+function updateStat(index, field, value) {
+    const guide = guides.find(g => g.id === selectedGuideId);
+    if (!guide.sidebarStats[index]) guide.sidebarStats[index] = {};
+    guide.sidebarStats[index][field] = value;
+}
+
+function deleteStat(index) {
+    const guide = guides.find(g => g.id === selectedGuideId);
+    guide.sidebarStats.splice(index, 1);
+    populateGuideEditor(guide);
+}
+
+function createNewGuide() {
+    const newGuide = {
+        id: 'new-guide-' + Date.now(),
+        slug: 'new-guide',
+        title: 'New Guide',
+        h1: 'New Guide Header',
+        intro: '',
+        metaDescription: '',
+        datePublished: new Date().toISOString().split('T')[0],
+        sections: [],
+        sidebarStats: []
+    };
+    guides.push(newGuide);
+    selectGuide(newGuide.id);
+}
+
+// --- Listeners ---
+function setupListeners() {
+    // Tabs
+    tabs.shops.onclick = () => switchTab('shops');
+    tabs.guides.onclick = () => switchTab('guides');
+
+    // Search
+    document.getElementById('search').addEventListener('input', renderList);
+
+    // Guide Actions
+    document.getElementById('addGuideBtn').onclick = createNewGuide;
+    document.getElementById('addSectionBtn').onclick = () => {
+        const guide = guides.find(g => g.id === selectedGuideId);
+        guide.sections.push({ title: '', content: '' });
+        populateGuideEditor(guide); // Re-render to show new section
+    };
+    document.getElementById('addStatBtn').onclick = () => {
+        const guide = guides.find(g => g.id === selectedGuideId);
+        if (!guide.sidebarStats) guide.sidebarStats = [];
+        guide.sidebarStats.push({ label: '', value: '' });
+        populateGuideEditor(guide);
+    };
+
+    // Shop Inputs
+    bindInput('inputName', (v) => updateShopState('name', v));
+    bindInput('inputLocation', (v) => updateShopState('location', v));
+    bindInput('inputAddress', (v) => updateShopState('address', v));
+    bindInput('inputDescription', (v) => updateShopState('description', v));
+    bindInput('inputDetailedReview', (v) => updateShopState('detailedReview', v));
+    bindInput('inputLat', () => updateShopState('coordinates'));
+    bindInput('inputLng', () => updateShopState('coordinates'));
+    bindInput('inputImage', (v) => updateShopState('image', v));
+
+    document.getElementById('editApproved').addEventListener('change', (e) => updateShopState('coraxApproved', e.target.checked));
+
+    // Guide Inputs
+    bindInput('guideTitle', (v) => updateGuideState('title', v));
+    bindInput('guideSlug', (v) => updateGuideState('slug', v));
+    bindInput('guideH1', (v) => updateGuideState('h1', v));
+    bindInput('guideIntro', (v) => updateGuideState('intro', v));
+    bindInput('guideMetaDesc', (v) => updateGuideState('metaDescription', v));
+
+    // Image Upload
+    document.getElementById('uploadImage').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const formData = new FormData();
+        formData.append('image', file);
+        try {
+            const res = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });
+            const data = await res.json();
+            if (data.path) {
+                document.getElementById('inputImage').value = data.path;
+                document.getElementById('previewImage').src = data.path;
+                updateShopState('image', data.path);
+            }
+        } catch (err) { alert('Upload failed'); }
+    });
+
+    // Save
+    saveBtn.onclick = async () => {
+        saveBtn.textContent = 'Saving...';
+        saveBtn.disabled = true;
+        try {
+            // Save BOTH
+            await fetch(`${API_URL}/shops`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(shops) });
+            await fetch(`${API_URL}/guides`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(guides) });
             alert('Saved successfully!');
-            renderList(); // Refresh badges
-        } else {
-            alert('Save failed!');
+            renderList();
+        } catch (err) {
+            alert('Save failed: ' + err.message);
+        } finally {
+            saveBtn.textContent = 'Save All Changes';
+            saveBtn.disabled = false;
         }
-    } catch (err) {
-        alert('Error saving: ' + err.message);
-    } finally {
-        saveBtn.textContent = 'Save All Changes';
-        saveBtn.disabled = false;
-    }
-});
+    };
+}
+
+function bindInput(id, handler) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', (e) => handler(e.target.value));
+}
+
+function setValue(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.value = val === undefined ? '' : val;
+}
+
+// Shop Tags
+function renderTags() {
+    const container = document.getElementById('tagsContainer');
+    const tags = ["Top Pick", "Tourist Friendly", "Local Favorite", "Quality Focus", "Good Prices", "Unique Vibe", "Historic"];
+    container.innerHTML = '';
+    tags.forEach(tag => {
+        const label = document.createElement('label');
+        label.className = 'flex items-center space-x-2 cursor-pointer';
+        label.innerHTML = `<input type="checkbox" value="${tag}" class="tag-checkbox w-4 h-4 text-blue-600 rounded"><span class="text-sm text-gray-700">${tag}</span>`;
+        label.querySelector('input').addEventListener('change', () => updateShopState('tags'));
+        container.appendChild(label);
+    });
+}
 
 init();
