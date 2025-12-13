@@ -50,50 +50,9 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Rotterdam",
-    "image": "/images/shops/1.svg",
+    "image": "/images/shops/the_4_floors_1765460236508.jpg",
     "menuImages": [
       "/menus/the-4-floors-11-11-25.png"
-    ]
-  },
-  {
-    "id": "2",
-    "name": "137",
-    "location": "Amsterdam",
-    "address": "Brouwersgracht 137, 1015 GE Amsterdam",
-    "coordinates": [
-      52.3814043,
-      4.8862983
-    ],
-    "rating": 0,
-    "tags": [],
-    "videoIds": [
-      "QVpMoKOxd2A",
-      "KFAKQAdY2pU",
-      "rw_EVmnyjYQ",
-      "1LVHf_41jEQ",
-      "KbhKyMrMXHg",
-      "cNARVqHpigI",
-      "4b3NDVZV3Zk",
-      "utuU8EA_KHk",
-      "7kwicBefV1w",
-      "4YkGp6JhzRE",
-      "nCorJMnfO8M",
-      "8TNwFAxZBg4",
-      "fS8THioQvhU",
-      "QMhjG6EdZ4A",
-      "6anPRuuA-SE",
-      "HA7CBmz04SQ",
-      "Yc16xcKSXqU"
-    ],
-    "shortIds": [
-      "VQwpWVtXdc8",
-      "ra08qUwf8zo",
-      "XeV-Z0Tk0DA"
-    ],
-    "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/2.jpg",
-    "menuImages": [
-      "/menus/137-17-01-25.png"
     ]
   },
   {
@@ -127,7 +86,8 @@ export const coffeeshops: CoffeeshopData[] = [
         "approval": "€14, originally grown by DJ",
         "videoTitle": ""
       }
-    ]
+    ],
+    "coraxApproved": true
   },
   {
     "id": "4",
@@ -240,7 +200,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/9.svg",
+    "image": "/images/shops/420_cafe_de_kuil_1765494223044.webp",
     "menuImages": [
       "/menus/420-cafe-de-kuil-06-09-25.png"
     ],
@@ -627,7 +587,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/24.svg",
+    "image": "/images/shops/coffeeshopamsterdam_1765469425116.jpg",
     "menuImages": [
       "/menus/coffeeshopamsterdam-27-08-25.png"
     ]
@@ -667,7 +627,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/26.svg",
+    "image": "/images/shops/mr_k_s_1765469444593.jpg",
     "menuImages": [
       "/menus/mr-ks-21-08-25.png"
     ]
@@ -1417,7 +1377,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/58.jpg",
+    "image": "/images/shops/new_times_2_1765496376062.jpg",
     "menuImages": [
       "/menus/new-times-2-04-08-25.png"
     ]
@@ -2200,14 +2160,17 @@ export const coffeeshops: CoffeeshopData[] = [
       4.8761179
     ],
     "rating": 0,
-    "tags": [],
+    "tags": [
+      "Local Favorite"
+    ],
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/86.jpg",
     "menuImages": [
       "/menus/tha-dogg-house-03-08-25.png"
-    ]
+    ],
+    "coraxApproved": false
   },
   {
     "id": "87",
@@ -2419,7 +2382,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/94.svg",
+    "image": "/images/shops/smokey_1765496807390.jpg",
     "menuImages": [
       "/menus/smokey-02-02-25.png"
     ]
@@ -3607,7 +3570,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/140.jpg",
+    "image": "/images/shops/easy_times_1765578693904.avif",
     "menuImages": [
       "/menus/easy-times-2-12-04-25.png"
     ]
@@ -3846,7 +3809,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/151.svg",
+    "image": "/images/shops/blackstar.jpg",
     "menuImages": [
       "/menus/blackstar-25-08-25.png"
     ]
@@ -4329,25 +4292,6 @@ export const coffeeshops: CoffeeshopData[] = [
     ]
   },
   {
-    "id": "173",
-    "name": "SWED a Snoop Dogg Store",
-    "location": "Amsterdam",
-    "address": "Marnixstraat 333, Amsterdam 1016 TC",
-    "coordinates": [
-      52.3726966,
-      4.8761179
-    ],
-    "rating": 0,
-    "tags": [],
-    "videoIds": [],
-    "shortIds": [],
-    "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/173.svg",
-    "menuImages": [
-      "/menus/swed-a-snoop-dogg-store-02-02-25.png"
-    ]
-  },
-  {
     "id": "174",
     "name": "De Kruidenier Cannabis Takeaway",
     "location": "Haarlem",
@@ -4550,7 +4494,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/183.jpg",
+    "image": "/images/shops/terps_army_2_1765497204784.jpg",
     "menuImages": [
       "/menus/terps-army-2-06-12-25.jpg",
       "/menus/terps-army-2-02-08-25.png"
@@ -4645,7 +4589,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/186.svg",
+    "image": "/images/shops/boerejongens_centrum_1765578820192.jpg",
     "menuImages": [
       "/menus/boerejongens-centrum-02-10-25.png"
     ],
@@ -6169,7 +6113,9 @@ export const coffeeshops: CoffeeshopData[] = [
       "Quality Focus",
       "Unique Vibe"
     ],
-    "videoIds": ["sfr2BaAMlG4"],
+    "videoIds": [
+      "sfr2BaAMlG4"
+    ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/258.jpg",
@@ -6530,7 +6476,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/274.svg",
+    "image": "/images/shops/cheech2.jpg",
     "menuImages": [
       "/menus/cheech-chongs-2-25-08-25.png"
     ]

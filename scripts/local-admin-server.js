@@ -40,34 +40,47 @@ const upload = multer({ storage: storage });
 
 // Helper to read/write TS file
 function readCoffeeshops() {
-    if (!fs.existsSync(COFFEESHOPS_FILE)) return [];
-    const content = fs.readFileSync(COFFEESHOPS_FILE, 'utf-8');
-    const startMarker = 'export const coffeeshops: CoffeeshopData[] =';
-    const endMarker = 'export const filterTags';
-
-    const startIndex = content.indexOf(startMarker);
-    const endIndex = content.indexOf(endMarker);
-
-    if (startIndex !== -1 && endIndex !== -1) {
-        let rawPart = content.substring(startIndex + startMarker.length, endIndex);
-        // Find the array brackets
-        const arrayStart = rawPart.indexOf('[');
-        const arrayEnd = rawPart.lastIndexOf(']');
-
-        if (arrayStart !== -1 && arrayEnd !== -1) {
-            const arrayString = rawPart.substring(arrayStart, arrayEnd + 1);
-            try {
-                // SECURITY: Use JSON.parse instead of eval where possible
-                // Fallback to Function if simple JSON parse fails (TS files might have trailing commas)
-                // return JSON.parse(arrayString); 
-                return new Function('return ' + arrayString)();
-            } catch (e) {
-                console.error('Parse error:', e.message);
-                return [];
-            }
+    console.log('Reading coffeeshops file...');
+    try {
+        if (!fs.existsSync(COFFEESHOPS_FILE)) {
+            console.warn('Coffeeshops file does not exist:', COFFEESHOPS_FILE);
+            return [];
         }
+        const content = fs.readFileSync(COFFEESHOPS_FILE, 'utf-8');
+        const startMarker = 'export const coffeeshops: CoffeeshopData[] =';
+        const endMarker = 'export const filterTags';
+
+        const startIndex = content.indexOf(startMarker);
+        const endIndex = content.indexOf(endMarker);
+
+        if (startIndex !== -1 && endIndex !== -1) {
+            let rawPart = content.substring(startIndex + startMarker.length, endIndex);
+            // Find the array brackets
+            const arrayStart = rawPart.indexOf('[');
+            const arrayEnd = rawPart.lastIndexOf(']');
+
+            if (arrayStart !== -1 && arrayEnd !== -1) {
+                const arrayString = rawPart.substring(arrayStart, arrayEnd + 1);
+                try {
+                    // SECURITY: Use JSON.parse instead of eval where possible
+                    // Fallback to Function if simple JSON parse fails (TS files might have trailing commas)
+                    // return JSON.parse(arrayString); 
+                    return new Function('return ' + arrayString)();
+                } catch (e) {
+                    console.error('Parse error inner:', e);
+                    return [];
+                }
+            } else {
+                console.error('Array brackets not found in raw part');
+            }
+        } else {
+            console.error('Markers not found. Start:', startIndex, 'End:', endIndex);
+        }
+        return [];
+    } catch (err) {
+        console.error('Fatal error in readCoffeeshops:', err);
+        throw err;
     }
-    return [];
 }
 
 function writeCoffeeshops(shops) {
@@ -118,9 +131,12 @@ function writeGuides(guides) {
 // GET all shops
 app.get('/api/shops', (req, res) => {
     try {
+        console.log('GET /api/shops requested');
         const shops = readCoffeeshops();
+        console.log('Read shops count:', shops.length);
         res.json(shops);
     } catch (err) {
+        console.error('GET /api/shops failed:', err);
         res.status(500).json({ error: err.message });
     }
 });
