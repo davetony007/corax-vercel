@@ -124,7 +124,15 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                                     </h2>
                                 )}
                                 <div className="mt-4 text-muted-foreground">
-                                    <ReactMarkdown>{section.content}</ReactMarkdown>
+                                    <ReactMarkdown
+                                        components={{
+                                            h4: ({ node, ...props }) => <h4 className="text-xl font-bold text-[#39ff14] mt-8 mb-3" {...props} />,
+                                            p: ({ node, ...props }) => <p className="mb-4 leading-relaxed" {...props} />,
+                                            strong: ({ node, ...props }) => <strong className="font-bold text-green-400" {...props} />
+                                        }}
+                                    >
+                                        {section.content}
+                                    </ReactMarkdown>
                                 </div>
                             </section>
                         ))}
