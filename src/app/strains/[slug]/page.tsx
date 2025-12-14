@@ -6,7 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ChevronLeft, Leaf, Dna, Clock, Zap } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Leaf, Dna, Clock, Zap } from 'lucide-react';
 import strainsData from '@/data/strains.json';
 
 // Define the interface for our strain data
@@ -64,13 +64,13 @@ export default async function StrainPage({ params }: { params: Promise<{ slug: s
             <Navigation />
 
             <main className="container mx-auto px-4 py-12 flex-grow max-w-4xl">
-                <Link
-                    href="/strains"
-                    className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors group"
-                >
-                    <ChevronLeft className="w-4 h-4 mr-1 group-hover:-translate-x-1 transition-transform" />
-                    Back to Strains Index
-                </Link>
+                <nav className="flex items-center text-sm text-muted-foreground mb-8">
+                    <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                    <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground/50" />
+                    <Link href="/strains" className="hover:text-primary transition-colors">Strains</Link>
+                    <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground/50" />
+                    <span className="text-foreground font-medium truncate">{strain.name}</span>
+                </nav>
 
                 {isPopulated ? (
                     <article>
