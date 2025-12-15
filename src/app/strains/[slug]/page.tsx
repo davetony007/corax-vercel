@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: `${strain.name} - Cannabis Strain Guide | Amsterdam Coffeeshop Directory`,
+        title: `${strain.name} | Amsterdam Coffeeshop Directory`,
         description: strain.descriptor,
     };
 }
