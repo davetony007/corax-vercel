@@ -6,6 +6,36 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSM8cmxES0H/",
+    "image": "/images/instagram/DSM8cmxES0H.jpg",
+    "caption": "This Won First Place In Last Years R*sin Category @coffeeshophashtag"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSMgSOTEUPH/",
+    "image": "/images/instagram/DSMgSOTEUPH.jpg",
+    "caption": "@thehighcastlesesh Advent Calendar Day 13 December 13th @thcturbine @petit_four_twenty"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSKticEkWcs/",
+    "image": "/images/instagram/DSKticEkWcs.jpg",
+    "caption": "Premium Address For Proper Chocolate in Amsterdam @coffeeshopthehit"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSKDkPtEQev/",
+    "image": "/images/instagram/DSKDkPtEQev.jpg",
+    "caption": "For Me The Highlight Until Now - @thehighcastlesesh Advent Calendar Day 12 December 12th @thcturbine"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSIL0StEfsA/",
+    "image": "/images/instagram/DSIL0StEfsA.jpg",
+    "caption": "Is This The Coziest Coffeeshop Of Amsterdam? Part 1 @abraxas.amsterdam"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSHUDfDkW_o/",
+    "image": "/images/instagram/DSHUDfDkW_o.jpg",
+    "caption": "@TheHighCastleSesh Advent Calendar Day 11 December 11th @thcturbine @petit_four_twenty"
+  },
+  {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSFSU2hERSw/",
     "image": "/images/instagram/DSFSU2hERSw.jpg",
     "caption": "Making A Big Purchase At @coffeeshopsiberie Part 1"
@@ -33,7 +63,7 @@ export const instagramPosts: InstagramPost[] = [
   {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSAfu1rkW-7/",
     "image": "/images/instagram/DSAfu1rkW-7.jpg",
-    "caption": "Gifting A T*C Vape Pen To A Random Person \n\nDISCLAIMER: This is a skit with actors, nothing illegal has taken place @chronic_kitchen710 @cannibal_kitchen"
+    "caption": "Gifting A T*C Vape Pen To A Random Person \n\nDISCLAIMER: This is a skit with actors, nothing illegal has taken place @chronic_kitchen710 @cannibalkitchen @cannibal_brand"
   },
   {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DR_nym_keL1/",

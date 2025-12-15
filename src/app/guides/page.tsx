@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Info, Flame, BookOpen } from "lucide-react";
+import { MapPin, Info, Flame, BookOpen, Zap, Globe, Activity, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Guides (2026): Tips & Insiders",
@@ -26,7 +26,11 @@ import guidesData from "@/data/guides.json";
 const iconMap: { [key: string]: any } = {
     Info,
     Flame,
-    BookOpen
+    BookOpen,
+    Zap,
+    Globe,
+    Activity,
+    Sparkles
 };
 
 export default function GuidesHub() {
@@ -63,6 +67,9 @@ export default function GuidesHub() {
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                         Don't just smoke. Learn. From etiquette to extracts, these guides will level up your Amsterdam experience.
+                    </p>
+                    <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
+                        You can also browse our full <Link href="/strains" className="text-primary hover:underline font-medium">Cannabis Strains Guide</Link>, organised by era and genetics.
                     </p>
                 </div>
 

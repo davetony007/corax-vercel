@@ -37,6 +37,9 @@ const InteractiveMap = () => {
     if (param === "best-hash") return "Best Hash";
     if (param === "best-edibles") return "Best Edibles";
     if (param === "local-favorites") return "Local Favorite";
+    if (param === "amsterdam-only") return "Amsterdam Only";
+    if (param === "has-menu") return "Has Menu";
+    if (param === "has-review") return "Has Review";
     return "All";
   }, []);
 
@@ -64,6 +67,9 @@ const InteractiveMap = () => {
     else if (newFilter === "Best Hash") urlValue = "best-hash";
     else if (newFilter === "Best Edibles") urlValue = "best-edibles";
     else if (newFilter === "Local Favorite") urlValue = "local-favorites";
+    else if (newFilter === "Amsterdam Only") urlValue = "amsterdam-only";
+    else if (newFilter === "Has Menu") urlValue = "has-menu";
+    else if (newFilter === "Has Review") urlValue = "has-review";
 
     if (newFilter === "All") {
       params.delete("filter");

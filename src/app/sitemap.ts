@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { coffeeshops } from '@/data/coffeeshops'
+import guidesData from '@/data/guides.json'
+import strainsData from '@/data/strains.json'
 
 export const dynamic = 'force-static'
 
@@ -14,13 +16,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insta',
         '/support',
         '/guides',
-        '/guides/first-time-guide-2026',
-        '/guides/best-hash-amsterdam-2026',
+        '/strains',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: route === '' ? 1 : 0.8,
+    }))
+
+    // Dynamic guide routes
+    const guideRoutes = guidesData.map((guide) => ({
+        url: `${baseUrl}/guides/${guide.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+    }))
+
+    // Dynamic strain routes
+    const strainRoutes = strainsData.map((strain) => ({
+        url: `${baseUrl}/strains/${strain.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
     }))
 
     // Dynamic shop routes
@@ -34,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
     })
 
-    return [...routes, ...shopRoutes]
+    return [...routes, ...guideRoutes, ...strainRoutes, ...shopRoutes]
 }

@@ -3,6 +3,7 @@ let guides = [];
 let selectedShopId = null;
 let selectedGuideId = null;
 let currentTab = 'shops'; // 'shops' or 'guides'
+let isFilteringDuplicates = false;
 
 const API_URL = 'http://localhost:3001/api';
 
@@ -35,15 +36,35 @@ async function init() {
 async function fetchShops() {
     try {
         const res = await fetch(`${API_URL}/shops`);
-        shops = await res.json();
-    } catch (err) { alert('Failed to load shops'); }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+            shops = data;
+        } else {
+            console.error('Detailed shop data:', data);
+            throw new Error('API did not return an array');
+        }
+    } catch (err) {
+        console.error('Fetch shops error:', err);
+        alert('Failed to load shops: ' + err.message);
+    }
 }
 
 async function fetchGuides() {
     try {
         const res = await fetch(`${API_URL}/guides`);
-        guides = await res.json();
-    } catch (err) { alert('Failed to load guides'); }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+            guides = data;
+        } else {
+            console.error('Detailed guide data:', data);
+            throw new Error('API did not return an array');
+        }
+    } catch (err) {
+        console.error('Fetch guides error:', err);
+        alert('Failed to load guides: ' + err.message);
+    }
 }
 
 // --- Tabs Logic ---
@@ -76,7 +97,25 @@ function switchTab(tab) {
     containers.guideEditor.classList.add('hidden');
     containers.emptyState.classList.remove('hidden');
 
+    isFilteringDuplicates = false;
+    updateDuplicateButtonState();
+
     renderList();
+}
+
+function updateDuplicateButtonState() {
+    const btn = document.getElementById('findDuplicatesBtn');
+    if (!btn) {
+        console.warn('Duplicate button not found in DOM');
+        return;
+    }
+    if (isFilteringDuplicates) {
+        btn.classList.add('bg-yellow-200', 'ring-2', 'ring-yellow-400');
+        btn.textContent = 'Show All Shops';
+    } else {
+        btn.classList.remove('bg-yellow-200', 'ring-2', 'ring-yellow-400');
+        btn.textContent = 'Find Duplicate Addresses';
+    }
 }
 
 // --- Rendering Lists ---
@@ -86,23 +125,61 @@ function renderList() {
 }
 
 function renderShopList() {
-    const query = document.getElementById('search').value.toLowerCase();
     containers.shopList.innerHTML = '';
+    let shopsToRender = [];
 
-    shops.forEach(shop => {
-        if (shop.name.toLowerCase().includes(query)) {
-            const div = document.createElement('div');
-            div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedShopId === shop.id ? 'bg-green-50 border-l-4 border-green-500' : ''}`;
-            div.onclick = () => selectShop(shop.id);
-            div.innerHTML = `
-                <div class="flex justify-between items-center">
-                    <span class="font-medium text-gray-800">${shop.name}</span>
-                    ${shop.coraxApproved ? '<span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Approved</span>' : ''}
-                </div>
-                <div class="text-xs text-gray-500 mt-1">${shop.location}</div>
-            `;
-            containers.shopList.appendChild(div);
+    if (isFilteringDuplicates) {
+        // Group by normalized address
+        const groups = {};
+        shops.forEach(shop => {
+            if (!shop.address) return;
+            const key = shop.address.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+            if (!groups[key]) groups[key] = [];
+            groups[key].push(shop);
+        });
+
+        // Filter for duplicates
+        shopsToRender = Object.values(groups)
+            .filter(group => group.length > 1)
+            .flat()
+            .sort((a, b) => {
+                const addrA = a.address.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+                const addrB = b.address.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+                return addrA.localeCompare(addrB);
+            });
+
+        if (shopsToRender.length === 0) {
+            containers.shopList.innerHTML = '<div class="p-4 text-center text-gray-500">No duplicate addresses found!</div>';
+            return;
         }
+
+    } else {
+        const query = document.getElementById('search').value.toLowerCase();
+        shopsToRender = shops.filter(shop => shop.name.toLowerCase().includes(query));
+    }
+
+    // Apply Amsterdam Filter
+    const amsterdamOnly = document.getElementById('filterAmsterdam').checked;
+    if (amsterdamOnly) {
+        shopsToRender = shopsToRender.filter(shop => shop.location && shop.location.toLowerCase() === 'amsterdam');
+    }
+
+    // Sort Alphabetically
+    shopsToRender.sort((a, b) => a.name.localeCompare(b.name));
+
+    shopsToRender.forEach(shop => {
+        const div = document.createElement('div');
+        div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedShopId === shop.id ? 'bg-green-50 border-l-4 border-green-500' : ''}`;
+        div.onclick = () => selectShop(shop.id);
+        div.innerHTML = `
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-800">${shop.name}</span>
+                ${shop.coraxApproved ? '<span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Approved</span>' : ''}
+            </div>
+            <div class="text-xs text-gray-500 mt-1">${shop.location}</div>
+            <div class="text-xs text-gray-400 mt-0.5">${shop.address || 'No Address'}</div>
+        `;
+        containers.shopList.appendChild(div);
     });
 }
 
@@ -299,7 +376,23 @@ function setupListeners() {
     tabs.guides.onclick = () => switchTab('guides');
 
     // Search
-    document.getElementById('search').addEventListener('input', renderList);
+    document.getElementById('search').addEventListener('input', () => {
+        isFilteringDuplicates = false; // Reset duplicate filter on search
+        updateDuplicateButtonState();
+        renderList();
+    });
+
+    // Amsterdam Filter
+    document.getElementById('filterAmsterdam').addEventListener('change', () => {
+        renderList();
+    });
+
+    // Find Duplicates
+    document.getElementById('findDuplicatesBtn').onclick = () => {
+        isFilteringDuplicates = !isFilteringDuplicates;
+        updateDuplicateButtonState();
+        renderList();
+    };
 
     // Guide Actions
     document.getElementById('addGuideBtn').onclick = createNewGuide;
@@ -313,6 +406,29 @@ function setupListeners() {
         if (!guide.sidebarStats) guide.sidebarStats = [];
         guide.sidebarStats.push({ label: '', value: '' });
         populateGuideEditor(guide);
+    };
+
+    // Delete Shop
+    document.getElementById('deleteShopBtn').onclick = (e) => {
+        if (e) e.preventDefault();
+        if (!selectedShopId) return;
+
+        if (confirm('Are you sure you want to delete this shop? This cannot be undone until you save.')) {
+            // Use String() to ensure type safety ensuring we don't miss matches
+            shops = shops.filter(s => String(s.id) !== String(selectedShopId));
+
+            selectedShopId = null;
+
+            // UI Updates
+            containers.shopEditor.classList.add('hidden');
+            containers.emptyState.classList.remove('hidden');
+
+            // Re-render
+            renderList();
+
+            // If in duplicate mode, verify if we still have duplicates
+            updateDuplicateButtonState();
+        }
     };
 
     // Shop Inputs
