@@ -6,6 +6,21 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSSNLNqjDoE/",
+    "image": "/images/instagram/DSSNLNqjDoE.jpg",
+    "caption": "Best feeling #fyp #viral #trending"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSR7-J0EYNZ/",
+    "image": "/images/instagram/DSR7-J0EYNZ.jpg",
+    "caption": "@TheHighCastleSesh Advent Calendar Day 15 December 15th @thcturbine @petit.four20"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSPjnNaEeOx/",
+    "image": "/images/instagram/DSPjnNaEeOx.jpg",
+    "caption": "@thehighcastlesesh Advent Calendar Day 14 December 14th @petit.four20 @thcturbine"
+  },
+  {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSM8cmxES0H/",
     "image": "/images/instagram/DSM8cmxES0H.jpg",
     "caption": "This Won First Place In Last Years R*sin Category @coffeeshophashtag"
@@ -63,7 +78,7 @@ export const instagramPosts: InstagramPost[] = [
   {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSAfu1rkW-7/",
     "image": "/images/instagram/DSAfu1rkW-7.jpg",
-    "caption": "Gifting A T*C Vape Pen To A Random Person \n\nDISCLAIMER: This is a skit with actors, nothing illegal has taken place @chronic_kitchen710 @cannibalkitchen @cannibal_brand"
+    "caption": "Gifting A T*C Vape Pen To A Random Person \n\nDISCLAIMER: This is a skit with actors, nothing illegal has taken place @chronic_kitchen710 @cannibal_kitchen"
   },
   {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DR_nym_keL1/",
