@@ -13,6 +13,9 @@ import { coffeeshops, filterTags, CoffeeshopData } from "@/data/coffeeshops";
 import ShopDetails from "@/components/ShopDetails";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useSearchParams, useRouter } from "next/navigation";
+import "leaflet-routing-machine";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import { useTour } from "@/context/TourContext";
 
 // Fix for default marker icons in Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -40,12 +43,15 @@ const InteractiveMap = () => {
     if (param === "amsterdam-only") return "Amsterdam Only";
     if (param === "has-menu") return "Has Menu";
     if (param === "has-review") return "Has Review";
+    if (param === "my-tour") return "My Tour";
     return "All";
   }, []);
 
   const [activeFilter, setActiveFilter] = useState(normalizeFilter(searchParams.get("filter")));
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedShop, setSelectedShop] = useState<CoffeeshopData | null>(null);
+  const { tour } = useTour();
+  const routingControlRef = useRef<any>(null);
 
   // Sync state if URL changes
   useEffect(() => {
@@ -70,6 +76,7 @@ const InteractiveMap = () => {
     else if (newFilter === "Amsterdam Only") urlValue = "amsterdam-only";
     else if (newFilter === "Has Menu") urlValue = "has-menu";
     else if (newFilter === "Has Review") urlValue = "has-review";
+    else if (newFilter === "My Tour") urlValue = "my-tour";
 
     if (newFilter === "All") {
       params.delete("filter");
@@ -88,12 +95,13 @@ const InteractiveMap = () => {
 
       // 2. Tag/Category Filter
       if (activeFilter === "All") return true;
+      if (activeFilter === "My Tour") return tour.some(t => t.id === shop.id);
       if (activeFilter === "Amsterdam Only") return shop.location === "Amsterdam";
       if (activeFilter === "Has Menu") return shop.menuImages && shop.menuImages.length > 0;
       if (activeFilter === "Has Review") return shop.detailedReview || shop.videoIds.length > 0;
       return shop.tags.includes(activeFilter);
     });
-  }, [activeFilter, searchQuery]);
+  }, [activeFilter, searchQuery, tour]);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -126,12 +134,17 @@ const InteractiveMap = () => {
     // Add markers for filtered shops
     filteredShops.forEach((shop) => {
       const isApproved = shop.coraxApproved;
-      // Green for standard, Blue for Corax Approved
-      const markerColor = isApproved ? "hsl(217 91% 60%)" : "hsl(142 76% 36%)";
+      const isInTour = tour.some(t => t.id === shop.id);
+
+      // Tour = Red, Corax = Blue, Standard = Green
+      let markerColor = "hsl(142 76% 36%)"; // Default Green
+      if (isInTour) markerColor = "#ef4444"; // Red for Tour
+      else if (isApproved) markerColor = "hsl(217 91% 60%)"; // Blue for Approved
 
       const customIcon = L.divIcon({
         className: "custom-marker",
-        html: `<div style="background: ${markerColor}; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+        html: `<div style="background: ${markerColor}; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; position: relative;">
+          ${isInTour ? `<div style="position: absolute; -top: 5px; -right: 5px; background: #ef4444; color: white; font-size: 10px; font-weight: bold; width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid white;">${tour.findIndex(t => t.id === shop.id) + 1}</div>` : ''}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
@@ -158,7 +171,54 @@ const InteractiveMap = () => {
       previousFilterRef.current = activeFilter;
     }
 
-  }, [filteredShops, activeFilter]);
+  }, [activeFilter, searchQuery, tour]);
+
+  // Handle Tour Routing
+  useEffect(() => {
+    if (!map.current) return;
+
+    const waypoints = tour.map(shop => L.latLng(shop.coordinates[0], shop.coordinates[1]));
+
+    if (!routingControlRef.current) {
+      // Initialize control if it doesn't exist
+      // @ts-ignore - Leaflet Routing Machine types workaround
+      routingControlRef.current = L.Routing.control({
+        waypoints: [], // Start empty
+        router: new (L.Routing as any).OSRMv1({
+          serviceUrl: 'https://routing.openstreetmap.de/routed-foot/route/v1',
+          profile: 'driving' // specialized server treats default profile as its main routing type (foot)
+        }),
+        routeWhileDragging: false,
+        showAlternatives: false,
+        fitSelectedRoutes: true,
+        show: false, // Hide the turn-by-turn panel
+        lineOptions: {
+          styles: [{ color: '#ef4444', opacity: 0.8, weight: 6 }],
+          extendToWaypoints: true,
+          missingRouteTolerance: 10
+        } as any,
+        createMarker: function () { return null; } // Don't create extra markers, we have our own
+      }).addTo(map.current);
+    }
+
+    // Update waypoints safely
+    if (routingControlRef.current) {
+      if (tour.length > 1) {
+        routingControlRef.current.setWaypoints(waypoints);
+      } else {
+        routingControlRef.current.setWaypoints([]); // Clear route if < 2 stops
+      }
+    }
+
+    // Cleanup on unmount only
+    return () => {
+      // We keep the control alive during re-renders to avoid race conditions
+      // Only remove if map is destroyed or component unmounts completely
+      if (!map.current && routingControlRef.current) {
+        routingControlRef.current = null;
+      }
+    };
+  }, [tour]);
 
   const [desktopView, setDesktopView] = useState(true);
 
@@ -171,8 +231,9 @@ const InteractiveMap = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Interactive Coffeeshop Map
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore reviewed coffeeshops across Amsterdam - click markers to see details
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Explore reviews, browse menus, and <strong>build your own Walking Tour</strong>. <br className="hidden md:inline" />
+            Add shops to your list and follow the <span className="text-red-500 font-semibold">Red Route 🚩</span> found on the map!
           </p>
         </div>
 
@@ -263,6 +324,13 @@ const InteractiveMap = () => {
               <span className="text-base">📍</span> Find Near Me
             </Button>
 
+            <Button
+              variant={activeFilter === "My Tour" ? "default" : "outline"}
+              onClick={() => handleFilterChange(activeFilter === "My Tour" ? "All" : "My Tour")}
+              className={`gap-2 h-9 text-sm ${activeFilter === "My Tour" ? "bg-red-600 hover:bg-red-700" : "border-red-200 text-red-600 hover:bg-red-50"}`}
+            >
+              <span className="text-base">🚩</span> My Tour ({tour.length})
+            </Button>
             <Button
               variant={activeFilter === "Amsterdam Only" ? "default" : "outline"}
               onClick={() => handleFilterChange(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")}

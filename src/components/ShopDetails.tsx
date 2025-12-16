@@ -1,7 +1,12 @@
+"use client";
+
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Star, Youtube, Award, ThumbsUp, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MapPin, Star, Youtube, Award, ThumbsUp, ExternalLink, Plus, Minus } from "lucide-react";
 import { CoffeeshopData } from "@/data/coffeeshops";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { useTour } from "@/context/TourContext";
 
 interface ShopDetailsProps {
     shop: CoffeeshopData;
@@ -16,6 +21,9 @@ const formatDate = (url: string) => {
 };
 
 const ShopDetails = ({ shop }: ShopDetailsProps) => {
+    const { addToTour, removeFromTour, isInTour } = useTour();
+    const isAdded = isInTour(shop.id);
+
     return (
         <div className="h-full bg-card">
             <div className="aspect-video overflow-hidden relative">
@@ -69,16 +77,32 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
                         <MapPin className="w-4 h-4" />
                         Directions
                     </a>
-                    <a
-                        href={`https://www.coffeeshopmenus.org/${shop.name.replace(/\s+/g, '')}/Menus/${shop.name.replace(/\s+/g, '')}.html`} // Crude approximation, actual linking might need the map url logic
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href={`/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                         className="flex-1 inline-flex items-center justify-center gap-2 h-9 rounded-md text-sm border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                         <ExternalLink className="w-4 h-4" />
                         More Info
-                    </a>
+                    </Link>
                 </div>
+
+                <Button
+                    variant={isAdded ? "destructive" : "default"}
+                    className="w-full h-9 mt-2"
+                    onClick={() => isAdded ? removeFromTour(shop.id) : addToTour(shop)}
+                >
+                    {isAdded ? (
+                        <>
+                            <Minus className="w-4 h-4 mr-2" />
+                            Remove from Tour
+                        </>
+                    ) : (
+                        <>
+                            <Plus className="w-4 h-4 mr-2" />
+                            Add to Tour
+                        </>
+                    )}
+                </Button>
 
                 {shop.description && (
                     <div className="prose prose-sm dark:prose-invert">
