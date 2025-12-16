@@ -7,6 +7,14 @@ interface ShopDetailsProps {
     shop: CoffeeshopData;
 }
 
+const formatDate = (url: string) => {
+    const match = url.match(/(\d{2})-(\d{2})-(\d{2})\.\w+$/);
+    if (!match) return null;
+    const [_, day, month, year] = match;
+    const date = new Date(`20${year}-${month}-${day}`);
+    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+};
+
 const ShopDetails = ({ shop }: ShopDetailsProps) => {
     return (
         <div className="h-full bg-card">
@@ -19,47 +27,75 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
                 {(shop.coraxApproved || shop.recommended) && (
                     <div className="absolute top-2 right-2 flex flex-col gap-1">
                         {shop.coraxApproved && (
-                            <Badge className="bg-yellow-500 hover:bg-yellow-600 text-white border-none shadow-lg gap-1">
-                                <Award className="w-3 h-3" /> Corax Approved
+                            <Badge className="bg-primary text-primary-foreground border-primary flex items-center gap-1 shadow-lg backdrop-blur-sm">
+                                <Award className="w-3 h-3 fill-current" />
+                                Corax Approved
                             </Badge>
                         )}
-                        {shop.recommended && !shop.coraxApproved && (
-                            <Badge className="bg-green-500 hover:bg-green-600 text-white border-none shadow-lg gap-1">
-                                <ThumbsUp className="w-3 h-3" /> Recommended
+                        {shop.recommended && (
+                            <Badge variant="secondary" className="bg-background/90 text-foreground flex items-center gap-1 shadow-lg backdrop-blur-sm">
+                                <ThumbsUp className="w-3 h-3" />
+                                Recommended
                             </Badge>
                         )}
                     </div>
                 )}
             </div>
 
-            <div className="p-6 space-y-4">
-                <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-2">{shop.name}</h2>
-                    <div className="flex items-center gap-2 text-muted-foreground mb-3">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{shop.location}</span>
-                    </div>
-                    {shop.address && (
-                        <div className="text-sm text-muted-foreground mb-3">
+            <div className="p-4 space-y-4">
+                <div className="flex justify-between items-start">
+                    <div>
+                        <h3 className="font-bold text-xl text-foreground mb-1">{shop.name}</h3>
+                        <div className="flex items-center text-muted-foreground text-sm">
+                            <MapPin className="w-3 h-3 mr-1" />
                             {shop.address}
                         </div>
-                    )}
-                    <div className="flex items-center gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star
-                                key={i}
-                                className={`w-4 h-4 ${i < shop.rating
-                                    ? "fill-primary text-primary"
-                                    : "text-muted"
-                                    }`}
-                            />
-                        ))}
                     </div>
+                    {shop.rating > 0 && (
+                        <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
+                            <Star className="w-4 h-4 fill-primary text-primary" />
+                            <span className="font-bold text-primary">{shop.rating}</span>
+                        </div>
+                    )}
                 </div>
 
-                <p className="text-muted-foreground text-sm">
-                    {shop.description}
-                </p>
+                <div className="flex gap-2">
+                    <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${shop.coordinates[0]},${shop.coordinates[1]}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-2 h-9 rounded-md text-sm border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                        <MapPin className="w-4 h-4" />
+                        Directions
+                    </a>
+                    <a
+                        href={`https://www.coffeeshopmenus.org/${shop.name.replace(/\s+/g, '')}/Menus/${shop.name.replace(/\s+/g, '')}.html`} // Crude approximation, actual linking might need the map url logic
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-2 h-9 rounded-md text-sm border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                        <ExternalLink className="w-4 h-4" />
+                        More Info
+                    </a>
+                </div>
+
+                {shop.description && (
+                    <div className="prose prose-sm dark:prose-invert">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                            {shop.description}
+                        </p>
+                    </div>
+                )}
+
+                {shop.detailedReview && (
+                    <div className="bg-muted/50 p-3 rounded-md border border-border">
+                        <h4 className="font-semibold text-foreground text-sm mb-1">Our Take</h4>
+                        <p className="text-muted-foreground text-sm">
+                            {shop.detailedReview}
+                        </p>
+                    </div>
+                )}
 
                 {/* Transcript Reviews Section */}
                 {shop.reviews && shop.reviews.length > 0 && (
@@ -91,15 +127,6 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                )}
-
-                {shop.detailedReview && (
-                    <div className="pt-3 border-t border-border">
-                        <h4 className="font-semibold text-foreground mb-2">Corax's Review</h4>
-                        <p className="text-muted-foreground text-sm">
-                            {shop.detailedReview}
-                        </p>
                     </div>
                 )}
 
@@ -178,57 +205,60 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
                             </span>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                            {shop.menuImages.map((img, idx) => (
-                                <Dialog key={idx}>
-                                    <DialogTrigger asChild>
-                                        <div className="group relative aspect-[3/4] overflow-hidden rounded-md border border-border cursor-pointer hover:shadow-glow transition-all duration-300">
-                                            {/* Badge Overlay */}
-                                            <div className="absolute top-2 left-2 z-10">
-                                                {idx === 0 ? (
-                                                    <Badge className="bg-primary text-primary-foreground hover:bg-primary font-bold shadow-sm">
-                                                        Latest
-                                                    </Badge>
-                                                ) : idx === 1 ? (
-                                                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground font-medium shadow-sm border border-border/50">
-                                                        Previous
-                                                    </Badge>
-                                                ) : null}
-                                            </div>
+                            {shop.menuImages.map((img, idx) => {
+                                const dateStr = formatDate(img);
+                                return (
+                                    <Dialog key={idx}>
+                                        <DialogTrigger asChild>
+                                            <div className="group relative aspect-[3/4] overflow-hidden rounded-md border border-border cursor-pointer hover:shadow-glow transition-all duration-300">
+                                                {/* Badge Overlay */}
+                                                <div className="absolute top-2 left-2 z-10">
+                                                    {idx === 0 ? (
+                                                        <Badge className="bg-primary text-primary-foreground hover:bg-primary font-bold shadow-sm">
+                                                            Latest {dateStr && `(${dateStr})`}
+                                                        </Badge>
+                                                    ) : idx === 1 ? (
+                                                        <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground font-medium shadow-sm border border-border/50">
+                                                            Previous {dateStr && `(${dateStr})`}
+                                                        </Badge>
+                                                    ) : null}
+                                                </div>
 
-                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
 
-                                            <img
-                                                src={img}
-                                                alt={`${shop.name} Menu ${idx === 0 ? '(Latest)' : '(Previous)'}`}
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                            />
-                                        </div>
-                                    </DialogTrigger>
-                                    <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden bg-black/95 border-border/20">
-                                        <DialogTitle className="sr-only">
-                                            {shop.name} Menu {idx === 0 ? '(Latest)' : '(Previous)'}
-                                        </DialogTitle>
-                                        <div className="w-full h-full flex items-center justify-center p-4 relative">
-                                            <div className="absolute top-4 left-4 z-50">
-                                                {idx === 0 ? (
-                                                    <Badge className="bg-primary text-primary-foreground text-lg px-4 py-1">
-                                                        Latest Menu
-                                                    </Badge>
-                                                ) : (
-                                                    <Badge variant="secondary" className="text-lg px-4 py-1">
-                                                        Previous Menu
-                                                    </Badge>
-                                                )}
+                                                <img
+                                                    src={img}
+                                                    alt={`${shop.name} Menu ${idx === 0 ? '(Latest)' : '(Previous)'}`}
+                                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                                />
                                             </div>
-                                            <img
-                                                src={img}
-                                                alt={`${shop.name} Menu ${idx + 1}`}
-                                                className="max-w-full max-h-[85vh] object-contain shadow-2xl"
-                                            />
-                                        </div>
-                                    </DialogContent>
-                                </Dialog>
-                            ))}
+                                        </DialogTrigger>
+                                        <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden bg-black/95 border-border/20">
+                                            <DialogTitle className="sr-only">
+                                                {shop.name} Menu {idx === 0 ? '(Latest)' : '(Previous)'}
+                                            </DialogTitle>
+                                            <div className="w-full h-full flex items-center justify-center p-4 relative">
+                                                <div className="absolute top-4 left-4 z-50">
+                                                    {idx === 0 ? (
+                                                        <Badge className="bg-primary text-primary-foreground text-lg px-4 py-1">
+                                                            Latest Menu {dateStr && `(${dateStr})`}
+                                                        </Badge>
+                                                    ) : (
+                                                        <Badge variant="secondary" className="text-lg px-4 py-1">
+                                                            Previous Menu {dateStr && `(${dateStr})`}
+                                                        </Badge>
+                                                    )}
+                                                </div>
+                                                <img
+                                                    src={img}
+                                                    alt={`${shop.name} Menu ${idx + 1}`}
+                                                    className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+                                                />
+                                            </div>
+                                        </DialogContent>
+                                    </Dialog>
+                                );
+                            })}
                         </div>
                     </div>
                 )}
@@ -238,3 +268,4 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
 };
 
 export default ShopDetails;
+```
