@@ -610,7 +610,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Haarlem",
     "image": "/images/shops/25.jpg",
     "menuImages": [
-      "/menus/willie-wortels-sinsemilla-31-08-25.png"
+      "/menus/willie-wortels-sinsemilla-31-08-25.jpg"
     ]
   },
   {
@@ -631,7 +631,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/mr_k_s_1765469444593.jpg",
     "menuImages": [
-      "/menus/mr-ks-21-08-25.png"
+      "/menus/mr-ks-21-08-25.jpg"
     ]
   },
   {
@@ -2030,7 +2030,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/79.jpg",
     "menuImages": [
-      "/menus/hunters-west-04-08-25.png"
+      "/menus/hunters-west-04-08-25.jpg"
     ]
   },
   {
@@ -2152,7 +2152,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/85.jpg",
     "menuImages": [
-      "/menus/hunters-rembrandtsquare-19-05-25.png"
+      "/menus/hunters-rembrandtsquare-19-05-25.jpg"
     ]
   },
   {
@@ -2193,7 +2193,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Zandvoort",
     "image": "/images/shops/87.jpg",
     "menuImages": [
-      "/menus/hunters-zandvoort-24-09-25.png"
+      "/menus/hunters-zandvoort-24-09-25.jpg"
     ]
   },
   {
@@ -2250,7 +2250,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/90.jpg",
     "menuImages": [
-      "/menus/hunter-s-downtown-24-11-25.jpg"
+      "/menus/hunters-downtown-19-08-25.jpg"
     ]
   },
   {
@@ -2369,7 +2369,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/93.jpg",
     "menuImages": [
-      "/menus/hunters-north-papaverweg-02-10-25.png"
+      "/menus/hunters-north-papaverweg-02-10-25.jpg"
     ]
   },
   {
@@ -2445,7 +2445,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/97.jpg",
     "menuImages": [
-      "/menus/hunters-north-waterlandplein-25-06-25.png"
+      "/menus/hunters-north-waterlandplein-25-06-25.jpg"
     ]
   },
   {
@@ -2514,7 +2514,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Rotterdam",
     "image": "/images/shops/99.jpg",
     "menuImages": [
-      "/menus/hunters-rotterdam-07-11-25.png"
+      "/menus/hunters-rotterdam-07-11-25.jpg"
     ]
   },
   {
@@ -4276,7 +4276,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Breda",
     "image": "/images/shops/171.jpg",
     "menuImages": [
-      "/menus/flynhy-15-07-25.png"
+      "/menus/flynhy-15-07-25.jpg"
     ]
   },
   {
@@ -4569,7 +4569,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/185.jpg",
     "menuImages": [
-      "/menus/prix-dami-01-11-25.png"
+      "/menus/prix-dami-01-11-25.jpg"
     ],
     "reviews": [
       {
@@ -6497,7 +6497,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/cheech2.jpg",
     "menuImages": [
-      "/menus/cheech-chongs-2-25-08-25.png"
+      "/menus/cheech-chongs-2-25-08-25.jpg"
     ]
   },
   {

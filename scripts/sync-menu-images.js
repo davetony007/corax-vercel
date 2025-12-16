@@ -67,7 +67,13 @@ function syncMenuImages() {
     shops.forEach(shop => {
         // Normalize shop name to find matches
         // Logic must match scrape-latest-menus.js
-        const normalizedShopName = shop.name.replace(/[^a-z0-9]/gi, '-').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+        // FIX: Remove apostrophes first to match "Hunter's" -> "hunters" instead of "hunter-s"
+        const normalizedShopName = shop.name
+            .replace(/'/g, '')
+            .replace(/[^a-z0-9]/gi, '-')
+            .toLowerCase()
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
 
         // Find files that start with this shop name and have a date pattern
         // The file should look like: normalizedShopName-DD-MM-YY.ext
