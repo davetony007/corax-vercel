@@ -263,10 +263,7 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
                     </div>
                 )}
             </div>
-        </div>
-    );
+            );
 };
 
-};
-
-export default ShopDetails;
+            export default ShopDetails;
