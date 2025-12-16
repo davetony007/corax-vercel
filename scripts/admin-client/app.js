@@ -1,8 +1,10 @@
 let shops = [];
 let guides = [];
+let strains = []; // [NEW]
 let selectedShopId = null;
 let selectedGuideId = null;
-let currentTab = 'shops'; // 'shops' or 'guides'
+let selectedStrainSlug = null; // [NEW]
+let currentTab = 'shops'; // 'shops' or 'guides' or 'strains'
 let isFilteringDuplicates = false;
 
 const API_URL = 'http://localhost:3001/api';
@@ -10,16 +12,23 @@ const API_URL = 'http://localhost:3001/api';
 // --- Selectors ---
 const tabs = {
     shops: document.getElementById('tabShops'),
-    guides: document.getElementById('tabGuides')
+    guides: document.getElementById('tabGuides'),
+    strains: document.getElementById('tabStrains') // [NEW]
 };
 
 const containers = {
     shopSearch: document.getElementById('shopSearchContainer'),
     guideActions: document.getElementById('guideActionsContainer'),
+    strainActions: document.getElementById('strainActionsContainer'), // [NEW]
+
     shopList: document.getElementById('shopList'),
     guideList: document.getElementById('guideList'),
+    strainList: document.getElementById('strainList'), // [NEW]
+
     shopEditor: document.getElementById('editor'),
     guideEditor: document.getElementById('guideEditor'),
+    strainEditor: document.getElementById('strainEditor'), // [NEW]
+
     emptyState: document.getElementById('emptyState')
 };
 
@@ -27,7 +36,7 @@ const saveBtn = document.getElementById('saveBtn');
 
 // --- Initialization ---
 async function init() {
-    await Promise.all([fetchShops(), fetchGuides()]);
+    await Promise.all([fetchShops(), fetchGuides(), fetchStrains()]);
     renderList();
     renderTags(); // For shops
     setupListeners();
@@ -67,34 +76,63 @@ async function fetchGuides() {
     }
 }
 
+// [NEW]
+async function fetchStrains() {
+    try {
+        const res = await fetch(`${API_URL}/strains`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+            strains = data;
+        } else {
+            console.error('Detailed strain data:', data);
+            throw new Error('API did not return an array');
+        }
+    } catch (err) {
+        console.error('Fetch strains error:', err);
+        alert('Failed to load strains: ' + err.message);
+    }
+}
+
 // --- Tabs Logic ---
 function switchTab(tab) {
     currentTab = tab;
 
-    // UI Classes
+    // Reset UI Classes
+    tabs.shops.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+    tabs.guides.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+    tabs.strains.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+
+    containers.shopSearch.classList.add('hidden');
+    containers.guideActions.classList.add('hidden');
+    containers.strainActions.classList.add('hidden');
+
+    containers.shopList.classList.add('hidden');
+    containers.guideList.classList.add('hidden');
+    containers.strainList.classList.add('hidden');
+
+    // Activate specific tab
     if (tab === 'shops') {
         tabs.shops.className = 'flex-1 py-2 text-sm font-bold text-green-600 border-b-2 border-green-600';
-        tabs.guides.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
-
         containers.shopSearch.classList.remove('hidden');
-        containers.guideActions.classList.add('hidden');
         containers.shopList.classList.remove('hidden');
-        containers.guideList.classList.add('hidden');
-    } else {
-        tabs.shops.className = 'flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600';
+    } else if (tab === 'guides') {
         tabs.guides.className = 'flex-1 py-2 text-sm font-bold text-blue-600 border-b-2 border-blue-600';
-
-        containers.shopSearch.classList.add('hidden');
         containers.guideActions.classList.remove('hidden');
-        containers.shopList.classList.add('hidden');
         containers.guideList.classList.remove('hidden');
+    } else if (tab === 'strains') {
+        tabs.strains.className = 'flex-1 py-2 text-sm font-bold text-purple-600 border-b-2 border-purple-600';
+        containers.strainActions.classList.remove('hidden');
+        containers.strainList.classList.remove('hidden');
     }
 
     // Reset Selection
     selectedShopId = null;
     selectedGuideId = null;
+    selectedStrainSlug = null;
     containers.shopEditor.classList.add('hidden');
     containers.guideEditor.classList.add('hidden');
+    containers.strainEditor.classList.add('hidden');
     containers.emptyState.classList.remove('hidden');
 
     isFilteringDuplicates = false;
@@ -106,7 +144,6 @@ function switchTab(tab) {
 function updateDuplicateButtonState() {
     const btn = document.getElementById('findDuplicatesBtn');
     if (!btn) {
-        console.warn('Duplicate button not found in DOM');
         return;
     }
     if (isFilteringDuplicates) {
@@ -121,7 +158,8 @@ function updateDuplicateButtonState() {
 // --- Rendering Lists ---
 function renderList() {
     if (currentTab === 'shops') renderShopList();
-    else renderGuideList();
+    else if (currentTab === 'guides') renderGuideList();
+    else renderStrainList();
 }
 
 function renderShopList() {
@@ -198,6 +236,22 @@ function renderGuideList() {
     });
 }
 
+// [NEW]
+function renderStrainList() {
+    containers.strainList.innerHTML = '';
+
+    strains.forEach(strain => {
+        const div = document.createElement('div');
+        div.className = `p-4 border-b cursor-pointer hover:bg-gray-50 transition ${selectedStrainSlug === strain.slug ? 'bg-purple-50 border-l-4 border-purple-500' : ''}`;
+        div.onclick = () => selectStrain(strain.slug);
+        div.innerHTML = `
+            <div class="font-medium text-gray-800">${strain.name}</div>
+            <div class="text-xs text-gray-500 mt-1">${strain.slug}</div>
+        `;
+        containers.strainList.appendChild(div);
+    });
+}
+
 // --- Selection Logic ---
 function selectShop(id) {
     selectedShopId = id;
@@ -205,6 +259,7 @@ function selectShop(id) {
     containers.emptyState.classList.add('hidden');
     containers.shopEditor.classList.remove('hidden');
     containers.guideEditor.classList.add('hidden');
+    containers.strainEditor.classList.add('hidden');
     populateShopEditor(shops.find(s => s.id === id));
 }
 
@@ -214,8 +269,21 @@ function selectGuide(id) {
     containers.emptyState.classList.add('hidden');
     containers.shopEditor.classList.add('hidden');
     containers.guideEditor.classList.remove('hidden');
+    containers.strainEditor.classList.add('hidden');
     populateGuideEditor(guides.find(g => g.id === id));
 }
+
+// [NEW]
+function selectStrain(slug) {
+    selectedStrainSlug = slug;
+    renderStrainList();
+    containers.emptyState.classList.add('hidden');
+    containers.shopEditor.classList.add('hidden');
+    containers.guideEditor.classList.add('hidden');
+    containers.strainEditor.classList.remove('hidden');
+    populateStrainEditor(strains.find(s => s.slug === slug));
+}
+
 
 // --- Editors (Shops) ---
 function populateShopEditor(shop) {
@@ -268,6 +336,37 @@ function populateGuideEditor(guide) {
     });
 }
 
+// [NEW] --- Editors (Strains) ---
+function populateStrainEditor(strain) {
+    if (!strain) return;
+
+    document.getElementById('editStrainName').textContent = strain.name;
+
+    setValue('strainName', strain.name);
+    setValue('strainSlug', strain.slug);
+    setValue('strainDescriptor', strain.descriptor);
+    setValue('strainH1', strain.h1);
+    setValue('strainIntro', strain.intro);
+    setValue('strainInputImage', strain.image);
+    document.getElementById('strainPreviewImage').src = strain.image || '/images/hero_bud.png';
+
+    // Quick Facts
+    const factsContainer = document.getElementById('factsContainer');
+    factsContainer.innerHTML = '';
+    if (strain.quickFacts) {
+        Object.entries(strain.quickFacts).forEach(([key, value]) => {
+            addFactToDOM(key, value);
+        });
+    }
+
+    // Sections
+    const sectionsContainer = document.getElementById('strainSectionsContainer');
+    sectionsContainer.innerHTML = '';
+    (strain.sections || []).forEach((section, idx) => {
+        addStrainSectionToDOM(section, idx);
+    });
+}
+
 function addSectionToDOM(section = { title: '', content: '' }, index) {
     const div = document.createElement('div');
     div.className = 'bg-gray-50 p-4 rounded border relative group';
@@ -300,6 +399,46 @@ function addStatToDOM(stat = { label: '', value: '' }, index) {
 
     document.getElementById('statsContainer').appendChild(div);
 }
+
+// [NEW]
+function addFactToDOM(key, value) {
+    const div = document.createElement('div');
+    div.className = 'flex space-x-2 items-center group mb-2';
+    div.innerHTML = `
+        <input type="text" class="fact-key w-1/3 p-1 text-xs border rounded font-bold" placeholder="Key" value="${key || ''}">
+        <input type="text" class="fact-value flex-1 p-1 text-xs border rounded" placeholder="Value" value="${value || ''}">
+        <button class="delete-fact text-red-500 opacity-0 group-hover:opacity-100 text-xs">×</button>
+    `;
+
+    // Because quickFacts is an object, updates are a bit trickier (key changes mean re-assignment).
+    // For simplicity, we'll rebuild the object on every change or just update specialized state logic.
+    // Let's attach listeners that call a specific updated helper.
+
+    // We bind the current element reference to the update logic
+    div.querySelector('.fact-key').onchange = () => updateStrainFacts();
+    div.querySelector('.fact-value').onchange = () => updateStrainFacts();
+    div.querySelector('.delete-fact').onclick = () => { div.remove(); updateStrainFacts(); };
+
+    document.getElementById('factsContainer').appendChild(div);
+}
+
+// [NEW]
+function addStrainSectionToDOM(section = { title: '', content: '' }, index) {
+    const div = document.createElement('div');
+    div.className = 'bg-gray-50 p-4 rounded border relative group';
+    div.innerHTML = `
+        <button class="delete-strain-section absolute top-2 right-2 text-red-500 opacity-0 group-hover:opacity-100" data-idx="${index}">×</button>
+        <input type="text" class="section-title w-full p-2 border rounded mb-2 font-bold" placeholder="Section Title" value="${section.title || ''}">
+        <textarea class="section-content w-full p-2 border rounded text-sm h-32" placeholder="Markdown content...">${section.content || ''}</textarea>
+    `;
+
+    div.querySelector('.section-title').oninput = (e) => updateStrainSection(index, 'title', e.target.value);
+    div.querySelector('.section-content').oninput = (e) => updateStrainSection(index, 'content', e.target.value);
+    div.querySelector('.delete-strain-section').onclick = () => deleteStrainSection(index);
+
+    document.getElementById('strainSectionsContainer').appendChild(div);
+}
+
 
 // --- Updates (State Management) ---
 
@@ -353,6 +492,44 @@ function deleteStat(index) {
     populateGuideEditor(guide);
 }
 
+// [NEW] Strains
+function updateStrainState(key, value) {
+    const strain = strains.find(s => s.slug === selectedStrainSlug);
+    if (!strain) return;
+    strain[key] = value;
+    if (key === 'name') {
+        document.getElementById('editStrainName').textContent = value;
+        renderStrainList();
+    }
+}
+
+function updateStrainFacts() {
+    const strain = strains.find(s => s.slug === selectedStrainSlug);
+    if (!strain) return;
+
+    // Rebuild object from DOM
+    const newFacts = {};
+    document.querySelectorAll('#factsContainer > div').forEach(div => {
+        const k = div.querySelector('.fact-key').value.trim();
+        const v = div.querySelector('.fact-value').value.trim();
+        if (k) newFacts[k] = v;
+    });
+    strain.quickFacts = newFacts;
+}
+
+function updateStrainSection(index, field, value) {
+    const strain = strains.find(s => s.slug === selectedStrainSlug);
+    if (!strain.sections[index]) strain.sections[index] = {};
+    strain.sections[index][field] = value;
+}
+
+function deleteStrainSection(index) {
+    const strain = strains.find(s => s.slug === selectedStrainSlug);
+    strain.sections.splice(index, 1);
+    populateStrainEditor(strain);
+}
+
+
 function createNewGuide() {
     const newGuide = {
         id: 'new-guide-' + Date.now(),
@@ -374,6 +551,7 @@ function setupListeners() {
     // Tabs
     tabs.shops.onclick = () => switchTab('shops');
     tabs.guides.onclick = () => switchTab('guides');
+    tabs.strains.onclick = () => switchTab('strains'); // [NEW]
 
     // Search
     document.getElementById('search').addEventListener('input', () => {
@@ -407,6 +585,18 @@ function setupListeners() {
         guide.sidebarStats.push({ label: '', value: '' });
         populateGuideEditor(guide);
     };
+
+    // [NEW] Strain Actions
+    document.getElementById('addFactBtn').onclick = () => {
+        addFactToDOM('', '');
+    }
+    document.getElementById('addStrainSectionBtn').onclick = () => {
+        const strain = strains.find(s => s.slug === selectedStrainSlug);
+        if (!strain.sections) strain.sections = [];
+        strain.sections.push({ title: '', content: '' });
+        populateStrainEditor(strain);
+    }
+
 
     // Delete Shop
     document.getElementById('deleteShopBtn').onclick = (e) => {
@@ -450,6 +640,14 @@ function setupListeners() {
     bindInput('guideIntro', (v) => updateGuideState('intro', v));
     bindInput('guideMetaDesc', (v) => updateGuideState('metaDescription', v));
 
+    // [NEW] Strain Inputs
+    bindInput('strainName', (v) => updateStrainState('name', v));
+    bindInput('strainSlug', (v) => updateStrainState('slug', v));
+    bindInput('strainDescriptor', (v) => updateStrainState('descriptor', v));
+    bindInput('strainH1', (v) => updateStrainState('h1', v));
+    bindInput('strainIntro', (v) => updateStrainState('intro', v));
+    bindInput('strainInputImage', (v) => updateStrainState('image', v));
+
     // Image Upload
     document.getElementById('uploadImage').addEventListener('change', async (e) => {
         const file = e.target.files[0];
@@ -467,14 +665,32 @@ function setupListeners() {
         } catch (err) { alert('Upload failed'); }
     });
 
+    // [NEW] Strain Image Upload
+    document.getElementById('uploadStrainImage').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const formData = new FormData();
+        formData.append('image', file);
+        try {
+            const res = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });
+            const data = await res.json();
+            if (data.path) {
+                document.getElementById('strainInputImage').value = data.path;
+                document.getElementById('strainPreviewImage').src = data.path;
+                updateStrainState('image', data.path);
+            }
+        } catch (err) { alert('Upload failed'); }
+    });
+
     // Save
     saveBtn.onclick = async () => {
         saveBtn.textContent = 'Saving...';
         saveBtn.disabled = true;
         try {
-            // Save BOTH
+            // Save ALL
             await fetch(`${API_URL}/shops`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(shops) });
             await fetch(`${API_URL}/guides`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(guides) });
+            await fetch(`${API_URL}/strains`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(strains) }); // [NEW]
             alert('Saved successfully!');
             renderList();
         } catch (err) {
