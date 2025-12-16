@@ -12,6 +12,8 @@ import { MapPin } from "lucide-react";
 import { coffeeshops, filterTags, CoffeeshopData } from "@/data/coffeeshops";
 import ShopDetails from "@/components/ShopDetails";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { useSearchParams, useRouter } from "next/navigation";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
@@ -52,6 +54,7 @@ const InteractiveMap = () => {
   const [selectedShop, setSelectedShop] = useState<CoffeeshopData | null>(null);
   const { tour } = useTour();
   const routingControlRef = useRef<any>(null);
+  const [startFromCentraal, setStartFromCentraal] = useState(false);
 
   // Sync state if URL changes
   useEffect(() => {
@@ -85,6 +88,47 @@ const InteractiveMap = () => {
     }
     router.push(`?${params.toString()}`, { scroll: false });
   };
+
+  // Optimize Tour Order (Nearest Neighbor)
+  const sortedTour = useMemo(() => {
+    if (tour.length < 2) return tour;
+
+    const unvisited = [...tour];
+    const optimized = [];
+
+    // Determine start point
+    let currentPoint: L.LatLng;
+    if (startFromCentraal) {
+      currentPoint = L.latLng(52.379189, 4.899431); // Centraal
+    } else {
+      // Start with the first added shop if Centraal is disabled
+      const first = unvisited.shift()!;
+      optimized.push(first);
+      currentPoint = L.latLng(first.coordinates[0], first.coordinates[1]);
+    }
+
+    // Greedy Nearest Neighbor
+    while (unvisited.length > 0) {
+      let nearestIdx = -1;
+      let minDist = Infinity;
+
+      unvisited.forEach((shop, idx) => {
+        const dist = currentPoint.distanceTo(L.latLng(shop.coordinates[0], shop.coordinates[1]));
+        if (dist < minDist) {
+          minDist = dist;
+          nearestIdx = idx;
+        }
+      });
+
+      if (nearestIdx !== -1) {
+        const nextShop = unvisited.splice(nearestIdx, 1)[0];
+        optimized.push(nextShop);
+        currentPoint = L.latLng(nextShop.coordinates[0], nextShop.coordinates[1]);
+      }
+    }
+
+    return optimized;
+  }, [tour, startFromCentraal]);
 
   const filteredShops = useMemo(() => {
     return coffeeshops.filter(shop => {
@@ -144,7 +188,7 @@ const InteractiveMap = () => {
       const customIcon = L.divIcon({
         className: "custom-marker",
         html: `<div style="background: ${markerColor}; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; position: relative;">
-          ${isInTour ? `<div style="position: absolute; -top: 5px; -right: 5px; background: #ef4444; color: white; font-size: 10px; font-weight: bold; width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid white;">${tour.findIndex(t => t.id === shop.id) + 1}</div>` : ''}
+          ${isInTour ? `<div style="position: absolute; -top: 5px; -right: 5px; background: #ef4444; color: white; font-size: 10px; font-weight: bold; width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid white;">${sortedTour.findIndex(t => t.id === shop.id) + 1}</div>` : ''}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
@@ -177,7 +221,13 @@ const InteractiveMap = () => {
   useEffect(() => {
     if (!map.current) return;
 
-    const waypoints = tour.map(shop => L.latLng(shop.coordinates[0], shop.coordinates[1]));
+    const waypoints = sortedTour.map(shop => L.latLng(shop.coordinates[0], shop.coordinates[1]));
+
+    // Add Centraal Station as start if enabled and we have shops
+    if (startFromCentraal && sortedTour.length > 0) {
+      // Amsterdam Centraal coords: 52.379189, 4.899431
+      waypoints.unshift(L.latLng(52.379189, 4.899431));
+    }
 
     if (!routingControlRef.current) {
       // Initialize control if it doesn't exist
@@ -203,7 +253,7 @@ const InteractiveMap = () => {
 
     // Update waypoints safely
     if (routingControlRef.current) {
-      if (tour.length > 1) {
+      if (sortedTour.length > 1 || (startFromCentraal && sortedTour.length > 0)) {
         routingControlRef.current.setWaypoints(waypoints);
       } else {
         routingControlRef.current.setWaypoints([]); // Clear route if < 2 stops
@@ -218,7 +268,7 @@ const InteractiveMap = () => {
         routingControlRef.current = null;
       }
     };
-  }, [tour]);
+  }, [sortedTour, startFromCentraal]);
 
   const [desktopView, setDesktopView] = useState(true);
 
@@ -237,65 +287,90 @@ const InteractiveMap = () => {
           </p>
         </div>
 
-        {/* Controls Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
-          {/* Search Input */}
-          <div className="w-full md:w-auto relative group">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
+        {/* Controls Bar - Redesigned Layout */}
+        <div className="flex flex-col gap-4 mb-6">
+
+          {/* Row 1: Search & View */}
+          <div className="flex items-center justify-between gap-4">
+            <div className="w-full md:w-auto relative group flex-1 md:flex-none">
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </div>
+              <Input
+                type="text"
+                placeholder="Search coffeeshops..."
+                className="pl-9 w-full md:w-80 bg-card border-border focus:ring-1 focus:ring-primary/50"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-            <Input
-              type="text"
-              placeholder="Search coffeeshops..."
-              className="pl-9 w-full md:w-64 bg-card border-border focus:ring-1 focus:ring-primary/50"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+
+            {/* View Toggle (Desktop Only) */}
+            <div className="hidden lg:flex items-center gap-2 bg-card border border-border p-1 rounded-lg">
+              <Button
+                variant={desktopView ? "secondary" : "ghost"}
+                size="sm"
+                onClick={() => setDesktopView(true)}
+                className="text-xs"
+              >
+                Split View
+              </Button>
+              <Button
+                variant={!desktopView ? "secondary" : "ghost"}
+                size="sm"
+                onClick={() => setDesktopView(false)}
+                className="text-xs"
+              >
+                Full Map
+              </Button>
+            </div>
           </div>
 
-          {/* View Toggle (Desktop Only) */}
-          <div className="hidden lg:flex items-center gap-2 bg-card border border-border p-1 rounded-lg">
-            <Button
-              variant={desktopView ? "secondary" : "ghost"}
-              size="sm"
-              onClick={() => setDesktopView(true)}
-              className="text-xs"
-            >
-              Split View
-            </Button>
-            <Button
-              variant={!desktopView ? "secondary" : "ghost"}
-              size="sm"
-              onClick={() => setDesktopView(false)}
-              className="text-xs"
-            >
-              Full Map
-            </Button>
-          </div>
+          {/* Row 2: Tool Bar (Tour & Location) */}
+          <div className="flex flex-wrap items-center gap-4 py-2 border-y border-border/40">
 
-          {/* Filter Tags */}
-          <div className="flex flex-wrap justify-center gap-3">
+            {/* Tour Controls */}
+            <div className="flex items-center gap-4 border-r border-border/40 pr-4">
+              <Button
+                variant={activeFilter === "My Tour" ? "default" : "outline"}
+                onClick={() => handleFilterChange(activeFilter === "My Tour" ? "All" : "My Tour")}
+                className={`gap-2 h-9 text-sm ${activeFilter === "My Tour" ? "bg-red-600 hover:bg-red-700 hover:text-white" : "border-red-200 text-red-600 hover:bg-red-50"}`}
+              >
+                <span className="text-base">🚩</span> My Tour ({tour.length})
+              </Button>
+
+              <div className="flex items-center gap-2">
+                <Switch
+                  id="start-centraal"
+                  checked={startFromCentraal}
+                  onCheckedChange={setStartFromCentraal}
+                />
+                <Label htmlFor="start-centraal" className="text-sm text-muted-foreground cursor-pointer select-none">
+                  Start from Centraal 🚆
+                </Label>
+              </div>
+            </div>
+
+            {/* Location */}
             <Button
               variant="outline"
               onClick={() => {
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition((position) => {
                     const { latitude, longitude } = position.coords;
-
-                    // Add user marker
                     if (map.current) {
                       L.marker([latitude, longitude], {
                         icon: L.divIcon({
@@ -304,13 +379,8 @@ const InteractiveMap = () => {
                           iconSize: [20, 20],
                         })
                       }).addTo(map.current).bindPopup("You are here").openPopup();
-
                       map.current.setView([latitude, longitude], 15);
                     }
-
-                    // Sort shops by distance (simple implementation)
-                    // In a real app, we might want to update the filteredShops state
-                    // For now, we just center the map
                   }, (error) => {
                     console.error("Error getting location:", error);
                     alert("Could not get your location. Please enable location services.");
@@ -319,54 +389,34 @@ const InteractiveMap = () => {
                   alert("Geolocation is not supported by this browser.");
                 }
               }}
-              className="gap-2 h-9 text-sm bg-blue-600 text-white hover:bg-blue-700 hover:text-white"
+              className="gap-2 h-9 text-sm bg-blue-600/10 text-blue-600 hover:bg-blue-600 hover:text-white border-blue-200"
             >
               <span className="text-base">📍</span> Find Near Me
             </Button>
-
-            <Button
-              variant={activeFilter === "My Tour" ? "default" : "outline"}
-              onClick={() => handleFilterChange(activeFilter === "My Tour" ? "All" : "My Tour")}
-              className={`gap-2 h-9 text-sm ${activeFilter === "My Tour" ? "bg-red-600 hover:bg-red-700" : "border-red-200 text-red-600 hover:bg-red-50"}`}
-            >
-              <span className="text-base">🚩</span> My Tour ({tour.length})
-            </Button>
-            <Button
-              variant={activeFilter === "Amsterdam Only" ? "default" : "outline"}
-              onClick={() => handleFilterChange(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")}
-              className="gap-2 h-9 text-sm"
-            >
-              <span className="text-base">🏙️</span> Amsterdam Only
-            </Button>
-            <Button
-              variant={activeFilter === "Has Menu" ? "default" : "outline"}
-              onClick={() => handleFilterChange(activeFilter === "Has Menu" ? "All" : "Has Menu")}
-              className="gap-2 h-9 text-sm"
-            >
-              <span className="text-base">📜</span> Has Menu
-            </Button>
-            <Button
-              variant={activeFilter === "Has Review" ? "default" : "outline"}
-              onClick={() => handleFilterChange(activeFilter === "Has Review" ? "All" : "Has Review")}
-              className="gap-2 h-9 text-sm"
-            >
-              <span className="text-base">⭐</span> Has Review
-            </Button>
           </div>
-        </div>
 
-        {/* Category Tags */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {filterTags.map((tag) => (
-            <Badge
-              key={tag}
-              variant={activeFilter === tag ? "default" : "outline"}
-              className="cursor-pointer px-3 py-1 text-sm hover:scale-105 transition-transform"
-              onClick={() => handleFilterChange(activeFilter === tag ? "All" : tag)}
-            >
-              {tag}
-            </Badge>
-          ))}
+          {/* Row 3: Filter Tags */}
+          <div className="flex flex-wrap gap-2">
+            <Button variant={activeFilter === "Amsterdam Only" ? "default" : "outline"} onClick={() => handleFilterChange(activeFilter === "Amsterdam Only" ? "All" : "Amsterdam Only")} className="gap-2 h-8 text-xs">
+              <span className="text-sm">🏙️</span> Ams Only
+            </Button>
+            <Button variant={activeFilter === "Has Menu" ? "default" : "outline"} onClick={() => handleFilterChange(activeFilter === "Has Menu" ? "All" : "Has Menu")} className="gap-2 h-8 text-xs">
+              <span className="text-sm">📜</span> Has Menu
+            </Button>
+            <Button variant={activeFilter === "Has Review" ? "default" : "outline"} onClick={() => handleFilterChange(activeFilter === "Has Review" ? "All" : "Has Review")} className="gap-2 h-8 text-xs">
+              <span className="text-sm">⭐</span> Reviewed
+            </Button>
+            {filterTags.map((tag) => (
+              <Button
+                key={tag}
+                variant={activeFilter === tag ? "default" : "secondary"}
+                onClick={() => handleFilterChange(activeFilter === tag ? "All" : tag)}
+                className={`h-8 text-xs ${activeFilter === tag ? "" : "bg-secondary/50 hover:bg-secondary border border-border"}`}
+              >
+                {tag}
+              </Button>
+            ))}
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">

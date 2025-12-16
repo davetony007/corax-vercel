@@ -397,7 +397,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Haarlem",
-    "image": "/images/shops/17.svg",
+    "image": "/images/shops/willie-wortel-indica-1765494454546.jpg",
     "menuImages": [
       "/menus/willie-wortel-indica-01-08-25.jpg"
     ]
@@ -458,7 +458,7 @@ export const coffeeshops: CoffeeshopData[] = [
     ],
     "shortIds": [],
     "description": "Coffeeshop located in Amsterdam",
-    "image": "/images/shops/20.svg",
+    "image": "/images/shops/happy-feelings-1765469232919.jpg",
     "menuImages": [
       "/menus/happy-feelings-28-11-25.jpg",
       "/menus/happy-feelings-14-10-25.jpg"
@@ -510,7 +510,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Haarlem",
-    "image": "/images/shops/22.svg",
+    "image": "/images/shops/willie-wortel-sativa-1765494518895.webp",
     "menuImages": [
       "/menus/willie-wortel-sativa-14-11-25.jpg"
     ],
@@ -689,7 +689,7 @@ export const coffeeshops: CoffeeshopData[] = [
       "Jb9iqikc_Zw"
     ],
     "description": "Coffeeshop located in Haarlem",
-    "image": "/images/shops/29.svg",
+    "image": "/images/shops/sandman-1765494656057.jpg",
     "menuImages": [
       "/menus/sandman-09-01-25.jpg"
     ]
@@ -818,7 +818,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Harderwijk",
-    "image": "/images/shops/35.svg",
+    "image": "/images/shops/columbus-1765494785320.jpg",
     "menuImages": [
       "/menus/columbus-06-10-25.jpg"
     ]
@@ -1142,7 +1142,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Leiden",
-    "image": "/images/shops/47.svg",
+    "image": "/images/shops/high-society-1765495395920.jpg",
     "menuImages": [
       "/menus/high-society-14-01-25.jpg"
     ]
@@ -1208,7 +1208,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Zwijndrecht",
-    "image": "/images/shops/50.svg",
+    "image": "/images/shops/de-ambassade-1765495449839.jpg",
     "menuImages": [
       "/menus/de-ambassade-08-03-25.jpg"
     ]
@@ -1316,7 +1316,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Winterswijk",
-    "image": "/images/shops/55.svg",
+    "image": "/images/shops/sensi_shop-1765495425822.jpg",
     "menuImages": [
       "/menus/sensi-shop-23-08-25.jpg"
     ]
@@ -1911,7 +1911,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "videoIds": [],
     "shortIds": [],
     "description": "Coffeeshop located in Haarlem",
-    "image": "/images/shops/76.svg",
+    "image": "/images/shops/hunter-s-west-1765496612816.jpg",
     "menuImages": [
       "/menus/hunters-haarlem-16-10-25.jpg"
     ],

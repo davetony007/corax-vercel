@@ -48,6 +48,33 @@ Follow these steps to update the YouTube and Instagram data on the website.
 - **"Module not found" error**: If you see an error about missing modules (e.g., `puppeteer`), try running `npm install`.
 - **"No data file found"**: Make sure your JSON files are named correctly and placed in the root directory (not in `src` or `scripts`).
 
+## Updating Shop Images (Bulk Process)
+
+If you have uploaded new images to `public/images/shops` and want to replace placeholder SVG files:
+
+1. **Upload Images**:
+   - Ensure new images are in `public/images/shops`.
+
+2. **Find Remaining SVGs**:
+   - Run to see how many shops still need updates:
+     ```bash
+     node scripts/find-svg-shops.js
+     ```
+
+3. **Check for Matches**:
+   - Run this to see what the script *would* update (dry run):
+     ```bash
+     node scripts/match-new-images.js
+     ```
+
+4. **Apply Updates**:
+   - **WARNING**: This modifies `src/data/coffeeshops.ts`. Make sure you have committed previous changes first!
+   - Run to apply the changes:
+     ```bash
+     node scripts/match-and-replace.js
+     ```
+   - If something goes wrong, you can undo with `git checkout src/data/coffeeshops.ts`.
+
 ## Git Operations
  
 ### 1. Sync with Remote (Pull)
