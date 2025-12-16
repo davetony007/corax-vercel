@@ -48,8 +48,15 @@ Follow these steps to update the YouTube and Instagram data on the website.
 - **"Module not found" error**: If you see an error about missing modules (e.g., `puppeteer`), try running `npm install`.
 - **"No data file found"**: Make sure your JSON files are named correctly and placed in the root directory (not in `src` or `scripts`).
 
-## Pushing Changes to Git
+## Git Operations
+ 
+### 1. Sync with Remote (Pull)
+Before starting new updates, it's good practice to ensure you have the latest version of the code.
+```bash
+git pull
+```
 
+### 2. Save Changes (Push)
 Once you have verified your updates, you need to save them to the repository.
 
 1. **Stage Changes**:
