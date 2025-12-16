@@ -171,26 +171,59 @@ const ShopDetails = ({ shop }: ShopDetailsProps) => {
 
                 {shop.menuImages && shop.menuImages.length > 0 && (
                     <div className="pt-3 border-t border-border">
-                        <h4 className="font-semibold text-foreground mb-3">Menu</h4>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="flex items-center justify-between mb-3">
+                            <h4 className="font-semibold text-foreground">Menu</h4>
+                            <span className="text-xs text-muted-foreground">
+                                {shop.menuImages.length > 1 ? 'Comparing latest vs previous' : 'Latest menu'}
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3">
                             {shop.menuImages.map((img, idx) => (
                                 <Dialog key={idx}>
                                     <DialogTrigger asChild>
-                                        <div className="aspect-[3/4] overflow-hidden rounded-md border border-border cursor-pointer hover:opacity-90 transition-opacity">
+                                        <div className="group relative aspect-[3/4] overflow-hidden rounded-md border border-border cursor-pointer hover:shadow-glow transition-all duration-300">
+                                            {/* Badge Overlay */}
+                                            <div className="absolute top-2 left-2 z-10">
+                                                {idx === 0 ? (
+                                                    <Badge className="bg-primary text-primary-foreground hover:bg-primary font-bold shadow-sm">
+                                                        Latest
+                                                    </Badge>
+                                                ) : idx === 1 ? (
+                                                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground font-medium shadow-sm border border-border/50">
+                                                        Previous
+                                                    </Badge>
+                                                ) : null}
+                                            </div>
+
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+
                                             <img
                                                 src={img}
-                                                alt={`${shop.name} Menu ${idx + 1}`}
-                                                className="w-full h-full object-cover"
+                                                alt={`${shop.name} Menu ${idx === 0 ? '(Latest)' : '(Previous)'}`}
+                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                             />
                                         </div>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden bg-black/90 border-none">
-                                        <DialogTitle className="sr-only">Menu {idx + 1}</DialogTitle>
-                                        <div className="w-full h-full flex items-center justify-center p-4">
+                                    <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden bg-black/95 border-border/20">
+                                        <DialogTitle className="sr-only">
+                                            {shop.name} Menu {idx === 0 ? '(Latest)' : '(Previous)'}
+                                        </DialogTitle>
+                                        <div className="w-full h-full flex items-center justify-center p-4 relative">
+                                            <div className="absolute top-4 left-4 z-50">
+                                                {idx === 0 ? (
+                                                    <Badge className="bg-primary text-primary-foreground text-lg px-4 py-1">
+                                                        Latest Menu
+                                                    </Badge>
+                                                ) : (
+                                                    <Badge variant="secondary" className="text-lg px-4 py-1">
+                                                        Previous Menu
+                                                    </Badge>
+                                                )}
+                                            </div>
                                             <img
                                                 src={img}
                                                 alt={`${shop.name} Menu ${idx + 1}`}
-                                                className="max-w-full max-h-[85vh] object-contain"
+                                                className="max-w-full max-h-[85vh] object-contain shadow-2xl"
                                             />
                                         </div>
                                     </DialogContent>

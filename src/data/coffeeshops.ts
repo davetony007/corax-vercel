@@ -437,7 +437,6 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Vlissingen",
     "image": "/images/shops/19.jpg",
     "menuImages": [
-      "/menus/aarden-plan-b-22-10-25.jpg",
       "/menus/aarden-29-04-25.jpg"
     ]
   },
@@ -1235,8 +1234,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/51.jpg",
     "menuImages": [
-      "/menus/new-times-11-10-25.jpg",
-      "/menus/new-times-2-04-08-25.jpg"
+      "/menus/new-times-11-10-25.jpg"
     ],
     "reviews": [
       {
@@ -1894,8 +1892,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Den Haag",
     "image": "/images/shops/75.jpg",
     "menuImages": [
-      "/menus/dizzy-duck-18-11-25.jpg",
-      "/menus/dizzy-duck-downtown-20-10-25.jpg"
+      "/menus/dizzy-duck-18-11-25.jpg"
     ]
   },
   {
@@ -2012,8 +2009,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Breda",
     "image": "/images/shops/78.jpg",
     "menuImages": [
-      "/menus/sky-31-10-25.jpg",
-      "/menus/sky-high-30-01-25.jpg"
+      "/menus/sky-31-10-25.jpg"
     ]
   },
   {
@@ -3462,8 +3458,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/135.jpg",
     "menuImages": [
-      "/menus/easy-times-10-09-25.jpg",
-      "/menus/easy-times-2-12-04-25.jpg"
+      "/menus/easy-times-10-09-25.jpg"
     ],
     "reviews": [
       {
@@ -4008,8 +4003,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "image": "/images/shops/157.jpg",
     "menuImages": [
       "/menus/superfly-27-11-25.jpg",
-      "/menus/superfly-26-09-25.jpg",
-      "/menus/superfly-29-06-25.jpg"
+      "/menus/superfly-26-09-25.jpg"
     ]
   },
   {
@@ -4066,7 +4060,6 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Lelystad",
     "image": "/images/shops/160.jpg",
     "menuImages": [
-      "/menus/koffie-en-dromen-blowboot-21-10-25.jpg",
       "/menus/koffie-en-dromen-25-01-25.jpg"
     ]
   },
@@ -4671,9 +4664,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/188.jpg",
     "menuImages": [
-      "/menus/terps-army-2-06-12-25.jpg",
-      "/menus/terps-army-09-08-25.jpg",
-      "/menus/terps-army-2-02-08-25.jpg"
+      "/menus/terps-army-09-08-25.jpg"
     ]
   },
   {
@@ -4830,7 +4821,6 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Vlissingen",
     "image": "/images/shops/196.jpg",
     "menuImages": [
-      "/menus/purple-rain-14-08-25.jpg",
       "/menus/purple-03-05-25.jpg"
     ]
   },
@@ -5317,7 +5307,6 @@ export const coffeeshops: CoffeeshopData[] = [
     "image": "/images/shops/219.svg",
     "menuImages": [
       "/menus/relax-25-11-25.jpg",
-      "/menus/relax-zuid-25-11-25.jpg",
       "/menus/relax-07-07-25.jpg"
     ]
   },
@@ -5376,8 +5365,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Tilburg",
     "image": "/images/shops/222.jpg",
     "menuImages": [
-      "/menus/the-grass-company-19-11-25.jpg",
-      "/menus/the-grass-company-2-22-10-25.jpg"
+      "/menus/the-grass-company-19-11-25.jpg"
     ]
   },
   {
@@ -5595,8 +5583,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/232.jpg",
     "menuImages": [
-      "/menus/green-place-27-10-25.jpg",
-      "/menus/green-place-2-08-10-25.jpg"
+      "/menus/green-place-27-10-25.jpg"
     ]
   },
   {

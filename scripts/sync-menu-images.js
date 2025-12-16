@@ -78,9 +78,22 @@ function syncMenuImages() {
         // Find files that start with this shop name and have a date pattern
         // The file should look like: normalizedShopName-DD-MM-YY.ext
         const shopFiles = allFiles.filter(file => {
+            // Strict match: The file must match normalizedShopName + '-' + Date
+            // normalizedShopName = "terps-army"
+            // file = "terps-army-01-01-25.jpg" -> Matches
+            // file = "terps-army-2-01-01-25.jpg" -> Should NOT match
+
+            // 1. Check if it starts with the name
             if (!file.startsWith(normalizedShopName + '-')) return false;
-            // distinct date pattern check
-            return /\d{2}-\d{2}-\d{2}\.\w+$/.test(file);
+
+            // 2. Remove the shop name prefix
+            const remainder = file.slice(normalizedShopName.length + 1); // +1 for the hyphen
+
+            // 3. The remainder MUST strictly match the date pattern "DD-MM-YY.ext"
+            // "2-06-12-25.jpg" does NOT match "^\d{2}-\d{2}-\d{2}\."
+            if (!/^\d{2}-\d{2}-\d{2}\.\w+$/.test(remainder)) return false;
+
+            return true;
         });
 
         if (shopFiles.length === 0) return;
@@ -95,7 +108,10 @@ function syncMenuImages() {
             return dateB - dateA; // Descending
         });
 
-        const newMenuImages = shopFiles.map(f => `/menus/${f}`);
+        // Limit to 2 newest images
+        const recentFiles = shopFiles.slice(0, 2);
+
+        const newMenuImages = recentFiles.map(f => `/menus/${f}`);
 
         // Compare with current images to see if we need to update
         // We only care if the list is different
