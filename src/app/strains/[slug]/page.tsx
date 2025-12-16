@@ -20,6 +20,7 @@ interface Strain {
         [key: string]: string;
     };
     image?: string; // URL to the hero image for this strain
+    imageAlt?: string; // [NEW] SEO alt text for the image
     sections?: {
         title: string;
         content: string;
@@ -96,7 +97,7 @@ export default async function StrainPage({ params }: { params: Promise<{ slug: s
                                 <Link href={strain.image || '/images/hero_bud.png'} target="_blank">
                                     <img
                                         src={strain.image || '/images/hero_bud.png'}
-                                        alt={`${strain.name} bud`}
+                                        alt={strain.imageAlt || `${strain.name} bud`}
                                         className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                                     />
                                 </Link>

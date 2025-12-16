@@ -3,19 +3,22 @@
     "slug": "acapulco-gold",
     "name": "Acapulco Gold",
     "descriptor": "A legendary Mexican landrace sativa known for its golden appearance.",
-    "image": "/images/shops/acapulco.jpg"
+    "image": "/images/shops/acapulco.jpg",
+    "imageAlt": "Acapulco Gold bud - A legendary Mexican landrace sativa known for its golden appearance"
   },
   {
     "slug": "durban-poison",
     "name": "Durban Poison",
     "descriptor": "A pure South African sativa known for its unique anise aroma and clear-headed energy.",
-    "image": "/images/shops/durban_poison.jpg"
+    "image": "/images/shops/durban_poison.jpg",
+    "imageAlt": "Durban Poison bud - A pure South African sativa known for its unique anise aroma and clear-headed energy"
   },
   {
     "slug": "skunk-1",
     "name": "Skunk #1",
     "descriptor": "The first stabilised hybrid offering high yields and reliable performance.",
-    "image": "/images/shops/skunk_1.png"
+    "image": "/images/shops/skunk_1.png",
+    "imageAlt": "Skunk #1 bud - The first stabilised hybrid offering high yields and reliable performance"
   },
   {
     "slug": "northern-lights",
@@ -47,13 +50,15 @@
         "content": "Northern Lights still matters because it solved problems that breeders continue to face: flowering time, consistency, and resin production. Its genetics appear in numerous modern strains, often quietly underpinning more fashionable names.\n\nAs one of the earliest true indoor champions, Northern Lights represents the moment cannabis breeding became technical, controlled, and repeatable."
       }
     ],
-    "image": "/images/shops/northern_lights.png"
+    "image": "/images/shops/northern_lights.png",
+    "imageAlt": "Northern Lights bud - A pure indica famous for its resin production and fast flowering"
   },
   {
     "slug": "haze",
     "name": "Haze",
     "descriptor": "A complex sativa polyhybrid combining Mexican, Colombian, Thai, and Indian genetics.",
-    "image": "/images/shops/haze.png"
+    "image": "/images/shops/haze.png",
+    "imageAlt": "Haze bud - A complex sativa polyhybrid combining Mexican, Colombian, Thai, and Indian genetics"
   },
   {
     "slug": "white-widow",
@@ -85,13 +90,15 @@
         "content": "White Widow remains relevant because it represents a turning point in cannabis breeding. It helped establish resin coverage and appearance as core quality markers and proved that balanced hybrids could succeed globally.\n\nEven decades later, White Widow is still grown, sold, and referenced — not as a novelty, but as a standard against which other strains are measured."
       }
     ],
-    "image": "/images/shops/white_widow.png"
+    "image": "/images/shops/white_widow.png",
+    "imageAlt": "White Widow bud - A defining 1990s hybrid that shaped Amsterdam coffeeshop culture"
   },
   {
     "slug": "super-silver-haze",
     "name": "Super Silver Haze",
     "descriptor": "A legendary 90s sativa hybrid connecting Skunk, Northern Lights, and Haze.",
-    "image": "/images/shops/super_silver_haze.png"
+    "image": "/images/shops/super_silver_haze.png",
+    "imageAlt": "Super Silver Haze bud - A legendary 90s sativa hybrid connecting Skunk, Northern Lights, and Haze"
   },
   {
     "slug": "jack-herer",
@@ -123,13 +130,15 @@
         "content": "Jack Herer still matters because it represents a high-water mark for balanced hybrid breeding. It demonstrated that potency, clarity, and reliability could coexist in a single strain.\n\nDecades later, Jack Herer remains a reference point for sativa-leaning hybrids and a symbol of the Dutch contribution to modern cannabis culture."
       }
     ],
-    "image": "/images/shops/jack_herer.jpg"
+    "image": "/images/shops/jack_herer.jpg",
+    "imageAlt": "Jack Herer bud - A celebrated hybrid combining Haze, Northern Lights, and Skunk"
   },
   {
     "slug": "ak-47",
     "name": "AK-47",
     "descriptor": "A sativa-dominant hybrid renowned for its potency and complex lineage.",
-    "image": "/images/shops/ak_47.png"
+    "image": "/images/shops/ak_47.png",
+    "imageAlt": "AK-47 bud - A sativa-dominant hybrid renowned for its potency and complex lineage"
   },
   {
     "slug": "chemdawg",
@@ -161,7 +170,8 @@
         "content": "Chemdawg matters because it is a **genetic keystone**. Many modern strains inherit its potency, aroma profile, or structure — even when the name itself is absent.\n\nWhile never a mainstream product, Chemdawg’s legacy is embedded in cannabis genetics. Understanding it helps explain why fuel-forward, high-impact strains became dominant in later decades."
       }
     ],
-    "image": "/images/shops/chemdawg.png"
+    "image": "/images/shops/chemdawg.png",
+    "imageAlt": "Chemdawg bud - The influential parent of chemical-fuel genetics and key to modern potency"
   },
   {
     "slug": "sour-diesel",
@@ -193,7 +203,8 @@
         "content": "Sour Diesel remains relevant because it introduced a flavour and effect profile that continues to be sought after decades later. Many modern “gas” or “diesel” strains owe their identity to its genetics.\n\nBeyond its name recognition, Sour Diesel represents a moment when aroma, energy, and cultural identity became inseparable from cannabis breeding — a legacy that still shapes menus today."
       }
     ],
-    "image": "/images/shops/sour_diesel.jpg"
+    "image": "/images/shops/sour_diesel.jpg",
+    "imageAlt": "Sour Diesel bud - An East Coast legend with a pungent, fuel-like terpene profile"
   },
   {
     "slug": "og-kush",
@@ -225,7 +236,8 @@
         "content": "Decades after its emergence, OG Kush remains relevant because of its genetic reach. Many modern favourites — from dessert strains to heavy indicas — trace some part of their lineage back to OG Kush. Its flavour profile still defines expectations, and its structure continues to influence breeding decisions.\n\nOG Kush is not just a classic strain; it is a **genetic engine** that links the legendary hybrids of the 1990s to the flavour‑driven cannabis of today."
       }
     ],
-    "image": "/images/shops/og_kush.png"
+    "image": "/images/shops/og_kush.png",
+    "imageAlt": "OG Kush bud - A foundational 1990s hybrid that shaped modern Kush genetics"
   },
   {
     "slug": "blue-dream",
@@ -257,7 +269,8 @@
         "content": "Blue Dream remains relevant because it set a template for dispensary-era cannabis. Many later hybrids aimed to replicate its balance, reliability, and broad appeal.\n\nEven as flavour-driven and high-THC strains gained popularity, Blue Dream endured as a benchmark for what a commercially successful, patient-friendly strain could be."
       }
     ],
-    "image": "/images/shops/blue_dream.jpg"
+    "image": "/images/shops/blue_dream.jpg",
+    "imageAlt": "Blue Dream bud - A high-yielding cross of Blueberry and Haze with broad appeal"
   },
   {
     "slug": "amnesia-haze",
@@ -289,13 +302,15 @@
         "content": "Amnesia Haze still matters because it preserved the intensity of classic sativas while adapting them to contemporary cultivation and retail environments.\n\nFor many European consumers, Amnesia Haze remains the reference point for what a powerful, cerebral cannabis strain should feel like — a role it has held for more than two decades."
       }
     ],
-    "image": "/images/shops/amnesia_haze.jpg"
+    "image": "/images/shops/amnesia_haze.jpg",
+    "imageAlt": "Amnesia Haze bud - A potent, long-flowering sativa that dominates European coffeeshop menus"
   },
   {
     "slug": "granddaddy-purple",
     "name": "Granddaddy Purple",
     "descriptor": "A famous purple indica cross of Purple Urkle and Big Bud.",
-    "image": "/images/shops/granddaddy_purple.png"
+    "image": "/images/shops/granddaddy_purple.png",
+    "imageAlt": "Granddaddy Purple bud - A famous purple indica cross of Purple Urkle and Big Bud"
   },
   {
     "slug": "girl-scout-cookies",
@@ -327,7 +342,8 @@
         "content": "GSC still matters because it reshaped breeding priorities. After its success, flavour, aroma, and brand identity became central to cannabis development.\n\nMany of today’s most popular strains are direct descendants of Girl Scout Cookies, making it a key bridge between classic genetics and the modern cannabis market."
       }
     ],
-    "image": "/images/shops/girl_scout_cookies_strain_flower_nug.png"
+    "image": "/images/shops/girl_scout_cookies_strain_flower_nug.png",
+    "imageAlt": "Girl Scout Cookies (GSC) bud - A flavor-focused hybrid that launched the modern dessert weed era"
   },
   {
     "slug": "gelato",
@@ -359,24 +375,28 @@
         "content": "Gelato still matters because it set a benchmark for what modern, flavour-forward cannabis could be. Many contemporary strains aim to replicate its balance of potency, smooth effects, and appealing terpene profile.\n\nAs both a destination strain and a breeding foundation, Gelato forms a crucial link between the original Cookies breakthrough and the broader landscape of modern cannabis genetics."
       }
     ],
-    "image": "/images/shops/gelato41.png"
+    "image": "/images/shops/gelato41.png",
+    "imageAlt": "Gelato bud - A creamy, visually striking cross of Sunset Sherbet and Thin Mint GSC"
   },
   {
     "slug": "zkittlez",
     "name": "Zkittlez",
     "descriptor": "An indica-dominant strain prized for its intense, candy-like fruit terpenes.",
-    "image": "/images/shops/zkittles.png"
+    "image": "/images/shops/zkittles.png",
+    "imageAlt": "Zkittlez bud - An indica-dominant strain prized for its intense, candy-like fruit terpenes"
   },
   {
     "slug": "wedding-cake",
     "name": "Wedding Cake",
     "descriptor": "A potent, vanilla-forward cross of Triangle Kush and Animal Mints.",
-    "image": "/images/shops/wedding_cake.jpg"
+    "image": "/images/shops/wedding_cake.jpg",
+    "imageAlt": "Wedding Cake bud - A potent, vanilla-forward cross of Triangle Kush and Animal Mints"
   },
   {
     "slug": "runtz",
     "name": "Runtz",
     "descriptor": "A highly popular cross of Zkittlez and Gelato with candy appeal.",
-    "image": "/images/shops/blueruntz1x_600x.png"
+    "image": "/images/shops/blueruntz1x_600x.png",
+    "imageAlt": "Runtz bud - A highly popular cross of Zkittlez and Gelato with candy appeal"
   }
 ]

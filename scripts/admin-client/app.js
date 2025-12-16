@@ -348,6 +348,7 @@ function populateStrainEditor(strain) {
     setValue('strainH1', strain.h1);
     setValue('strainIntro', strain.intro);
     setValue('strainInputImage', strain.image);
+    setValue('strainImageAlt', strain.imageAlt);
     document.getElementById('strainPreviewImage').src = strain.image || '/images/hero_bud.png';
 
     // Quick Facts
@@ -647,6 +648,7 @@ function setupListeners() {
     bindInput('strainH1', (v) => updateStrainState('h1', v));
     bindInput('strainIntro', (v) => updateStrainState('intro', v));
     bindInput('strainInputImage', (v) => updateStrainState('image', v));
+    bindInput('strainImageAlt', (v) => updateStrainState('imageAlt', v));
 
     // Image Upload
     document.getElementById('uploadImage').addEventListener('change', async (e) => {

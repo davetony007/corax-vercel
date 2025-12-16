@@ -229,24 +229,25 @@
         <!-- Strain Editor -->
         <div id="strainEditor" class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md hidden">
             <div class="flex justify-between items-start mb-6">
-                 <div>
+                <div>
                     <h2 id="editStrainName" class="text-3xl font-bold text-gray-800">Strain Name</h2>
-                    <input type="text" id="strainSlug" class="mt-2 text-sm text-gray-500 p-1 border rounded w-full" placeholder="slug">
+                    <input type="text" id="strainSlug" class="mt-2 text-sm text-gray-500 p-1 border rounded w-full"
+                        placeholder="slug">
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-6">
-                 <!-- Left Col -->
-                 <div class="space-y-4">
+                <!-- Left Col -->
+                <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-bold text-gray-700">Name</label>
                         <input type="text" id="strainName" class="w-full p-2 border rounded mt-1">
                     </div>
-                     <div>
+                    <div>
                         <label class="block text-sm font-bold text-gray-700">Descriptor</label>
                         <textarea id="strainDescriptor" rows="3" class="w-full p-2 border rounded mt-1"></textarea>
                     </div>
-                     <div>
+                    <div>
                         <label class="block text-sm font-bold text-gray-700">H1</label>
                         <input type="text" id="strainH1" class="w-full p-2 border rounded mt-1">
                     </div>
@@ -254,44 +255,54 @@
                         <label class="block text-sm font-bold text-gray-700">Intro</label>
                         <textarea id="strainIntro" rows="4" class="w-full p-2 border rounded mt-1"></textarea>
                     </div>
-                 </div>
+                </div>
 
-                 <!-- Right Col -->
-                 <div class="space-y-4">
+                <!-- Right Col -->
+                <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Strain Image</label>
                         <div class="mt-1 flex items-center space-x-4">
-                            <img id="strainPreviewImage" src="" class="w-20 h-20 object-contain rounded border bg-gray-900">
+                            <img id="strainPreviewImage" src=""
+                                class="w-20 h-20 object-contain rounded border bg-gray-900">
                             <div class="flex-1">
-                                <input type="text" id="strainInputImage" class="w-full p-2 border rounded text-sm mb-2" readonly placeholder="Default">
-                                <label class="cursor-pointer bg-purple-50 text-purple-600 px-3 py-1 rounded text-sm hover:bg-purple-100">
+                                <input type="text" id="strainInputImage" class="w-full p-2 border rounded text-sm mb-2"
+                                    readonly placeholder="Default">
+                                <label
+                                    class="cursor-pointer bg-purple-50 text-purple-600 px-3 py-1 rounded text-sm hover:bg-purple-100">
                                     Upload New
                                     <input type="file" id="uploadStrainImage" class="hidden" accept="image/*">
                                 </label>
                             </div>
                         </div>
+                        <div class="mt-2">
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Image Alt Text (SEO)</label>
+                            <input type="text" id="strainImageAlt" class="w-full p-2 border rounded text-sm"
+                                placeholder="e.g. Close up of Northern Lights bud">
+                        </div>
                     </div>
-                    
+
                     <div class="bg-gray-50 p-4 rounded border">
-                         <div class="flex justify-between items-center mb-2">
-                             <h3 class="font-bold text-sm text-gray-500 uppercase">Quick Facts</h3>
-                             <button id="addFactBtn" class="text-xs text-blue-600 hover:underline">+ Add</button>
-                         </div>
-                         <div id="factsContainer" class="space-y-2">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-sm text-gray-500 uppercase">Quick Facts</h3>
+                            <button id="addFactBtn" class="text-xs text-blue-600 hover:underline">+ Add</button>
+                        </div>
+                        <div id="factsContainer" class="space-y-2">
                             <!-- Facts injected -->
-                         </div>
+                        </div>
                     </div>
-                 </div>
+                </div>
             </div>
-            
+
             <div class="mt-6 pt-6 border-t">
-                 <div class="flex justify-between items-center mb-4">
-                     <h3 class="font-bold text-lg">Sections</h3>
-                     <button id="addStrainSectionBtn" class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded hover:bg-purple-200">+ Add Section</button>
-                 </div>
-                 <div id="strainSectionsContainer" class="space-y-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-lg">Sections</h3>
+                    <button id="addStrainSectionBtn"
+                        class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded hover:bg-purple-200">+ Add
+                        Section</button>
+                </div>
+                <div id="strainSectionsContainer" class="space-y-6">
                     <!-- Strain sections -->
-                 </div>
+                </div>
             </div>
         </div>
 
