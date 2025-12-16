@@ -801,6 +801,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/34.jpg",
     "menuImages": [
+      "/menus/abraxas-12-12-25.jpg",
       "/menus/abraxas-08-09-25.jpg"
     ]
   },
@@ -969,6 +970,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Zaandam",
     "image": "/images/shops/39.jpg",
     "menuImages": [
+      "/menus/headlines-09-12-25.jpg",
       "/menus/headlines-03-09-25.jpg"
     ],
     "reviews": [
@@ -2299,6 +2301,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/92.jpg",
     "menuImages": [
+      "/menus/bagheera-13-12-25.jpg",
       "/menus/bagheera-02-10-25.jpg"
     ],
     "reviews": [
@@ -2552,6 +2555,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/101.jpg",
     "menuImages": [
+      "/menus/de-overkant-hortus-13-12-25.jpg",
       "/menus/de-overkant-hortus-26-08-25.jpg"
     ]
   },
@@ -3880,6 +3884,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/153.jpg",
     "menuImages": [
+      "/menus/family-first-14-12-25.jpg",
       "/menus/family-first-07-11-25.jpg"
     ],
     "reviews": [
@@ -6308,6 +6313,7 @@ export const coffeeshops: CoffeeshopData[] = [
     "description": "Coffeeshop located in Amsterdam",
     "image": "/images/shops/265.jpg",
     "menuImages": [
+      "/menus/grey-area-09-12-25.jpg",
       "/menus/grey-area-27-10-25.jpg"
     ],
     "reviews": [
