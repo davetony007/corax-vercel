@@ -56,14 +56,33 @@ function deduplicateMenus() {
     // Find duplicates
     fileMap.forEach((exts, basename) => {
         if (exts.length > 1) {
-            // If we have both .png and .jpg, delete .jpg
-            if (exts.includes('.png') && exts.includes('.jpg')) {
-                const jpgFile = `${basename}.jpg`;
-                const jpgPath = path.join(MENUS_DIR, jpgFile);
-                fs.unlinkSync(jpgPath);
-                deletedFiles.push(jpgFile);
-                console.log(`Deleted duplicate: ${jpgFile} (kept .png)`);
-            }
+            // If we have multiple extensions for the same basename (same shop + same date), pick one.
+            // Preference order: jpg, jpeg, png, webp
+            const preferences = ['.jpg', '.jpeg', '.png', '.webp'];
+
+            // Sort extensions by preference index
+            exts.sort((a, b) => {
+                const idxA = preferences.indexOf(a);
+                const idxB = preferences.indexOf(b);
+                // If not in list, put at end
+                return (idxA === -1 ? 99 : idxA) - (idxB === -1 ? 99 : idxB);
+            });
+
+            // Keep the first one (most preferred), delete the others
+            const toKeep = exts[0];
+            const toDelete = exts.slice(1);
+
+            toDelete.forEach(ext => {
+                const fileToDelete = `${basename}${ext}`;
+                const deletePath = path.join(MENUS_DIR, fileToDelete);
+                try {
+                    fs.unlinkSync(deletePath);
+                    deletedFiles.push(fileToDelete);
+                    console.log(`Deleted duplicate: ${fileToDelete} (kept ${toKeep})`);
+                } catch (err) {
+                    console.error(`Failed to delete ${fileToDelete}: ${err.message}`);
+                }
+            });
         }
     });
 
