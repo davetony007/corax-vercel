@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const COFFEESHOPS_FILE = path.join(__dirname, '../src/data/coffeeshops.ts');
 const SITEMAP_FILE = path.join(__dirname, '../public/sitemap.xml');
-const BASE_URL = 'https://budstuntman.pages.dev';
+const BASE_URL = 'https://corax-amsterdam.vercel.app';
 
 // Static routes
 const staticRoutes = [

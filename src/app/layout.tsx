@@ -23,10 +23,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  metadataBase: new URL("https://budstuntman.pages.dev/"),
+  metadataBase: new URL("https://corax-amsterdam.vercel.app/"),
   openGraph: {
     type: "website",
-    url: "https://budstuntman.pages.dev/",
+    url: "https://corax-amsterdam.vercel.app/",
     title: "Corax Dawai: Amsterdam Coffeeshop Reviews & Guide 2026",
     description: "Discover Amsterdam's best coffeeshops with Corax Dawai. Honest reviews of weed, hash, and edibles. Find top shops, menus, and prices.",
     images: ["/og-image.png"],
@@ -63,7 +63,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Bud Stuntman",
               alternateName: ["Corax Dawai", "Corax Amsterdam"],
-              url: "https://budstuntman.pages.dev/",
+              url: "https://corax-amsterdam.vercel.app/",
               description: "Comprehensive guide to Amsterdam's coffeeshops and cannabis culture.",
               author: {
                 "@type": "Person",
@@ -73,7 +73,7 @@ export default function RootLayout({
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://budstuntman.pages.dev/?search={search_term_string}",
+                  "https://corax-amsterdam.vercel.app/?search={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

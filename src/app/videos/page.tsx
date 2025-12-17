@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Reviews & Walking Tours (2026)",
     description: "Watch in-depth Amsterdam coffeeshop reviews, walking tours, and shorts covering the best smoking spots, hash, edibles, and neighborhoods.",
     alternates: {
-        canonical: "https://budstuntman.pages.dev/videos",
+        canonical: "https://corax-amsterdam.vercel.app/videos",
     },
     openGraph: {
-        url: "https://budstuntman.pages.dev/videos",
+        url: "https://corax-amsterdam.vercel.app/videos",
     },
 };
 
@@ -24,12 +24,12 @@ export default function Videos() {
                         "@context": "https://schema.org",
                         "@type": "CollectionPage",
                         "name": "Amsterdam Coffeeshop Reviews & Videos",
-                        "url": "https://budstuntman.pages.dev/videos",
+                        "url": "https://corax-amsterdam.vercel.app/videos",
                         "description": "Collection of Amsterdam coffeeshop review videos, walking tours and shorts covering the best smoking spots, hash, edibles and neighborhoods for 2026 travelers.",
                         "isPartOf": {
                             "@type": "WebSite",
                             "name": "Bud Stuntman",
-                            "url": "https://budstuntman.pages.dev/"
+                            "url": "https://corax-amsterdam.vercel.app/"
                         }
                     })
                 }}

@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: "Support Corax Dawai: Independent Cannabis Journalism",
     description: "Support independent Amsterdam coffeeshop journalism. Help keep reviews honest and ad-free by backing Corax Dawai via Patreon, Ko-Fi, or Twitch.",
     alternates: {
-        canonical: "https://budstuntman.pages.dev/support",
+        canonical: "https://corax-amsterdam.vercel.app/support",
     },
     openGraph: {
-        url: "https://budstuntman.pages.dev/support",
+        url: "https://corax-amsterdam.vercel.app/support",
     },
 };
 

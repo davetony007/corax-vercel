@@ -6,7 +6,7 @@ import strainsData from '@/data/strains.json'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://budstuntman.pages.dev'
+    const baseUrl = 'https://corax-amsterdam.vercel.app'
 
     // Static routes
     const routes = [

@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Map (2026): Find Best Weed & Hash",
     description: "Interactive Amsterdam coffeeshop map. Filter for tourist-friendly spots, best hash, strong edibles, and local favorites for your 2026 trip.",
     alternates: {
-        canonical: "https://budstuntman.pages.dev/explore",
+        canonical: "https://corax-amsterdam.vercel.app/explore",
     },
     openGraph: {
-        url: "https://budstuntman.pages.dev/explore",
+        url: "https://corax-amsterdam.vercel.app/explore",
     },
 };
 
@@ -28,12 +28,12 @@ export default function Explore() {
                         "@context": "https://schema.org",
                         "@type": "CollectionPage",
                         "name": "Amsterdam Coffeeshop Map",
-                        "url": "https://budstuntman.pages.dev/explore",
+                        "url": "https://corax-amsterdam.vercel.app/explore",
                         "description": "Interactive Amsterdam coffeeshop map with filters for tourist-friendly shops, best cannabis, hash and waterhash, edibles, local favorites and historic spots for 2026 trips.",
                         "isPartOf": {
                             "@type": "WebSite",
                             "name": "Bud Stuntman",
-                            "url": "https://budstuntman.pages.dev/"
+                            "url": "https://corax-amsterdam.vercel.app/"
                         }
                     })
                 }}

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Guides (2026): Tips & Insiders",
     description: "Expert guides for navigating Amsterdam's coffeeshop scene. From first-time tips to finding the best hash, our deep dives help you smoke like a local.",
     alternates: {
-        canonical: "https://budstuntman.pages.dev/guides",
+        canonical: "https://corax-amsterdam.vercel.app/guides",
     },
     openGraph: {
         title: "Amsterdam Coffeeshop Guides (2026): Tips & Insiders",
         description: "Expert guides for navigating Amsterdam's coffeeshop scene. Tips, etiquette, and best product lists.",
         type: "website",
-        url: "https://budstuntman.pages.dev/guides",
+        url: "https://corax-amsterdam.vercel.app/guides",
         images: ["/og-image.png"],
     },
 };
@@ -44,13 +44,13 @@ export default function GuidesHub() {
                         "@type": "CollectionPage",
                         name: "Amsterdam Coffeeshop Guides",
                         description: "Expert guides for navigating Amsterdam's coffeeshop scene.",
-                        url: "https://budstuntman.pages.dev/guides",
+                        url: "https://corax-amsterdam.vercel.app/guides",
                         mainEntity: {
                             "@type": "ItemList",
                             itemListElement: guidesData.map((guide, index) => ({
                                 "@type": "ListItem",
                                 position: index + 1,
-                                url: `https://budstuntman.pages.dev/guides/${guide.slug}`,
+                                url: `https://corax-amsterdam.vercel.app/guides/${guide.slug}`,
                                 name: guide.title,
                                 description: guide.metaDescription,
                             })),

@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: "Amsterdam Coffeeshop Daily Updates: Instagram Feed",
     description: "Daily cannabis culture updates from Amsterdam. Follow Corax for the latest menu drops, smoke spots, and community vibes in the local scene.",
     alternates: {
-        canonical: "https://budstuntman.pages.dev/insta",
+        canonical: "https://corax-amsterdam.vercel.app/insta",
     },
     openGraph: {
-        url: "https://budstuntman.pages.dev/insta",
+        url: "https://corax-amsterdam.vercel.app/insta",
     },
 };
 

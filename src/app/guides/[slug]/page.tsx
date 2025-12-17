@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: guide.title,
         description: guide.metaDescription,
         alternates: {
-            canonical: `https://budstuntman.pages.dev/guides/${guide.slug}`,
+            canonical: `https://corax-amsterdam.vercel.app/guides/${guide.slug}`,
         },
         openGraph: {
             title: guide.title,
             description: guide.metaDescription,
             type: "article",
-            url: `https://budstuntman.pages.dev/guides/${guide.slug}`,
+            url: `https://corax-amsterdam.vercel.app/guides/${guide.slug}`,
             images: ["/og-image.png"],
         },
     };
@@ -66,7 +66,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                         "@context": "https://schema.org",
                         "@type": "Article",
                         headline: guide.title,
-                        image: ["https://budstuntman.pages.dev/og-image.png"],
+                        image: ["https://corax-amsterdam.vercel.app/og-image.png"],
                         author: {
                             "@type": "Person",
                             name: guide.author || "Corax Dawai",
@@ -77,7 +77,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                             name: "Bud Stuntman",
                             logo: {
                                 "@type": "ImageObject",
-                                url: "https://budstuntman.pages.dev/favicon.ico",
+                                url: "https://corax-amsterdam.vercel.app/favicon.ico",
                             },
                         },
                         datePublished: guide.datePublished || "2025-01-01",

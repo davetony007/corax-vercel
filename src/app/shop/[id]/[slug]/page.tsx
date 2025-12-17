@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const tagsStr = shop.tags?.length > 0 ? `known for ${shop.tags.slice(0, 2).join(" & ")}` : "in Amsterdam";
     const description = `Read our honest review of ${shop.name} (${shop.location}). ${ratingStr} and ${tagsStr}. Check the latest menu, prices, and explore our 2026 guide.`;
 
-    const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+    const canonicalUrl = `https://corax-amsterdam.vercel.app/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
 
     return {
         title,
@@ -105,7 +105,7 @@ export default async function ShopPage({ params }: { params: Promise<{ id: strin
         );
     }
 
-    const canonicalUrl = `https://budstuntman.pages.dev/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+    const canonicalUrl = `https://corax-amsterdam.vercel.app/shop/${shop.id}/${shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
     const description = `Read honest reviews for ${shop.name} in ${shop.location}.`;
 
     return (

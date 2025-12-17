@@ -20,9 +20,9 @@ while ((match = regex.exec(sitemapContent)) !== null) {
 console.log(`Found ${urls.length} URLs to submit.`);
 
 const data = JSON.stringify({
-    "host": "budstuntman.pages.dev",
+    "host": "corax-amsterdam.vercel.app",
     "key": "d2a8f4fef2844399871c60c335d86c7d",
-    "keyLocation": "https://budstuntman.pages.dev/d2a8f4fef2844399871c60c335d86c7d.txt",
+    "keyLocation": "https://corax-amsterdam.vercel.app/d2a8f4fef2844399871c60c335d86c7d.txt",
     "urlList": urls
 });
 

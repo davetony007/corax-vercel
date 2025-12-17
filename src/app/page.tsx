@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: "Amsterdam Coffeeshop Reviews, Map & Guide (2026)",
   description: "Plan your 2026 Amsterdam trip with honest coffeeshop reviews, an interactive map, daily videos, and practical guides for mature travelers.",
   alternates: {
-    canonical: "https://budstuntman.pages.dev/",
+    canonical: "https://corax-amsterdam.vercel.app/",
   }
 };
 
