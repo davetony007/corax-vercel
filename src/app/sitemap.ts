@@ -18,19 +18,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/guides',
         '/strains',
     ].map((route) => ({
-        url: `${baseUrl}${route}`,
+        url: `${baseUrl}${route}/`,
         lastModified: new Date(),
     }))
 
     // Dynamic guide routes
     const guideRoutes = guidesData.map((guide) => ({
-        url: `${baseUrl}/guides/${guide.slug}`,
+        url: `${baseUrl}/guides/${guide.slug}/`,
         lastModified: new Date(),
     }))
 
     // Dynamic strain routes
     const strainRoutes = strainsData.map((strain) => ({
-        url: `${baseUrl}/strains/${strain.slug}`,
+        url: `${baseUrl}/strains/${strain.slug}/`,
         lastModified: new Date(),
     }))
 
@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const shopRoutes = coffeeshops.map((shop) => {
         const slug = shop.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
         return {
-            url: `${baseUrl}/shop/${shop.id}/${slug}`,
+            url: `${baseUrl}/shop/${shop.id}/${slug}/`,
             lastModified: new Date(),
         }
     })
