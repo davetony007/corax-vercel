@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SITEMAP_FILE = path.join(__dirname, '../public/sitemap.xml');
+const SITEMAP_FILE = path.join(__dirname, '../out/sitemap.xml');
 
 // Extract URLs from sitemap
 const sitemapContent = fs.readFileSync(SITEMAP_FILE, 'utf-8');
