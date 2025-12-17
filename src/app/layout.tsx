@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   verification: {
-    google: "kBV-auX9NyTxu-xyeJYlwQ4R2n_PbsENmQnSWye_Ui4",
+    google: "e22Me2xmW74B2UEGaXRO-y9IzQy0t3NA8Dcd2Ub7DTw",
     other: {
       "msvalidate.01": "35BE4B98F4D7158553A56853893E44A9",
     },
