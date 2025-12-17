@@ -1,362 +1,402 @@
 [
-    {
-        "slug": "acapulco-gold",
-        "name": "Acapulco Gold",
-        "descriptor": "A legendary Mexican landrace sativa known for its golden appearance."
+  {
+    "slug": "acapulco-gold",
+    "name": "Acapulco Gold",
+    "descriptor": "A legendary Mexican landrace sativa known for its golden appearance.",
+    "image": "/images/shops/acapulco.jpg",
+    "imageAlt": "Acapulco Gold bud - A legendary Mexican landrace sativa known for its golden appearance"
+  },
+  {
+    "slug": "durban-poison",
+    "name": "Durban Poison",
+    "descriptor": "A pure South African sativa known for its unique anise aroma and clear-headed energy.",
+    "image": "/images/shops/durban_poison.jpg",
+    "imageAlt": "Durban Poison bud - A pure South African sativa known for its unique anise aroma and clear-headed energy"
+  },
+  {
+    "slug": "skunk-1",
+    "name": "Skunk #1",
+    "descriptor": "The first stabilised hybrid offering high yields and reliable performance.",
+    "image": "/images/shops/skunk_1.png",
+    "imageAlt": "Skunk #1 bud - The first stabilised hybrid offering high yields and reliable performance"
+  },
+  {
+    "slug": "northern-lights",
+    "name": "Northern Lights",
+    "descriptor": "A pure indica famous for its resin production and fast flowering.",
+    "h1": "Northern Lights",
+    "intro": "Northern Lights is one of the most influential indica-dominant cannabis strains ever created and a cornerstone of [1980s indoor cultivation](/guides/first-generation-hybrids-1980s). Known for its fast flowering, dense resin-coated buds, and deeply relaxing effects, it helped define what modern indica cannabis could be. Long before dispensaries and branding, Northern Lights set technical standards that breeders still rely on today.",
+    "quickFacts": {
+      "Genetics": "Afghani Indica (with later Thai influence in some phenotypes)",
+      "Type": "Indica-dominant hybrid",
+      "Era": "1980s",
+      "Known for": "Fast flowering, heavy resin production, strong body relaxation"
     },
-    {
-        "slug": "durban-poison",
-        "name": "Durban Poison",
-        "descriptor": "A pure South African sativa known for its unique anise aroma and clear-headed energy."
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Northern Lights traces its roots primarily to Afghani indica landraces, prized for their resilience, compact structure, and high resin output. These traits made it especially suited to indoor cultivation, which was becoming increasingly important during the 1980s.\n\nAfter its initial development in the United States, Northern Lights was refined and stabilised in the Netherlands, where breeders selected phenotypes that combined potency with consistency. This process transformed Northern Lights from a powerful plant into a reliable genetic template."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Northern Lights is best known for its **deeply calming, body-focused effects**. The experience typically begins with a gentle mental ease before settling into pronounced physical relaxation.\n\nIts aroma is often earthy, sweet, and slightly spicy, with subtle herbal notes. Compared to later fuel-heavy strains, Northern Lights feels smooth and understated — a reflection of its era and genetic origins."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Northern Lights rose to prominence during the **first-generation hybrid era of the 1980s**, when breeders focused on creating plants that flowered quickly and performed reliably indoors. It became a foundational strain for many later hybrids and was frequently used to stabilise more temperamental genetics.\n\nDuring the [1990s strain explosion](/guides/the-1990s-strain-explosion), Northern Lights played a supporting but crucial role, contributing structure and potency to crosses such as NL#5 × Haze and influencing countless breeding projects."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Northern Lights still matters because it solved problems that breeders continue to face: flowering time, consistency, and resin production. Its genetics appear in numerous modern strains, often quietly underpinning more fashionable names.\n\nAs one of the earliest true indoor champions, Northern Lights represents the moment cannabis breeding became technical, controlled, and repeatable."
+      }
+    ],
+    "image": "/images/shops/northern_lights.png",
+    "imageAlt": "Northern Lights bud - A pure indica famous for its resin production and fast flowering"
+  },
+  {
+    "slug": "haze",
+    "name": "Haze",
+    "descriptor": "A complex sativa polyhybrid combining Mexican, Colombian, Thai, and Indian genetics.",
+    "image": "/images/shops/haze.png",
+    "imageAlt": "Haze bud - A complex sativa polyhybrid combining Mexican, Colombian, Thai, and Indian genetics"
+  },
+  {
+    "slug": "white-widow",
+    "name": "White Widow",
+    "descriptor": "A defining 1990s hybrid that shaped Amsterdam coffeeshop culture.",
+    "h1": "White Widow",
+    "intro": "White Widow is one of the most recognisable cannabis strains of the 1990s and a defining symbol of the Amsterdam coffeeshop era. First appearing in the **mid-1990s**, it became famous for its extreme resin production, balanced effects, and visual impact. For many users outside the United States, White Widow was their first reference point for what “modern” cannabis looked and felt like.",
+    "quickFacts": {
+      "Genetics": "Brazilian Sativa × South Indian Indica",
+      "Type": "Balanced hybrid",
+      "Era": "1990s",
+      "Known for": "Heavy resin coverage, clear but relaxing effects"
     },
-    {
-        "slug": "skunk-1",
-        "name": "Skunk #1",
-        "descriptor": "The first stabilised hybrid offering high yields and reliable performance."
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "White Widow was bred in the Netherlands by crossing a Brazilian sativa landrace with a resin-rich South Indian indica. This pairing was deliberate: the sativa contributed mental clarity and uplift, while the indica added body relaxation and dense bud structure.\n\nThe result was a plant that produced an unusually thick layer of trichomes, giving the buds their characteristic white, frosted appearance. This visual quality became just as important to White Widow’s success as its effects."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "White Widow is known for delivering a **balanced, functional high**. The initial effects are often cerebral and energising, followed by a calm, steady body relaxation rather than heavy sedation.\n\nThis made it appealing to a wide range of users, including those seeking clarity, creativity, or social engagement without feeling overwhelmed. Its flavour profile is typically earthy and slightly spicy, with subtle citrus notes."
+      },
+      {
+        "title": "Historical Context",
+        "content": "White Widow rose to prominence during the [1990s strain explosion](/guides/the-1990s-strain-explosion), when Dutch seed banks and coffeeshops set global standards for cannabis quality. It quickly became a benchmark strain in Amsterdam, appearing consistently on menus and winning major competitions.\n\nIts success also influenced breeding throughout the [medical and commercial expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), as growers sought strains that combined potency, stability, and visual appeal. White Widow’s genetics went on to produce an entire family of “White” strains."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "White Widow remains relevant because it represents a turning point in cannabis breeding. It helped establish resin coverage and appearance as core quality markers and proved that balanced hybrids could succeed globally.\n\nEven decades later, White Widow is still grown, sold, and referenced — not as a novelty, but as a standard against which other strains are measured."
+      }
+    ],
+    "image": "/images/shops/white_widow.png",
+    "imageAlt": "White Widow bud - A defining 1990s hybrid that shaped Amsterdam coffeeshop culture"
+  },
+  {
+    "slug": "super-silver-haze",
+    "name": "Super Silver Haze",
+    "descriptor": "A legendary 90s sativa hybrid connecting Skunk, Northern Lights, and Haze.",
+    "image": "/images/shops/super_silver_haze.png",
+    "imageAlt": "Super Silver Haze bud - A legendary 90s sativa hybrid connecting Skunk, Northern Lights, and Haze"
+  },
+  {
+    "slug": "jack-herer",
+    "name": "Jack Herer",
+    "descriptor": "A celebrated hybrid combining Haze, Northern Lights, and Skunk.",
+    "h1": "Jack Herer",
+    "intro": "Jack Herer is one of the most iconic cannabis strains of the **[1990s](/guides/the-1990s-strain-explosion)**, closely associated with Dutch breeding excellence and Amsterdam coffeeshop culture. Named after the cannabis activist and author, the strain became known for delivering a clear, uplifting cerebral experience alongside reliable potency. Jack Herer helped define what a balanced, functional hybrid could be during a period of rapid genetic innovation.",
+    "quickFacts": {
+      "Genetics": "Northern Lights #5 × Shiva Skunk × Haze",
+      "Type": "Sativa-dominant hybrid",
+      "Era": "1990s",
+      "Known for": "Clear-headed effects, balance, Dutch coffeeshop popularity"
     },
-    {
-        "slug": "northern-lights",
-        "name": "Northern Lights",
-        "descriptor": "A pure indica famous for its resin production and fast flowering.",
-        "h1": "Northern Lights",
-        "intro": "Northern Lights is one of the most influential indica-dominant cannabis strains ever created and a cornerstone of [1980s indoor cultivation](/guides/first-generation-hybrids-1980s). Known for its fast flowering, dense resin-coated buds, and deeply relaxing effects, it helped define what modern indica cannabis could be. Long before dispensaries and branding, Northern Lights set technical standards that breeders still rely on today.",
-        "quickFacts": {
-            "Genetics": "Afghani Indica (with later Thai influence in some phenotypes)",
-            "Type": "Indica-dominant hybrid",
-            "Era": "1980s",
-            "Known for": "Fast flowering, heavy resin production, strong body relaxation"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Northern Lights traces its roots primarily to Afghani indica landraces, prized for their resilience, compact structure, and high resin output. These traits made it especially suited to indoor cultivation, which was becoming increasingly important during the 1980s.\n\nAfter its initial development in the United States, Northern Lights was refined and stabilised in the Netherlands, where breeders selected phenotypes that combined potency with consistency. This process transformed Northern Lights from a powerful plant into a reliable genetic template."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Northern Lights is best known for its **deeply calming, body-focused effects**. The experience typically begins with a gentle mental ease before settling into pronounced physical relaxation.\n\nIts aroma is often earthy, sweet, and slightly spicy, with subtle herbal notes. Compared to later fuel-heavy strains, Northern Lights feels smooth and understated — a reflection of its era and genetic origins."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Northern Lights rose to prominence during the **first-generation hybrid era of the 1980s**, when breeders focused on creating plants that flowered quickly and performed reliably indoors. It became a foundational strain for many later hybrids and was frequently used to stabilise more temperamental genetics.\n\nDuring the [1990s strain explosion](/guides/the-1990s-strain-explosion), Northern Lights played a supporting but crucial role, contributing structure and potency to crosses such as NL#5 × Haze and influencing countless breeding projects."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Northern Lights still matters because it solved problems that breeders continue to face: flowering time, consistency, and resin production. Its genetics appear in numerous modern strains, often quietly underpinning more fashionable names.\n\nAs one of the earliest true indoor champions, Northern Lights represents the moment cannabis breeding became technical, controlled, and repeatable."
-            }
-        ]
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Jack Herer was developed in the Netherlands by combining three influential genetic lines. [Northern Lights](/strains/northern-lights) #5 contributed potency and resin production, Shiva Skunk added structure and reliability, and Haze introduced cerebral uplift and complexity.\n\nThis carefully engineered combination produced a strain that captured the best qualities of each parent without extreme drawbacks, making it well suited to both indoor cultivation and broad consumer appeal."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Jack Herer is best known for its **energising, clear-headed effects**. The experience often feels mentally stimulating and creative, while maintaining a grounded physical calm rather than heavy sedation.\n\nIts aroma is typically described as spicy, herbal, and slightly piney, reflecting its Haze influence. Compared to later fuel-heavy strains, Jack Herer feels articulate and bright, aligning with its reputation as a functional daytime strain."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Jack Herer rose to prominence during the **[1990s strain explosion](/guides/the-1990s-strain-explosion)**, when Dutch seed banks played a central role in shaping global cannabis genetics. It became a staple of Amsterdam coffeeshops and won multiple awards, reinforcing the Netherlands’ influence during this era.\n\nThe strain’s popularity also carried into the **[early medical cannabis era](/guides/the-2000s-medical-cannabis-commercial-giants)**, where its balanced effects made it appealing to users seeking clarity and consistency."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Jack Herer still matters because it represents a high-water mark for balanced hybrid breeding. It demonstrated that potency, clarity, and reliability could coexist in a single strain.\n\nDecades later, Jack Herer remains a reference point for sativa-leaning hybrids and a symbol of the Dutch contribution to modern cannabis culture."
+      }
+    ],
+    "image": "/images/shops/jack_herer.jpg",
+    "imageAlt": "Jack Herer bud - A celebrated hybrid combining Haze, Northern Lights, and Skunk"
+  },
+  {
+    "slug": "ak-47",
+    "name": "AK-47",
+    "descriptor": "A sativa-dominant hybrid renowned for its potency and complex lineage.",
+    "image": "/images/shops/ak_47.png",
+    "imageAlt": "AK-47 bud - A sativa-dominant hybrid renowned for its potency and complex lineage"
+  },
+  {
+    "slug": "chemdawg",
+    "name": "Chemdawg",
+    "descriptor": "The influential parent of chemical-fuel genetics and key to modern potency.",
+    "h1": "Chemdawg",
+    "intro": "Chemdawg is one of the most important yet least fully understood cannabis strains in modern history. First appearing in the **early 1990s**, it became legendary for its extreme potency and sharp, chemical aroma. Although never as widely commercialised as some of its descendants, Chemdawg sits at the genetic core of several iconic lineages that continue to shape cannabis today.",
+    "quickFacts": {
+      "Genetics": "Unknown (often described as a possible Thai/Nepalese lineage)",
+      "Type": "Hybrid",
+      "Era": "Early 1990s",
+      "Known for": "Intense potency, fuel/chemical aroma, genetic influence"
     },
-    {
-        "slug": "haze",
-        "name": "Haze",
-        "descriptor": "A complex sativa polyhybrid combining Mexican, Colombian, Thai, and Indian genetics."
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Unlike many famous strains, Chemdawg’s origins are uncertain. The most widely accepted account traces it back to a single seed found in high-grade cannabis in 1991, later grown and preserved by a small circle of U.S. growers. Several phenotypes emerged over time, including Chemdawg ’91, Chem D, and Chem 4.\n\nWhat makes Chemdawg exceptional is not its stability, but its impact. Despite its mysterious background, it became a parent to some of the most influential strains ever created, acting as a genetic catalyst rather than a polished commercial product."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Chemdawg is known for **fast-onset cerebral intensity paired with heavy physical relaxation**. The effects can feel mentally stimulating and immersive at first, before settling into a deep, grounding body sensation.\n\nIts aroma profile is unmistakable: sharp, fuel-like, chemical, and sometimes sour. This scent category was unusual when Chemdawg first appeared and later became a defining feature of entire genetic families."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Chemdawg emerged during the [1990s strain explosion](/guides/the-1990s-strain-explosion), a period when underground growers began producing hybrids far stronger than earlier generations. Although it never dominated coffeeshop menus, its genetics quietly reshaped the landscape.\n\nChemdawg directly influenced the creation of Sour Diesel and OG Kush, two strains that went on to define cannabis culture in the United States and beyond. Through them, Chemdawg’s influence extended into the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants) and the modern era."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Chemdawg matters because it is a **genetic keystone**. Many modern strains inherit its potency, aroma profile, or structure — even when the name itself is absent.\n\nWhile never a mainstream product, Chemdawg’s legacy is embedded in cannabis genetics. Understanding it helps explain why fuel-forward, high-impact strains became dominant in later decades."
+      }
+    ],
+    "image": "/images/shops/chemdawg.png",
+    "imageAlt": "Chemdawg bud - The influential parent of chemical-fuel genetics and key to modern potency"
+  },
+  {
+    "slug": "sour-diesel",
+    "name": "Sour Diesel",
+    "descriptor": "An East Coast legend with a pungent, fuel-like terpene profile.",
+    "h1": "Sour Diesel",
+    "intro": "Sour Diesel is one of the most recognisable cannabis strains to emerge from the [1990s](/guides/the-1990s-strain-explosion), particularly associated with the U.S. East Coast. Known for its sharp fuel aroma and energising cerebral effects, Sour Diesel helped define an entire flavour category and cemented “diesel” as a genetic and cultural shorthand in modern cannabis.",
+    "quickFacts": {
+      "Genetics": "Commonly cited as Chemdawg ’91 × Super Skunk",
+      "Type": "Sativa-dominant hybrid",
+      "Era": "Mid–late 1990s",
+      "Known for": "Pungent fuel aroma, uplifting mental effects"
     },
-    {
-        "slug": "white-widow",
-        "name": "White Widow",
-        "descriptor": "A defining 1990s hybrid that shaped Amsterdam coffeeshop culture.",
-        "h1": "White Widow",
-        "intro": "White Widow is one of the most recognisable cannabis strains of the 1990s and a defining symbol of the Amsterdam coffeeshop era. First appearing in the **mid-1990s**, it became famous for its extreme resin production, balanced effects, and visual impact. For many users outside the United States, White Widow was their first reference point for what “modern” cannabis looked and felt like.",
-        "quickFacts": {
-            "Genetics": "Brazilian Sativa × South Indian Indica",
-            "Type": "Balanced hybrid",
-            "Era": "1990s",
-            "Known for": "Heavy resin coverage, clear but relaxing effects"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "White Widow was bred in the Netherlands by crossing a Brazilian sativa landrace with a resin-rich South Indian indica. This pairing was deliberate: the sativa contributed mental clarity and uplift, while the indica added body relaxation and dense bud structure.\n\nThe result was a plant that produced an unusually thick layer of trichomes, giving the buds their characteristic white, frosted appearance. This visual quality became just as important to White Widow’s success as its effects."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "White Widow is known for delivering a **balanced, functional high**. The initial effects are often cerebral and energising, followed by a calm, steady body relaxation rather than heavy sedation.\n\nThis made it appealing to a wide range of users, including those seeking clarity, creativity, or social engagement without feeling overwhelmed. Its flavour profile is typically earthy and slightly spicy, with subtle citrus notes."
-            },
-            {
-                "title": "Historical Context",
-                "content": "White Widow rose to prominence during the [1990s strain explosion](/guides/the-1990s-strain-explosion), when Dutch seed banks and coffeeshops set global standards for cannabis quality. It quickly became a benchmark strain in Amsterdam, appearing consistently on menus and winning major competitions.\n\nIts success also influenced breeding throughout the [medical and commercial expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), as growers sought strains that combined potency, stability, and visual appeal. White Widow’s genetics went on to produce an entire family of “White” strains."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "White Widow remains relevant because it represents a turning point in cannabis breeding. It helped establish resin coverage and appearance as core quality markers and proved that balanced hybrids could succeed globally.\n\nEven decades later, White Widow is still grown, sold, and referenced — not as a novelty, but as a standard against which other strains are measured."
-            }
-        ]
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Sour Diesel traces its origins back to [Chemdawg](/strains/chemdawg) genetics, most often linked to the Chemdawg ’91 cut. While exact details remain debated, the prevailing consensus places Sour Diesel as a cross involving Chemdawg and a Skunk lineage, resulting in a plant with both extreme aroma and strong cerebral impact.\n\nThis lineage explains Sour Diesel’s defining traits: Chemdawg’s raw intensity combined with Skunk’s vigour and structure. The result was a strain that stood out immediately from earlier hybrids."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Sour Diesel is best known for its **fast-acting, uplifting head high**. The effects are typically energising, creative, and mentally expansive, with relatively light body sedation compared to indica-dominant strains.\n\nIts aroma is unmistakable — sharp, sour, and fuel-like — often described as diesel, chemical, or skunky citrus. This scent profile became a blueprint for many later sativa-leaning hybrids."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Sour Diesel rose to prominence during the **1990s strain explosion**, as underground growers in the northeastern United States circulated exceptionally potent clones. It quickly became associated with New York–area cannabis culture and later spread nationwide.\n\nThrough its Chemdawg heritage, Sour Diesel connects directly to the same genetic wave that produced OG Kush. Its popularity carried forward into the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), where demand for functional, daytime strains increased."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Sour Diesel remains relevant because it introduced a flavour and effect profile that continues to be sought after decades later. Many modern “gas” or “diesel” strains owe their identity to its genetics.\n\nBeyond its name recognition, Sour Diesel represents a moment when aroma, energy, and cultural identity became inseparable from cannabis breeding — a legacy that still shapes menus today."
+      }
+    ],
+    "image": "/images/shops/sour_diesel.jpg",
+    "imageAlt": "Sour Diesel bud - An East Coast legend with a pungent, fuel-like terpene profile"
+  },
+  {
+    "slug": "og-kush",
+    "name": "OG Kush",
+    "descriptor": "A foundational 1990s hybrid that shaped modern Kush genetics.",
+    "h1": "OG Kush",
+    "intro": "OG Kush is one of the most influential cannabis strains of the modern era. Emerging in the **mid‑1990s**, it helped define the West Coast style of cannabis with its dense buds, fuel‑pine aroma, and powerful, relaxing effects. More than a single strain, OG Kush became a genetic foundation that shaped countless hybrids and an entire naming convention that still dominates menus today.",
+    "quickFacts": {
+      "Genetics": "Commonly cited as Chemdawg × (Lemon Thai × Hindu Kush)",
+      "Type": "Indica‑dominant hybrid",
+      "Era": "1990s",
+      "Known for": "Potency, gas/pine aroma, strong body relaxation"
     },
-    {
-        "slug": "super-silver-haze",
-        "name": "Super Silver Haze",
-        "descriptor": "A legendary 90s sativa hybrid connecting Skunk, Northern Lights, and Haze."
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "OG Kush’s lineage reflects a meeting of two major genetic worlds. The Chemdawg side contributed raw potency and sharp fuel notes, while the Lemon Thai × Hindu Kush background added citrus brightness and deep indica structure. Together, these influences produced a plant that was compact, resin‑heavy, and unusually strong for its time.\n\nWhile details of OG Kush’s exact origin remain debated, there is broad agreement that it arose in the U.S. during the 1990s and spread primarily as a clone‑only cut. This exclusivity helped preserve its characteristics and contributed to its mystique."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "OG Kush is best known for its **intense euphoric onset followed by heavy physical relaxation**. Mentally, it can feel uplifting and mood‑enhancing at first, before settling into a calming, sometimes sedating body effect.\n\nIts aroma profile — often described as **fuel, pine, citrus, and earth** — became a template for what many users now associate with “gas” strains. In the 1990s, this combination of flavour and strength set OG Kush apart from earlier hybrids."
+      },
+      {
+        "title": "Historical Context",
+        "content": "OG Kush rose to prominence during the [1990s strain explosion](/guides/the-1990s-strain-explosion), a period when hybrid potency and regional genetics pushed cannabis into the mainstream. It became a cornerstone of West Coast cannabis culture and later influenced breeding during the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), when consistency and strength were in high demand.\n\nThrough this period, OG Kush spawned numerous offshoots and phenotypes — including SFV OG, Tahoe OG, and Ghost OG — cementing “OG” as both a genetic marker and a cultural label."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Decades after its emergence, OG Kush remains relevant because of its genetic reach. Many modern favourites — from dessert strains to heavy indicas — trace some part of their lineage back to OG Kush. Its flavour profile still defines expectations, and its structure continues to influence breeding decisions.\n\nOG Kush is not just a classic strain; it is a **genetic engine** that links the legendary hybrids of the 1990s to the flavour‑driven cannabis of today."
+      }
+    ],
+    "image": "/images/shops/og_kush.png",
+    "imageAlt": "OG Kush bud - A foundational 1990s hybrid that shaped modern Kush genetics"
+  },
+  {
+    "slug": "blue-dream",
+    "name": "Blue Dream",
+    "descriptor": "A high-yielding cross of Blueberry and Haze with broad appeal.",
+    "h1": "Blue Dream",
+    "intro": "Blue Dream is one of the defining cannabis strains of the [2000s medical era](/guides/the-2000s-medical-cannabis-commercial-giants), particularly associated with California dispensaries. Known for its balanced effects, high yields, and broad appeal, it became a staple not because it was extreme, but because it worked reliably for both growers and users. Few strains better represent the shift from underground genetics to scalable, dispensary-ready cannabis.",
+    "quickFacts": {
+      "Genetics": "Blueberry × Haze",
+      "Type": "Sativa-dominant hybrid",
+      "Era": "Early–mid 2000s",
+      "Known for": "Balanced effects, high yields, wide acceptance"
     },
-    {
-        "slug": "jack-herer",
-        "name": "Jack Herer",
-        "descriptor": "A celebrated hybrid combining Haze, Northern Lights, and Skunk.",
-        "h1": "Jack Herer",
-        "intro": "Jack Herer is one of the most iconic cannabis strains of the **[1990s](/guides/the-1990s-strain-explosion)**, closely associated with Dutch breeding excellence and Amsterdam coffeeshop culture. Named after the cannabis activist and author, the strain became known for delivering a clear, uplifting cerebral experience alongside reliable potency. Jack Herer helped define what a balanced, functional hybrid could be during a period of rapid genetic innovation.",
-        "quickFacts": {
-            "Genetics": "Northern Lights #5 × Shiva Skunk × Haze",
-            "Type": "Sativa-dominant hybrid",
-            "Era": "1990s",
-            "Known for": "Clear-headed effects, balance, Dutch coffeeshop popularity"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Jack Herer was developed in the Netherlands by combining three influential genetic lines. [Northern Lights](/strains/northern-lights) #5 contributed potency and resin production, Shiva Skunk added structure and reliability, and Haze introduced cerebral uplift and complexity.\n\nThis carefully engineered combination produced a strain that captured the best qualities of each parent without extreme drawbacks, making it well suited to both indoor cultivation and broad consumer appeal."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Jack Herer is best known for its **energising, clear-headed effects**. The experience often feels mentally stimulating and creative, while maintaining a grounded physical calm rather than heavy sedation.\n\nIts aroma is typically described as spicy, herbal, and slightly piney, reflecting its Haze influence. Compared to later fuel-heavy strains, Jack Herer feels articulate and bright, aligning with its reputation as a functional daytime strain."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Jack Herer rose to prominence during the **[1990s strain explosion](/guides/the-1990s-strain-explosion)**, when Dutch seed banks played a central role in shaping global cannabis genetics. It became a staple of Amsterdam coffeeshops and won multiple awards, reinforcing the Netherlands’ influence during this era.\n\nThe strain’s popularity also carried into the **[early medical cannabis era](/guides/the-2000s-medical-cannabis-commercial-giants)**, where its balanced effects made it appealing to users seeking clarity and consistency."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Jack Herer still matters because it represents a high-water mark for balanced hybrid breeding. It demonstrated that potency, clarity, and reliability could coexist in a single strain.\n\nDecades later, Jack Herer remains a reference point for sativa-leaning hybrids and a symbol of the Dutch contribution to modern cannabis culture."
-            }
-        ]
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Blue Dream combines two influential genetic lines. Blueberry contributed sweetness, colour, and calming body effects, while Haze added cerebral lift and longer-lasting mental clarity. Together, they produced a strain that was potent yet approachable, and more forgiving to grow than many pure sativas.\n\nThis genetic balance made Blue Dream particularly suitable for large-scale cultivation, a key factor in its rapid spread through medical dispensaries."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Blue Dream is best known for its **smooth, balanced experience**. Users often describe an initial sense of mental uplift and focus followed by gentle physical relaxation, without heavy sedation.\n\nThis profile made it popular for daytime use and among medical patients seeking consistency rather than intensity. Its aroma is typically sweet and berry-forward with subtle herbal notes, reflecting its Blueberry heritage."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Blue Dream rose to prominence during the **medical cannabis expansion of the 2000s**, when dispensaries required strains that could be produced consistently and appealed to a wide audience. It became one of the most cultivated strains in California and a default menu option in many medical markets.\n\nIts success marked a shift in breeding priorities — away from niche or extreme strains, and toward hybrids optimised for stability, yield, and repeatability."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Blue Dream remains relevant because it set a template for dispensary-era cannabis. Many later hybrids aimed to replicate its balance, reliability, and broad appeal.\n\nEven as flavour-driven and high-THC strains gained popularity, Blue Dream endured as a benchmark for what a commercially successful, patient-friendly strain could be."
+      }
+    ],
+    "image": "/images/shops/blue_dream.jpg",
+    "imageAlt": "Blue Dream bud - A high-yielding cross of Blueberry and Haze with broad appeal"
+  },
+  {
+    "slug": "amnesia-haze",
+    "name": "Amnesia Haze",
+    "descriptor": "A potent, long-flowering sativa that dominates European coffeeshop menus.",
+    "h1": "Amnesia Haze",
+    "intro": "Amnesia Haze is one of the most dominant cannabis strains in European coffeeshop culture and a defining sativa of the **[late 1990s and 2000s](/guides/the-2000s-medical-cannabis-commercial-giants)**. Known for its powerful cerebral effects and long-lasting experience, it became a flagship strain in Amsterdam and beyond. Amnesia Haze demonstrated that sativa-dominant genetics could succeed commercially when refined for consistency and indoor cultivation.",
+    "quickFacts": {
+      "Genetics": "Southeast Asian sativas with Afghani influence (exact lineage varies by cut)",
+      "Type": "Sativa-dominant hybrid",
+      "Era": "Late 1990s–2000s",
+      "Known for": "Strong cerebral effects, long-lasting high, European dominance"
     },
-    {
-        "slug": "ak-47",
-        "name": "AK-47",
-        "descriptor": "A sativa-dominant hybrid renowned for its potency and complex lineage."
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Amnesia Haze emerged from the refinement of classic Haze genetics, which originally combined Southeast Asian landrace sativas known for their intensity and duration. To make these genetics viable for indoor cultivation, breeders introduced Afghani influence, improving flowering time, yield, and structure.\n\nMultiple versions of Amnesia Haze exist due to different breeding programs and selections over time. Despite these variations, the defining characteristics — powerful sativa effects and distinctive aroma — remain consistent across cuts."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Amnesia Haze is best known for its **intense, long-lasting cerebral high**. The experience is typically energetic and mentally stimulating, often described as immersive and expansive rather than physically sedating.\n\nIts aroma is commonly citrus-forward with herbal and earthy undertones, reflecting its Haze lineage. Compared to earlier pure sativas, Amnesia Haze offers improved manageability without losing its characteristic strength."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Amnesia Haze rose to prominence during the **[medical and commercial cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants)**, particularly in the Netherlands. It became a staple of Amsterdam coffeeshops, valued for delivering a strong sativa experience in a format that growers could reproduce reliably.\n\nThe strain also represents the successful evolution of Haze genetics, bridging the gap between the long-flowering sativas of earlier decades and the demands of modern cannabis markets."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Amnesia Haze still matters because it preserved the intensity of classic sativas while adapting them to contemporary cultivation and retail environments.\n\nFor many European consumers, Amnesia Haze remains the reference point for what a powerful, cerebral cannabis strain should feel like — a role it has held for more than two decades."
+      }
+    ],
+    "image": "/images/shops/amnesia_haze.jpg",
+    "imageAlt": "Amnesia Haze bud - A potent, long-flowering sativa that dominates European coffeeshop menus"
+  },
+  {
+    "slug": "granddaddy-purple",
+    "name": "Granddaddy Purple",
+    "descriptor": "A famous purple indica cross of Purple Urkle and Big Bud.",
+    "image": "/images/shops/granddaddy_purple.png",
+    "imageAlt": "Granddaddy Purple bud - A famous purple indica cross of Purple Urkle and Big Bud"
+  },
+  {
+    "slug": "girl-scout-cookies",
+    "name": "Girl Scout Cookies (GSC)",
+    "descriptor": "A flavor-focused hybrid that launched the modern dessert weed era.",
+    "h1": "Girl Scout Cookies (GSC)",
+    "intro": "Girl Scout Cookies, often shortened to **GSC**, is one of the most influential cannabis strains of the [2010s](/guides/the-candy-cookies-branding-era), marking a clear shift toward flavour-driven breeding and brand-aware genetics. Emerging from California, it combined high potency with a sweet, doughy aroma and striking visual appeal. GSC didn’t just succeed as a strain — it changed what consumers expected from modern cannabis.",
+    "quickFacts": {
+      "Genetics": "OG Kush × Durban Poison",
+      "Type": "Hybrid",
+      "Era": "Early 2010s",
+      "Known for": "Dessert-like flavour, high potency, genetic influence"
     },
-    {
-        "slug": "chemdawg",
-        "name": "Chemdawg",
-        "descriptor": "The influential parent of chemical-fuel genetics and key to modern potency.",
-        "h1": "Chemdawg",
-        "intro": "Chemdawg is one of the most important yet least fully understood cannabis strains in modern history. First appearing in the **early 1990s**, it became legendary for its extreme potency and sharp, chemical aroma. Although never as widely commercialised as some of its descendants, Chemdawg sits at the genetic core of several iconic lineages that continue to shape cannabis today.",
-        "quickFacts": {
-            "Genetics": "Unknown (often described as a possible Thai/Nepalese lineage)",
-            "Type": "Hybrid",
-            "Era": "Early 1990s",
-            "Known for": "Intense potency, fuel/chemical aroma, genetic influence"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Unlike many famous strains, Chemdawg’s origins are uncertain. The most widely accepted account traces it back to a single seed found in high-grade cannabis in 1991, later grown and preserved by a small circle of U.S. growers. Several phenotypes emerged over time, including Chemdawg ’91, Chem D, and Chem 4.\n\nWhat makes Chemdawg exceptional is not its stability, but its impact. Despite its mysterious background, it became a parent to some of the most influential strains ever created, acting as a genetic catalyst rather than a polished commercial product."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Chemdawg is known for **fast-onset cerebral intensity paired with heavy physical relaxation**. The effects can feel mentally stimulating and immersive at first, before settling into a deep, grounding body sensation.\n\nIts aroma profile is unmistakable: sharp, fuel-like, chemical, and sometimes sour. This scent category was unusual when Chemdawg first appeared and later became a defining feature of entire genetic families."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Chemdawg emerged during the [1990s strain explosion](/guides/the-1990s-strain-explosion), a period when underground growers began producing hybrids far stronger than earlier generations. Although it never dominated coffeeshop menus, its genetics quietly reshaped the landscape.\n\nChemdawg directly influenced the creation of Sour Diesel and OG Kush, two strains that went on to define cannabis culture in the United States and beyond. Through them, Chemdawg’s influence extended into the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants) and the modern era."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Chemdawg matters because it is a **genetic keystone**. Many modern strains inherit its potency, aroma profile, or structure — even when the name itself is absent.\n\nWhile never a mainstream product, Chemdawg’s legacy is embedded in cannabis genetics. Understanding it helps explain why fuel-forward, high-impact strains became dominant in later decades."
-            }
-        ]
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "GSC’s lineage reflects a deliberate pairing of two powerful but contrasting genetics. [OG Kush](/strains/og-kush) contributed strength, density, and body effects, while Durban Poison added cerebral lift and sweetness. This combination produced a strain that was both mentally engaging and physically relaxing.\n\nUnlike earlier strains that spread quietly, GSC circulated through a mix of underground cultivation and early legal markets, allowing its characteristics to be preserved and rapidly refined into multiple phenotypes."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "GSC is known for a **euphoric, mood-lifting onset** followed by deep physical relaxation. The effects tend to feel immersive and long-lasting, often described as both mentally stimulating and physically calming.\n\nIts aroma and flavour profile — sweet, baked goods–like, with hints of mint and spice — stood out sharply from fuel-heavy strains of earlier decades. This sensory appeal played a major role in its rise."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Girl Scout Cookies rose to prominence during the **[2010s branding and flavour-driven era](/guides/the-candy-cookies-branding-era)**, when legal markets and social media amplified strain identity. It marked a turning point where flavour, name recognition, and visual presentation became as important as raw potency.\n\nGSC became the genetic foundation for a wide family of modern strains, including Thin Mint, Sunset Sherbet, Gelato, Wedding Cake, and Runtz. Through these descendants, its influence spread globally and defined the modern dessert-strain category."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "GSC still matters because it reshaped breeding priorities. After its success, flavour, aroma, and brand identity became central to cannabis development.\n\nMany of today’s most popular strains are direct descendants of Girl Scout Cookies, making it a key bridge between classic genetics and the modern cannabis market."
+      }
+    ],
+    "image": "/images/shops/girl_scout_cookies_strain_flower_nug.png",
+    "imageAlt": "Girl Scout Cookies (GSC) bud - A flavor-focused hybrid that launched the modern dessert weed era"
+  },
+  {
+    "slug": "gelato",
+    "name": "Gelato",
+    "descriptor": "A creamy, visually striking cross of Sunset Sherbet and Thin Mint GSC.",
+    "h1": "Gelato",
+    "intro": "Gelato is one of the defining cannabis strains of the **[mid–late 2010s](/guides/the-candy-cookies-branding-era)**, representing the refinement of dessert-style genetics that followed the rise of Girl Scout Cookies. Developed in California, Gelato combined high potency with a creamy, sweet flavour profile and striking visual appeal. It marked the moment when flavour, balance, and presentation became inseparable from modern cannabis breeding.",
+    "quickFacts": {
+      "Genetics": "Thin Mint Girl Scout Cookies × Sunset Sherbet",
+      "Type": "Balanced hybrid",
+      "Era": "Mid–late 2010s",
+      "Known for": "Dessert flavours, visual appeal, genetic influence"
     },
-    {
-        "slug": "sour-diesel",
-        "name": "Sour Diesel",
-        "descriptor": "An East Coast legend with a pungent, fuel-like terpene profile.",
-        "h1": "Sour Diesel",
-        "intro": "Sour Diesel is one of the most recognisable cannabis strains to emerge from the [1990s](/guides/the-1990s-strain-explosion), particularly associated with the U.S. East Coast. Known for its sharp fuel aroma and energising cerebral effects, Sour Diesel helped define an entire flavour category and cemented “diesel” as a genetic and cultural shorthand in modern cannabis.",
-        "quickFacts": {
-            "Genetics": "Commonly cited as Chemdawg ’91 × Super Skunk",
-            "Type": "Sativa-dominant hybrid",
-            "Era": "Mid–late 1990s",
-            "Known for": "Pungent fuel aroma, uplifting mental effects"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Sour Diesel traces its origins back to [Chemdawg](/strains/chemdawg) genetics, most often linked to the Chemdawg ’91 cut. While exact details remain debated, the prevailing consensus places Sour Diesel as a cross involving Chemdawg and a Skunk lineage, resulting in a plant with both extreme aroma and strong cerebral impact.\n\nThis lineage explains Sour Diesel’s defining traits: Chemdawg’s raw intensity combined with Skunk’s vigour and structure. The result was a strain that stood out immediately from earlier hybrids."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Sour Diesel is best known for its **fast-acting, uplifting head high**. The effects are typically energising, creative, and mentally expansive, with relatively light body sedation compared to indica-dominant strains.\n\nIts aroma is unmistakable — sharp, sour, and fuel-like — often described as diesel, chemical, or skunky citrus. This scent profile became a blueprint for many later sativa-leaning hybrids."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Sour Diesel rose to prominence during the **1990s strain explosion**, as underground growers in the northeastern United States circulated exceptionally potent clones. It quickly became associated with New York–area cannabis culture and later spread nationwide.\n\nThrough its Chemdawg heritage, Sour Diesel connects directly to the same genetic wave that produced OG Kush. Its popularity carried forward into the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), where demand for functional, daytime strains increased."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Sour Diesel remains relevant because it introduced a flavour and effect profile that continues to be sought after decades later. Many modern “gas” or “diesel” strains owe their identity to its genetics.\n\nBeyond its name recognition, Sour Diesel represents a moment when aroma, energy, and cultural identity became inseparable from cannabis breeding — a legacy that still shapes menus today."
-            }
-        ]
-    },
-    {
-        "slug": "og-kush",
-        "name": "OG Kush",
-        "descriptor": "A foundational 1990s hybrid that shaped modern Kush genetics.",
-        "h1": "OG Kush",
-        "intro": "OG Kush is one of the most influential cannabis strains of the modern era. Emerging in the **mid‑1990s**, it helped define the West Coast style of cannabis with its dense buds, fuel‑pine aroma, and powerful, relaxing effects. More than a single strain, OG Kush became a genetic foundation that shaped countless hybrids and an entire naming convention that still dominates menus today.",
-        "quickFacts": {
-            "Genetics": "Commonly cited as Chemdawg × (Lemon Thai × Hindu Kush)",
-            "Type": "Indica‑dominant hybrid",
-            "Era": "1990s",
-            "Known for": "Potency, gas/pine aroma, strong body relaxation"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "OG Kush’s lineage reflects a meeting of two major genetic worlds. The Chemdawg side contributed raw potency and sharp fuel notes, while the Lemon Thai × Hindu Kush background added citrus brightness and deep indica structure. Together, these influences produced a plant that was compact, resin‑heavy, and unusually strong for its time.\n\nWhile details of OG Kush’s exact origin remain debated, there is broad agreement that it arose in the U.S. during the 1990s and spread primarily as a clone‑only cut. This exclusivity helped preserve its characteristics and contributed to its mystique."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "OG Kush is best known for its **intense euphoric onset followed by heavy physical relaxation**. Mentally, it can feel uplifting and mood‑enhancing at first, before settling into a calming, sometimes sedating body effect.\n\nIts aroma profile — often described as **fuel, pine, citrus, and earth** — became a template for what many users now associate with “gas” strains. In the 1990s, this combination of flavour and strength set OG Kush apart from earlier hybrids."
-            },
-            {
-                "title": "Historical Context",
-                "content": "OG Kush rose to prominence during the [1990s strain explosion](/guides/the-1990s-strain-explosion), a period when hybrid potency and regional genetics pushed cannabis into the mainstream. It became a cornerstone of West Coast cannabis culture and later influenced breeding during the [medical cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants), when consistency and strength were in high demand.\n\nThrough this period, OG Kush spawned numerous offshoots and phenotypes — including SFV OG, Tahoe OG, and Ghost OG — cementing “OG” as both a genetic marker and a cultural label."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Decades after its emergence, OG Kush remains relevant because of its genetic reach. Many modern favourites — from dessert strains to heavy indicas — trace some part of their lineage back to OG Kush. Its flavour profile still defines expectations, and its structure continues to influence breeding decisions.\n\nOG Kush is not just a classic strain; it is a **genetic engine** that links the legendary hybrids of the 1990s to the flavour‑driven cannabis of today."
-            }
-        ]
-    },
-    {
-        "slug": "blue-dream",
-        "name": "Blue Dream",
-        "descriptor": "A high-yielding cross of Blueberry and Haze with broad appeal.",
-        "h1": "Blue Dream",
-        "intro": "Blue Dream is one of the defining cannabis strains of the [2000s medical era](/guides/the-2000s-medical-cannabis-commercial-giants), particularly associated with California dispensaries. Known for its balanced effects, high yields, and broad appeal, it became a staple not because it was extreme, but because it worked reliably for both growers and users. Few strains better represent the shift from underground genetics to scalable, dispensary-ready cannabis.",
-        "quickFacts": {
-            "Genetics": "Blueberry × Haze",
-            "Type": "Sativa-dominant hybrid",
-            "Era": "Early–mid 2000s",
-            "Known for": "Balanced effects, high yields, wide acceptance"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Blue Dream combines two influential genetic lines. Blueberry contributed sweetness, colour, and calming body effects, while Haze added cerebral lift and longer-lasting mental clarity. Together, they produced a strain that was potent yet approachable, and more forgiving to grow than many pure sativas.\n\nThis genetic balance made Blue Dream particularly suitable for large-scale cultivation, a key factor in its rapid spread through medical dispensaries."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Blue Dream is best known for its **smooth, balanced experience**. Users often describe an initial sense of mental uplift and focus followed by gentle physical relaxation, without heavy sedation.\n\nThis profile made it popular for daytime use and among medical patients seeking consistency rather than intensity. Its aroma is typically sweet and berry-forward with subtle herbal notes, reflecting its Blueberry heritage."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Blue Dream rose to prominence during the **medical cannabis expansion of the 2000s**, when dispensaries required strains that could be produced consistently and appealed to a wide audience. It became one of the most cultivated strains in California and a default menu option in many medical markets.\n\nIts success marked a shift in breeding priorities — away from niche or extreme strains, and toward hybrids optimised for stability, yield, and repeatability."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Blue Dream remains relevant because it set a template for dispensary-era cannabis. Many later hybrids aimed to replicate its balance, reliability, and broad appeal.\n\nEven as flavour-driven and high-THC strains gained popularity, Blue Dream endured as a benchmark for what a commercially successful, patient-friendly strain could be."
-            }
-        ]
-    },
-    {
-        "slug": "amnesia-haze",
-        "name": "Amnesia Haze",
-        "descriptor": "A potent, long-flowering sativa that dominates European coffeeshop menus.",
-        "h1": "Amnesia Haze",
-        "intro": "Amnesia Haze is one of the most dominant cannabis strains in European coffeeshop culture and a defining sativa of the **[late 1990s and 2000s](/guides/the-2000s-medical-cannabis-commercial-giants)**. Known for its powerful cerebral effects and long-lasting experience, it became a flagship strain in Amsterdam and beyond. Amnesia Haze demonstrated that sativa-dominant genetics could succeed commercially when refined for consistency and indoor cultivation.",
-        "quickFacts": {
-            "Genetics": "Southeast Asian sativas with Afghani influence (exact lineage varies by cut)",
-            "Type": "Sativa-dominant hybrid",
-            "Era": "Late 1990s–2000s",
-            "Known for": "Strong cerebral effects, long-lasting high, European dominance"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Amnesia Haze emerged from the refinement of classic Haze genetics, which originally combined Southeast Asian landrace sativas known for their intensity and duration. To make these genetics viable for indoor cultivation, breeders introduced Afghani influence, improving flowering time, yield, and structure.\n\nMultiple versions of Amnesia Haze exist due to different breeding programs and selections over time. Despite these variations, the defining characteristics — powerful sativa effects and distinctive aroma — remain consistent across cuts."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Amnesia Haze is best known for its **intense, long-lasting cerebral high**. The experience is typically energetic and mentally stimulating, often described as immersive and expansive rather than physically sedating.\n\nIts aroma is commonly citrus-forward with herbal and earthy undertones, reflecting its Haze lineage. Compared to earlier pure sativas, Amnesia Haze offers improved manageability without losing its characteristic strength."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Amnesia Haze rose to prominence during the **[medical and commercial cannabis expansion of the 2000s](/guides/the-2000s-medical-cannabis-commercial-giants)**, particularly in the Netherlands. It became a staple of Amsterdam coffeeshops, valued for delivering a strong sativa experience in a format that growers could reproduce reliably.\n\nThe strain also represents the successful evolution of Haze genetics, bridging the gap between the long-flowering sativas of earlier decades and the demands of modern cannabis markets."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Amnesia Haze still matters because it preserved the intensity of classic sativas while adapting them to contemporary cultivation and retail environments.\n\nFor many European consumers, Amnesia Haze remains the reference point for what a powerful, cerebral cannabis strain should feel like — a role it has held for more than two decades."
-            }
-        ]
-    },
-    {
-        "slug": "granddaddy-purple",
-        "name": "Granddaddy Purple",
-        "descriptor": "A famous purple indica cross of Purple Urkle and Big Bud."
-    },
-    {
-        "slug": "girl-scout-cookies",
-        "name": "Girl Scout Cookies (GSC)",
-        "descriptor": "A flavor-focused hybrid that launched the modern dessert weed era.",
-        "h1": "Girl Scout Cookies (GSC)",
-        "intro": "Girl Scout Cookies, often shortened to **GSC**, is one of the most influential cannabis strains of the [2010s](/guides/the-candy-cookies-branding-era), marking a clear shift toward flavour-driven breeding and brand-aware genetics. Emerging from California, it combined high potency with a sweet, doughy aroma and striking visual appeal. GSC didn’t just succeed as a strain — it changed what consumers expected from modern cannabis.",
-        "quickFacts": {
-            "Genetics": "OG Kush × Durban Poison",
-            "Type": "Hybrid",
-            "Era": "Early 2010s",
-            "Known for": "Dessert-like flavour, high potency, genetic influence"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "GSC’s lineage reflects a deliberate pairing of two powerful but contrasting genetics. [OG Kush](/strains/og-kush) contributed strength, density, and body effects, while Durban Poison added cerebral lift and sweetness. This combination produced a strain that was both mentally engaging and physically relaxing.\n\nUnlike earlier strains that spread quietly, GSC circulated through a mix of underground cultivation and early legal markets, allowing its characteristics to be preserved and rapidly refined into multiple phenotypes."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "GSC is known for a **euphoric, mood-lifting onset** followed by deep physical relaxation. The effects tend to feel immersive and long-lasting, often described as both mentally stimulating and physically calming.\n\nIts aroma and flavour profile — sweet, baked goods–like, with hints of mint and spice — stood out sharply from fuel-heavy strains of earlier decades. This sensory appeal played a major role in its rise."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Girl Scout Cookies rose to prominence during the **[2010s branding and flavour-driven era](/guides/the-candy-cookies-branding-era)**, when legal markets and social media amplified strain identity. It marked a turning point where flavour, name recognition, and visual presentation became as important as raw potency.\n\nGSC became the genetic foundation for a wide family of modern strains, including Thin Mint, Sunset Sherbet, Gelato, Wedding Cake, and Runtz. Through these descendants, its influence spread globally and defined the modern dessert-strain category."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "GSC still matters because it reshaped breeding priorities. After its success, flavour, aroma, and brand identity became central to cannabis development.\n\nMany of today’s most popular strains are direct descendants of Girl Scout Cookies, making it a key bridge between classic genetics and the modern cannabis market."
-            }
-        ]
-    },
-    {
-        "slug": "gelato",
-        "name": "Gelato",
-        "descriptor": "A creamy, visually striking cross of Sunset Sherbet and Thin Mint GSC.",
-        "h1": "Gelato",
-        "intro": "Gelato is one of the defining cannabis strains of the **[mid–late 2010s](/guides/the-candy-cookies-branding-era)**, representing the refinement of dessert-style genetics that followed the rise of Girl Scout Cookies. Developed in California, Gelato combined high potency with a creamy, sweet flavour profile and striking visual appeal. It marked the moment when flavour, balance, and presentation became inseparable from modern cannabis breeding.",
-        "quickFacts": {
-            "Genetics": "Thin Mint Girl Scout Cookies × Sunset Sherbet",
-            "Type": "Balanced hybrid",
-            "Era": "Mid–late 2010s",
-            "Known for": "Dessert flavours, visual appeal, genetic influence"
-        },
-        "sections": [
-            {
-                "title": "Genetics & Lineage",
-                "content": "Gelato was created by crossing Thin Mint GSC with Sunset Sherbet, both descendants of the [Girl Scout Cookies](/strains/girl-scout-cookies) genetic family. Thin Mint contributed potency and structure, while Sunset Sherbet added sweetness, colour, and a creamy terpene profile.\n\nThis combination produced a strain that retained strong effects while smoothing out some of the harsher fuel notes found in earlier generations. Gelato’s genetics were intentionally refined rather than experimental, reflecting the maturity of breeding during this era."
-            },
-            {
-                "title": "Effects & Characteristics",
-                "content": "Gelato is known for a **euphoric, uplifting mental effect paired with gentle physical relaxation**. The experience is often described as immersive without being overwhelming, making it appealing to a broad audience.\n\nIts aroma and flavour profile leans toward sweet cream, berries, and subtle citrus, with a smooth finish. Visually, Gelato buds are often dense and colourful, reinforcing its reputation as a premium modern strain."
-            },
-            {
-                "title": "Historical Context",
-                "content": "Gelato rose to prominence during the **[2010s–2020s candy and dessert strain era](/guides/the-candy-cookies-branding-era)**, when cannabis breeding became closely tied to flavour, branding, and visual presentation. It represented a second-generation evolution of Girl Scout Cookies genetics, demonstrating how dessert strains could be refined rather than simply intensified.\n\nGelato also became a prolific parent strain, giving rise to numerous popular hybrids and helping solidify dessert profiles as a permanent category in modern cannabis."
-            },
-            {
-                "title": "Why This Strain Still Matters",
-                "content": "Gelato still matters because it set a benchmark for what modern, flavour-forward cannabis could be. Many contemporary strains aim to replicate its balance of potency, smooth effects, and appealing terpene profile.\n\nAs both a destination strain and a breeding foundation, Gelato forms a crucial link between the original Cookies breakthrough and the broader landscape of modern cannabis genetics."
-            }
-        ]
-    },
-    {
-        "slug": "zkittlez",
-        "name": "Zkittlez",
-        "descriptor": "An indica-dominant strain prized for its intense, candy-like fruit terpenes."
-    },
-    {
-        "slug": "wedding-cake",
-        "name": "Wedding Cake",
-        "descriptor": "A potent, vanilla-forward cross of Triangle Kush and Animal Mints."
-    },
-    {
-        "slug": "runtz",
-        "name": "Runtz",
-        "descriptor": "A highly popular cross of Zkittlez and Gelato with candy appeal."
-    }
+    "sections": [
+      {
+        "title": "Genetics & Lineage",
+        "content": "Gelato was created by crossing Thin Mint GSC with Sunset Sherbet, both descendants of the [Girl Scout Cookies](/strains/girl-scout-cookies) genetic family. Thin Mint contributed potency and structure, while Sunset Sherbet added sweetness, colour, and a creamy terpene profile.\n\nThis combination produced a strain that retained strong effects while smoothing out some of the harsher fuel notes found in earlier generations. Gelato’s genetics were intentionally refined rather than experimental, reflecting the maturity of breeding during this era."
+      },
+      {
+        "title": "Effects & Characteristics",
+        "content": "Gelato is known for a **euphoric, uplifting mental effect paired with gentle physical relaxation**. The experience is often described as immersive without being overwhelming, making it appealing to a broad audience.\n\nIts aroma and flavour profile leans toward sweet cream, berries, and subtle citrus, with a smooth finish. Visually, Gelato buds are often dense and colourful, reinforcing its reputation as a premium modern strain."
+      },
+      {
+        "title": "Historical Context",
+        "content": "Gelato rose to prominence during the **[2010s–2020s candy and dessert strain era](/guides/the-candy-cookies-branding-era)**, when cannabis breeding became closely tied to flavour, branding, and visual presentation. It represented a second-generation evolution of Girl Scout Cookies genetics, demonstrating how dessert strains could be refined rather than simply intensified.\n\nGelato also became a prolific parent strain, giving rise to numerous popular hybrids and helping solidify dessert profiles as a permanent category in modern cannabis."
+      },
+      {
+        "title": "Why This Strain Still Matters",
+        "content": "Gelato still matters because it set a benchmark for what modern, flavour-forward cannabis could be. Many contemporary strains aim to replicate its balance of potency, smooth effects, and appealing terpene profile.\n\nAs both a destination strain and a breeding foundation, Gelato forms a crucial link between the original Cookies breakthrough and the broader landscape of modern cannabis genetics."
+      }
+    ],
+    "image": "/images/shops/gelato41.png",
+    "imageAlt": "Gelato bud - A creamy, visually striking cross of Sunset Sherbet and Thin Mint GSC"
+  },
+  {
+    "slug": "zkittlez",
+    "name": "Zkittlez",
+    "descriptor": "An indica-dominant strain prized for its intense, candy-like fruit terpenes.",
+    "image": "/images/shops/zkittles.png",
+    "imageAlt": "Zkittlez bud - An indica-dominant strain prized for its intense, candy-like fruit terpenes"
+  },
+  {
+    "slug": "wedding-cake",
+    "name": "Wedding Cake",
+    "descriptor": "A potent, vanilla-forward cross of Triangle Kush and Animal Mints.",
+    "image": "/images/shops/wedding_cake.jpg",
+    "imageAlt": "Wedding Cake bud - A potent, vanilla-forward cross of Triangle Kush and Animal Mints"
+  },
+  {
+    "slug": "runtz",
+    "name": "Runtz",
+    "descriptor": "A highly popular cross of Zkittlez and Gelato with candy appeal.",
+    "image": "/images/shops/blueruntz1x_600x.png",
+    "imageAlt": "Runtz bud - A highly popular cross of Zkittlez and Gelato with candy appeal"
+  }
 ]

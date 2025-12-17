@@ -14,6 +14,7 @@ const PORT = 3001;
 // Paths
 const COFFEESHOPS_FILE = path.join(__dirname, '../src/data/coffeeshops.ts');
 const GUIDES_FILE = path.join(__dirname, '../src/data/guides.json');
+const STRAINS_FILE = path.join(__dirname, '../src/data/strains.json');
 const IMAGES_DIR = path.join(__dirname, '../public/images/shops');
 const CLIENT_DIR = path.join(__dirname, 'admin-client');
 
@@ -126,6 +127,28 @@ function writeGuides(guides) {
     }
 }
 
+// Helper: Read Strains
+function readStrains() {
+    try {
+        if (!fs.existsSync(STRAINS_FILE)) return [];
+        return JSON.parse(fs.readFileSync(STRAINS_FILE, 'utf8'));
+    } catch (err) {
+        console.error('Error reading strains:', err);
+        return [];
+    }
+}
+
+// Helper: Write Strains
+function writeStrains(strains) {
+    try {
+        fs.writeFileSync(STRAINS_FILE, JSON.stringify(strains, null, 2), 'utf8');
+        return true;
+    } catch (err) {
+        console.error('Error writing strains:', err);
+        return false;
+    }
+}
+
 // Routes
 
 // GET all shops
@@ -181,6 +204,34 @@ app.post('/api/guides', (req, res) => {
             res.json({ success: true, count: guides.length });
         } else {
             res.status(500).json({ error: 'Failed to write guides file' });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// GET all strains
+app.get('/api/strains', (req, res) => {
+    try {
+        const strains = readStrains();
+        res.json(strains);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// POST update strains
+app.post('/api/strains', (req, res) => {
+    try {
+        const strains = req.body;
+        if (!Array.isArray(strains)) {
+            return res.status(400).json({ error: 'Expected array of strains' });
+        }
+        const success = writeStrains(strains);
+        if (success) {
+            res.json({ success: true, count: strains.length });
+        } else {
+            res.status(500).json({ error: 'Failed to write strains file' });
         }
     } catch (err) {
         res.status(500).json({ error: err.message });

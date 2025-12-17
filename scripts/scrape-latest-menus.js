@@ -172,8 +172,15 @@ async function scrapeLatestMenus() {
             });
 
             if (imageUrl) {
-                // Normalize name with hyphens to match existing convention
-                const normalizedShopName = shop.name.replace(/[^a-z0-9]/gi, '-').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                // Normalize shop name to find matches
+                // Logic must match sync-menu-images.js
+                // FIX: Remove apostrophes first to match "Hunter's" -> "hunters" instead of "hunter-s"
+                const normalizedShopName = shop.name
+                    .replace(/'/g, '')
+                    .replace(/[^a-z0-9]/gi, '-')
+                    .toLowerCase()
+                    .replace(/-+/g, '-')
+                    .replace(/^-|-$/g, '');
                 const filenameBase = `${normalizedShopName}-${dateStr}`;
 
                 // Check for existing files with any extension

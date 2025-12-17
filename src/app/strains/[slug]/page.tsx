@@ -19,6 +19,8 @@ interface Strain {
     quickFacts?: {
         [key: string]: string;
     };
+    image?: string; // URL to the hero image for this strain
+    imageAlt?: string; // [NEW] SEO alt text for the image
     sections?: {
         title: string;
         content: string;
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: `${strain.name} - Cannabis Strain Guide | Amsterdam Coffeeshop Directory`,
+        title: `${strain.name} | Amsterdam Coffeeshop Directory`,
         description: strain.descriptor,
     };
 }
@@ -63,7 +65,7 @@ export default async function StrainPage({ params }: { params: Promise<{ slug: s
         <div className="min-h-screen bg-background flex flex-col">
             <Navigation />
 
-            <main className="container mx-auto px-4 py-12 flex-grow max-w-4xl">
+            <main className="container mx-auto px-4 py-12 flex-grow max-w-6xl">
                 <nav className="flex items-center text-sm text-muted-foreground mb-8">
                     <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                     <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground/50" />
@@ -74,19 +76,33 @@ export default async function StrainPage({ params }: { params: Promise<{ slug: s
 
                 {isPopulated ? (
                     <article>
-                        <header className="mb-12">
-                            <div className="flex items-center gap-3 mb-6">
-                                <Badge variant="outline" className="border-primary/50 text-primary uppercase tracking-widest px-3 py-1">
-                                    Strain Profile
-                                </Badge>
+                        <header className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <Badge variant="outline" className="border-primary/50 text-primary uppercase tracking-widest px-3 py-1">
+                                        Strain Profile
+                                    </Badge>
+                                </div>
+
+                                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 font-display tracking-tight">
+                                    {strain.h1}
+                                </h1>
+
+                                <div className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl prose-strong:text-primary">
+                                    <ReactMarkdown>{strain.intro || ''}</ReactMarkdown>
+                                </div>
                             </div>
 
-                            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 font-display tracking-tight">
-                                {strain.h1}
-                            </h1>
-
-                            <div className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl prose-strong:text-primary">
-                                <ReactMarkdown>{strain.intro || ''}</ReactMarkdown>
+                            <div className="relative aspect-square w-full max-w-[500px] mx-auto">
+                                <Link href={strain.image || '/images/hero_bud.png'} target="_blank">
+                                    <img
+                                        src={strain.image || '/images/hero_bud.png'}
+                                        alt={strain.imageAlt || `${strain.name} bud`}
+                                        className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                                    />
+                                </Link>
+                                {/* Radial gradient background for the bud to sit on */}
+                                <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full opacity-50"></div>
                             </div>
                         </header>
 
@@ -105,7 +121,7 @@ export default async function StrainPage({ params }: { params: Promise<{ slug: s
                             </div>
                         )}
 
-                        <div className="space-y-16">
+                        <div className="space-y-16 max-w-4xl mx-auto">
                             {strain.sections?.map((section, index) => (
                                 <section key={index} className="prose prose-invert prose-lg max-w-none">
                                     <h2 className="text-3xl font-bold text-white mb-6 border-b border-white/10 pb-4">

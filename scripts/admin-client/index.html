@@ -27,6 +27,8 @@
                     class="flex-1 py-2 text-sm font-bold text-green-600 border-b-2 border-green-600">Shops</button>
                 <button id="tabGuides"
                     class="flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600">Guides</button>
+                <button id="tabStrains"
+                    class="flex-1 py-2 text-sm font-bold text-gray-500 hover:text-green-600">Strains</button>
             </div>
 
             <div id="shopSearchContainer">
@@ -48,6 +50,9 @@
                     class="w-full bg-blue-600 text-white py-2 rounded text-sm font-bold hover:bg-blue-700">+ New
                     Guide</button>
             </div>
+            <div id="strainActionsContainer" class="hidden mt-4">
+                {/* No specific actions for strains yet, maybe add new strain later */}
+            </div>
         </div>
 
         <!-- Lists -->
@@ -56,6 +61,9 @@
         </div>
         <div id="guideList" class="flex-1 overflow-y-auto hidden">
             <!-- Guide items injected here -->
+        </div>
+        <div id="strainList" class="flex-1 overflow-y-auto hidden">
+            <!-- Strain items injected here -->
         </div>
 
         <div class="p-4 border-t bg-gray-50">
@@ -214,6 +222,86 @@
                             <!-- Stats injected -->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strain Editor -->
+        <div id="strainEditor" class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md hidden">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 id="editStrainName" class="text-3xl font-bold text-gray-800">Strain Name</h2>
+                    <input type="text" id="strainSlug" class="mt-2 text-sm text-gray-500 p-1 border rounded w-full"
+                        placeholder="slug">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Left Col -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">Name</label>
+                        <input type="text" id="strainName" class="w-full p-2 border rounded mt-1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">Descriptor</label>
+                        <textarea id="strainDescriptor" rows="3" class="w-full p-2 border rounded mt-1"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">H1</label>
+                        <input type="text" id="strainH1" class="w-full p-2 border rounded mt-1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">Intro</label>
+                        <textarea id="strainIntro" rows="4" class="w-full p-2 border rounded mt-1"></textarea>
+                    </div>
+                </div>
+
+                <!-- Right Col -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Strain Image</label>
+                        <div class="mt-1 flex items-center space-x-4">
+                            <img id="strainPreviewImage" src=""
+                                class="w-20 h-20 object-contain rounded border bg-gray-900">
+                            <div class="flex-1">
+                                <input type="text" id="strainInputImage" class="w-full p-2 border rounded text-sm mb-2"
+                                    readonly placeholder="Default">
+                                <label
+                                    class="cursor-pointer bg-purple-50 text-purple-600 px-3 py-1 rounded text-sm hover:bg-purple-100">
+                                    Upload New
+                                    <input type="file" id="uploadStrainImage" class="hidden" accept="image/*">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Image Alt Text (SEO)</label>
+                            <input type="text" id="strainImageAlt" class="w-full p-2 border rounded text-sm"
+                                placeholder="e.g. Close up of Northern Lights bud">
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded border">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-sm text-gray-500 uppercase">Quick Facts</h3>
+                            <button id="addFactBtn" class="text-xs text-blue-600 hover:underline">+ Add</button>
+                        </div>
+                        <div id="factsContainer" class="space-y-2">
+                            <!-- Facts injected -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-lg">Sections</h3>
+                    <button id="addStrainSectionBtn"
+                        class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded hover:bg-purple-200">+ Add
+                        Section</button>
+                </div>
+                <div id="strainSectionsContainer" class="space-y-6">
+                    <!-- Strain sections -->
                 </div>
             </div>
         </div>

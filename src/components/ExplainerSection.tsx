@@ -18,7 +18,10 @@ export default function ExplainerSection() {
                         This interactive map is your <strong>ultimate decision tool for 2026</strong>. Unlike generic maps that just show dots, we’ve qualified every single shop. We filter out the noise so you can find exactly what fits your vibe—whether that’s a safe, welcoming spot for your first time, or a connoisseur-grade dispensary with verified Cali genetics.
                     </p>
                     <p>
-                        Use the filters above the map to instantly narrow down the city. Click any pin to see valid menus, verified reviews, and video walk-throughs. Don’t waste your trip smoking hay; let us guide you to the fire.
+                        Use the filters above the map to instantly narrow down the city. Click any pin to see valid menus, verified reviews, and video walk-throughs.
+                    </p>
+                    <p className="mt-4 pt-4 border-t border-border/50">
+                        <strong>New Tour Planner:</strong> Want to create your own journey? Click <strong>"Add to Tour"</strong> on any shop to build your custom itinerary. We'll draw a <span className="text-red-500 font-bold">Red Walking Route</span> connecting your stops, using the most efficient pedestrian paths (not car roads). Use the <strong>"My Tour"</strong> filter to hide everything else and follow your path!
                     </p>
                 </div>
             </section>
