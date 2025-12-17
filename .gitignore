@@ -50,3 +50,9 @@ build_error.md
 
 # artifacts
 walkthrough*.md
+
+# temporary debug files
+sitemap_live*.xml
+sitemap_preview.xml
+image_updates.json
+svg_shops_list.txt
