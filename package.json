@@ -2,9 +2,10 @@
   "name": "web-next-js",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/sync-menu-images.js && next build && node scripts/minify-sitemap.js",
+    "build": "node scripts/sync-menu-images.js && next build",
     "start": "next start",
     "lint": "eslint",
     "admin": "node scripts/local-admin-server.js"
