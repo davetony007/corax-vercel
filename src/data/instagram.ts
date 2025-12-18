@@ -6,6 +6,16 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSZWaIVEb8F/",
+    "image": "/images/instagram/DSZWaIVEb8F.jpg",
+    "caption": "@thehighcastlesesh Advent Calendar Day 18 December 18th @thcturbine @petit.four20"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSX0QRkESFw/",
+    "image": "/images/instagram/DSX0QRkESFw.jpg",
+    "caption": "My Own Grinder @nvgrinder"
+  },
+  {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSWzhX9EUmW/",
     "image": "/images/instagram/DSWzhX9EUmW.jpg",
     "caption": "@thehighcastlesesh Advent Calendar Day 17 December 17th @thcturbine @petit.four20"
