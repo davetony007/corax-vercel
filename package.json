@@ -8,7 +8,8 @@
     "build": "node scripts/sync-menu-images.js && next build",
     "start": "next start",
     "lint": "eslint",
-    "admin": "node scripts/local-admin-server.js"
+    "admin": "node scripts/local-admin-server.js",
+    "indexnow": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/submit-indexnow.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -79,6 +80,7 @@
     "multer": "^2.0.2",
     "puppeteer": "^24.32.1",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
