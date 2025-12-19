@@ -11,8 +11,8 @@ export const shorts: ShortData[] = [
   {
     "id": "s1",
     "videoId": "SmiP_rQ7qQk",
-    "title": "TheHighCastleSesh Advent Calendar Day 20",
-    "description": "TheHighCastleSesh Advent Calendar Day 20"
+    "title": "TheHighCastleSesh Advent Calendar Day 19",
+    "description": "TheHighCastleSesh Advent Calendar Day 19"
   },
   {
     "id": "s2",
