@@ -6,6 +6,46 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSpDJaQkTAo/",
+    "image": "/images/instagram/DSpDJaQkTAo.jpg",
+    "caption": "New Life in the Last Door of @TheHighCastleSesh Advent Calendar Day 24 December 24th @petit.four20 @silent.seeds @thcturbine"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/p/DSm86TijAOe/",
+    "image": "/images/instagram/DSm86TijAOe.jpg",
+    "caption": "New video out: \"Top Coffeeshops in Amsterdam 2026\" + Christmas Dinner Stream pow. by @puffpuffpastry.co Announcement"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSmPOkVET3Z/",
+    "image": "/images/instagram/DSmPOkVET3Z.jpg",
+    "caption": "Sour Surprise in Door 23 @thehighcastlesesh Advent Calendar Day 23 December 23rd @petit.four20 @thcturbine"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSkc7TbkS7e/",
+    "image": "/images/instagram/DSkc7TbkS7e.jpg",
+    "caption": "This Coffeeshop Checks All Boxes @coffeeshophashtag"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSjtWAwEV4I/",
+    "image": "/images/instagram/DSjtWAwEV4I.jpg",
+    "caption": "Magic Powder in This Box @thehighcastlesesh Advent Calendar Day 22 December 22nd @thcturbine @petit.four20"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DShMuR1EdLh/",
+    "image": "/images/instagram/DShMuR1EdLh.jpg",
+    "caption": "Sweet Suprise in Door 21 of the @thehighcastlesesh Advent Calendar December 21st @thcturbine @dreambrosamsterdam"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSfPxRWkbYA/",
+    "image": "/images/instagram/DSfPxRWkbYA.jpg",
+    "caption": "A New Player From The UK Has Entered The Game - Got Invited To Test @jollygood.coffeeshop Menu Part 1 @jollygood.world @maisonocacapo @terpence_vie"
+  },
+  {
+    "url": "https://www.instagram.com/corax_amsterdam/reel/DSem69TEb30/",
+    "image": "/images/instagram/DSem69TEb30.jpg",
+    "caption": "Tangie Godness in Todays Door From @thehighcastlesesh Advent Calendar December 20th @thcturbine @abraxas.amsterdam @afro.genetics"
+  },
+  {
     "url": "https://www.instagram.com/corax_amsterdam/reel/DSZWaIVEb8F/",
     "image": "/images/instagram/DSZWaIVEb8F.jpg",
     "caption": "@thehighcastlesesh Advent Calendar Day 18 December 18th @thcturbine @petit.four20"
